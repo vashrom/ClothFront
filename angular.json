@@ -115,7 +115,18 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/imagesloaded.pkgd.min.js",
+              "src/assets/js/jquery.countdown.min.js",
+              "src/assets/js/dd.min.js",
+              "src/assets/js/jquery.nice-select.min.js",
+              "src/assets/js/jquery.slicknav.js",
+              "src/assets/js/jquery.zoom.min.js",
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/js/jquery-ui.min.js",
+              "src/assets/js/owl.carousel.min.js"
+            ]
           }
         },
         "lint": {
