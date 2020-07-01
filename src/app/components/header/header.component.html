@@ -15,9 +15,9 @@
         <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
         <div class="lan-selector">
           <select class="language_drop" name="countries" id="countries" style="width:300px;">
-            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
+            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
                     data-title="English">English</option>
-            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
+            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
                     data-title="Bangladesh">German </option>
           </select>
         </div>
@@ -95,15 +95,15 @@
                 </div>
                 <div class="select-total">
                   <span>total:</span>
-                  <h5>$120.00</h5>
+                  <h5>{{0.00 | currency: 'USD'}}</h5>
                 </div>
                 <div class="select-button">
-                  <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                  <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                  <a routerLink="/cart" class="primary-btn view-card">VIEW CARD</a>
+                  <a routerLink="/checkout" class="primary-btn checkout-btn">CHECK OUT</a>
                 </div>
               </div>
             </li>
-            <li class="cart-price">$150.00</li>
+            <li class="cart-price">{{0.00 | currency: 'USD'}}</li>
           </ul>
         </div>
       </div>
@@ -129,7 +129,9 @@
       </div>
       <nav class="nav-menu mobile-menu">
         <ul>
-          <li class="active"><a href="./index.html">Home</a></li>
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li><a href="./shop.html">Payment</a></li>
+          <li><a href="./shop.html">Back</a></li>
           <li><a href="./shop.html">Shop</a></li>
           <li><a href="#">Collection</a>
             <ul class="dropdown">
@@ -140,16 +142,16 @@
           </li>
           <li><a href="./blog.html">Blog</a></li>
           <li><a href="./contact.html">Contact</a></li>
-          <li><a href="#">Pages</a>
-            <ul class="dropdown">
-              <li><a href="./blog-details.html">Blog Details</a></li>
-              <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-              <li><a href="./check-out.html">Checkout</a></li>
-              <li><a href="./faq.html">Faq</a></li>
-              <li><a href="./register.html">Register</a></li>
-              <li><a href="./login.html">Login</a></li>
-            </ul>
-          </li>
+<!--          <li><a href="#">Pages</a>-->
+<!--            <ul class="dropdown">-->
+<!--              <li><a href="./blog-details.html">Blog Details</a></li>-->
+<!--              <li><a href="./shopping-cart.html">Shopping Cart</a></li>-->
+<!--              <li><a href="./check-out.html">Checkout</a></li>-->
+<!--              <li><a href="./faq.html">Faq</a></li>-->
+<!--              <li><a href="./register.html">Register</a></li>-->
+<!--              <li><a href="./login.html">Login</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
