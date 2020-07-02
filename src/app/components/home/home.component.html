@@ -172,6 +172,7 @@
 
                       [class.disabled]="p.quantity<1"
                       [class.btn-outline-danger]="p.quantity<1"
+                                              (click)="AddToCart(p.id)"
 
                     >{{p.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
                     <!--
@@ -191,6 +192,8 @@
                 </div>
               </div>
             </div>
+
+
 
 
             <div class="col-lg-4 col-sm-6">

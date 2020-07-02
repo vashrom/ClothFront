@@ -7,6 +7,8 @@ import {CartModelPublic, CartModelServer} from "../models/cart.model";
 import {BehaviorSubject} from "rxjs";
 import {NavigationExtras, Router} from "@angular/router";
 import {ProductModelServer} from "../models/product.model";
+import {ToastrService} from "ngx-toastr";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Injectable({
   providedIn: 'root'
@@ -40,9 +42,12 @@ export class CartService {
 
 
 
-  constructor(private http: HttpClient, private productService: ProductService,
+  constructor(private http: HttpClient,
+              private productService: ProductService,
               private orderService: OrderService,
-              private router: Router
+              private router: Router,
+              private toast: ToastrService,
+              private spinner: NgxSpinnerService
               ) {
 
         this.cartTotal$.next(this.cartDataServer.total);
@@ -98,33 +103,56 @@ export class CartService {
       {
         this.cartDataServer.data[0].product = prod;
         this.cartDataServer.data[0].numInCart = quantity != undefined ? quantity : 1;
-        //TODO Calculate total amount
+        this.CalculateTotal();
         this.cartDataClient.prodData[0].incart=this.cartDataServer.data[0].numInCart;
         this.cartDataClient.prodData[0].id = prod.id;
         this.cartDataClient.total = this.cartDataServer.total;
         localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
         this.cartData$.next({... this.cartDataServer});
-        //TODO Display toast notification
+
+        this.toast.success(`${prod.name} added to the cart`, 'Product Added', {
+          timeOut: 1500,
+          progressBar: true,
+          progressAnimation: 'increasing',
+          positionClass: 'toast-top-right'
+        });
 
 
       }
       //Cart has some items
       else {
-        let index = this.cartDataServer.data.findIndex(p => p.product.id == prod.id);
+        const index = this.cartDataServer.data.findIndex(p => p.product.id == prod.id);
 
         if(index != -1){
           if(quantity != undefined && quantity <= prod.quantity){
             this.cartDataServer.data[index].numInCart = this.cartDataServer.data[index].numInCart < prod.quantity ? quantity : prod.quantity;
           }
           else {
-            this.cartDataServer.data[index].numInCart = this.cartDataServer.data[index].numInCart < prod.quantity ? this.cartDataServer.data[index].numInCart++ : prod.quantity;
+            //tsl
+            this.cartDataServer.data[index].numInCart < prod.quantity ? this.cartDataServer.data[index].numInCart++ : prod.quantity;
           }
 
           this.cartDataClient.prodData[index].incart = this.cartDataServer.data[index].numInCart;
-          //TODO Display toast notification
+
+          this.CalculateTotal();
+          this.cartDataClient.total = this.cartDataServer.total;
+
+          localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
+
+
+          this.toast.info(`${prod.name} quantity updated in the cart`, 'Product Updated', {
+            timeOut: 1500,
+            progressBar: true,
+            progressAnimation: 'increasing',
+            positionClass: 'toast-top-right'
+          });
+
+
         } //endofif
 
-        //if item not in cart
+        //if item not in cart arr
+
+
         else {
           this.cartDataServer.data.push({
             numInCart:1,
@@ -137,9 +165,16 @@ export class CartService {
           });
 
 
-          //TODO Display toast notification
+           this.toast.success(`${prod.name} added to the cart`, 'Product Added', {
+             timeOut: 1500,
+             progressBar: true,
+             progressAnimation: 'increasing',
+             positionClass: 'toast-top-right'
+           });
 
-          //TODO Calculate total amount
+
+
+          this.CalculateTotal();
           this.cartDataClient.total = this.cartDataServer.total;
           localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
           this.cartData$.next({... this.cartDataServer});
@@ -155,7 +190,7 @@ export class CartService {
     if(increase) {
       data.numInCart < data.product.quantity ? data.numInCart++ : data.product.quantity;
       this.cartDataClient.prodData[index].incart = data.numInCart;
-      //TODO Calculate total amount
+      this.CalculateTotal();
       this.cartDataClient.total = this.cartDataServer.total;
       localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
       this.cartData$.next({... this.cartDataServer});
@@ -164,13 +199,13 @@ export class CartService {
       data.numInCart--;
 
       if(data.numInCart < 1) {
-        //TODO DELETE PRODUCT FROM CART
+        this.DeleteProductFromCart(index);
         this.cartData$.next({...this.cartDataServer});
       }
       else {
         this.cartData$.next({...this.cartDataServer});
         this.cartDataClient.prodData[index].incart = data.numInCart;
-        //TODO Calculate total amount
+        this.CalculateTotal();
         this.cartDataClient.total = this.cartDataServer.total;
         localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
       }
@@ -182,7 +217,7 @@ export class CartService {
     {
       this.cartDataServer.data.splice(index, 1);
       this.cartDataClient.prodData.splice(index, 1);
-      //TODO Calculate total amount
+      this.CalculateTotal();
       this.cartDataClient.total = this.cartDataServer.total;
 
 
@@ -248,6 +283,7 @@ export class CartService {
                 }
               };
 
+              this.spinner.hide().then();
               this.router.navigate(['/thankyou'],navigationExtras).then(p => {
                 this.cartDataClient = {total: 0, prodData: [{incart: 0, id: 0}] };
                 this.cartTotal$.next(0);
@@ -258,6 +294,16 @@ export class CartService {
 
         });
 
+      }
+      else {
+        this.spinner.hide().then();
+        this.router.navigateByUrl('/checkout').then();
+        this.toast.error(`Sorry, failed to book the order` , 'Order Status', {
+          timeOut: 1500,
+          progressBar: true,
+          progressAnimation: 'increasing',
+          positionClass: 'toast-top-right'
+        });
       }
     });
   }
