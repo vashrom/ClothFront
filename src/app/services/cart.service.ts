@@ -28,11 +28,12 @@ export class CartService {
 
   //Data var to store cart info on the server
   private cartDataServer: CartModelServer = {
-    total: 0,
+
     data: [{
       numInCart: 0,
       product: undefined
-    }]
+    }],
+    total: 0
   };
 
   /* OBSERVABLES for components to subscribe */
@@ -72,6 +73,8 @@ export class CartService {
                 this.cartDataServer.data[0].numInCart = p.incart;
                 this.cartDataServer.data[0].product = actualProductInfo;
 
+                this.CalculateTotal();
+
                 this.cartDataClient.total = this.cartDataServer.total;
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
 
@@ -82,6 +85,7 @@ export class CartService {
                   product: actualProductInfo
                 });
 
+                this.CalculateTotal();
                 this.cartDataClient.total = this.cartDataServer.total;
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
               }
