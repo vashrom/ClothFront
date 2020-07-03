@@ -82,16 +82,16 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="cart-buttons">
-                  <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                  <a href="#" class="primary-btn up-cart">Update cart</a>
+                  <a routerLink="/" class="primary-btn up-cart">Continue shopping</a>
+<!--                  <a href="#" class="primary-btn up-cart">Update cart</a>-->
                 </div>
-                <div class="discount-coupon">
-                  <h6>Discount Codes</h6>
-                  <form action="#" class="coupon-form">
-                    <input type="text" placeholder="Enter your codes">
-                    <button type="submit" class="site-btn coupon-btn">Apply</button>
-                  </form>
-                </div>
+<!--                <div class="discount-coupon">-->
+<!--                  <h6>Discount Codes</h6>-->
+<!--                  <form action="#" class="coupon-form">-->
+<!--                    <input type="text" placeholder="Enter your codes">-->
+<!--                    <button type="submit" class="site-btn coupon-btn">Apply</button>-->
+<!--                  </form>-->
+<!--                </div>-->
               </div>
               <div class="col-lg-4 offset-lg-4">
                 <div class="proceed-checkout">
@@ -99,7 +99,7 @@
 <!--                    <li class="subtotal">Subtotal <span>$240.00</span></li>-->
                     <li class="cart-total">Total <span>{{cartTotal | currency: 'USD'}}</span></li>
                   </ul>
-                  <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                  <a routerLink="/checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
                 </div>
               </div>
             </div>
