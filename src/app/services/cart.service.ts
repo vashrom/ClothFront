@@ -288,8 +288,8 @@ export class CartService {
               };
 
               this.spinner.hide().then();
-              this.router.navigate(['/thankyou'],navigationExtras).then(p => {
-                this.cartDataClient = {total: 0, prodData: [{incart: 0, id: 0}] };
+              this.router.navigate(['/thankyou'], navigationExtras).then(p => {
+                this.cartDataClient = {prodData: [{incart: 0, id: 0}], total: 0};
                 this.cartTotal$.next(0);
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
               });
