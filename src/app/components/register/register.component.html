@@ -1,0 +1,48 @@
+<div class="register-login-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="register-form">
+          <h2>Register</h2>
+
+
+          <form (submit)="register()">
+            <div class="group-input">
+              <label>First Name</label>
+              <input type="text" class="form-control" name="first_name" placeholder="Enter first name" [(ngModel)]="credentials.first_name">
+            </div>
+            <div class="group-input">
+              <label>Last Name</label>
+              <input type="text" class="form-control" name="last_name" placeholder="Enter last name" [(ngModel)]="credentials.last_name">
+            </div>
+            <div class="group-input">
+              <label>Email address *</label>
+              <input type="email" class="form-control" id="username" name="email" placeholder="Enter Email" [(ngModel)]="credentials.email">
+            </div>
+            <div class="group-input">
+              <label>Password *</label>
+              <input type="password" class="form-control" id="pass" name="password" placeholder="Enter Password" [(ngModel)]="credentials.password">
+            </div>
+
+
+<!--            <div class="group-input">-->
+<!--              <label for="pass">Password *</label>-->
+<!--              <input type="text" id="pass">-->
+<!--            </div>-->
+<!--            <div class="group-input">-->
+<!--              <label for="con-pass">Confirm Password *</label>-->
+<!--              <input type="text" id="con-pass">-->
+<!--            </div>-->
+
+            <button type="submit" class="site-btn register-btn">REGISTER</button>
+          </form>
+
+
+             <div class="switch-login">
+            <a routerLink="/login" class="or-login">Or Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

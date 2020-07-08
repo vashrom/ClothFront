@@ -5,6 +5,11 @@ import {ProductComponent} from "./components/product/product.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {ThankyouComponent} from "./components/thankyou/thankyou.component";
+import {ProfileComponent} from "./components/profile/profile.component";
+import {LoginComponent} from "./components/login/login.component";
+import {RegisterComponent} from "./components/register/register.component";
+import {AuthGuardService} from "./guard/auth-guard.service";
+
 
 
 const routes: Routes = [
@@ -23,8 +28,22 @@ const routes: Routes = [
   {
     path: 'thankyou',component: ThankyouComponent
   },
+  {
+    path: 'profile',component: ProfileComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'login',component: LoginComponent
+  },
+  {
+    path: 'register',component: RegisterComponent
+  },
+
+
 
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
