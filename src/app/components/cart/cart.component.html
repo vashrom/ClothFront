@@ -1,5 +1,5 @@
 <div class="container">
-<!--  Cart is  empty-->
+  <!--  Cart is  empty-->
 
   <div class="text-center my-5" *ngIf="cartData.data[0].numInCart == 0;" >
     <h4>Your Cart Is Empty</h4>
@@ -8,7 +8,7 @@
   </div>
 
 
-<!--  Cart with items-->
+  <!--  Cart with items-->
   <ng-container *ngIf="cartData.data[0].numInCart != 0">
     <!-- Breadcrumb Section Begin -->
     <div class="breacrumb-section">
@@ -53,21 +53,21 @@
                   </td>
                   <td class="p-price first-row">{{c.product.price | currency: 'USD'}}</td>
                   <td class="qua-col first-row">
-<!--                    <div class="quantity" (click)="ChangeQuantity(i , false)" >-->
-<!--                      <div class="pro-qty">-->
-<!--                        <input type="text" [value]="c.numInCart" readonly [max]="c.product.quantity"] />-->
-<!--                      </div>-->
-<!--                    </div>-->
-                      <form>
-                        <div class="value-button" id="decrease" (click)="ChangeQuantity(i , false)">
-                          <i class="fa fa-minus"></i>
-                        </div>
-                        <input type="number" id="number"type="number" id="number" [value]="c.numInCart" readonly [max]="c.product.quantity" />
-                        <div class="value-button" id="increase" (click)="ChangeQuantity(i , true)">
-                          <i class="fa fa-plus"></i>
-                        </div>
+                    <!--                    <div class="quantity" (click)="ChangeQuantity(i , false)" >-->
+                    <!--                      <div class="pro-qty">-->
+                    <!--                        <input type="text" [value]="c.numInCart" readonly [max]="c.product.quantity"] />-->
+                    <!--                      </div>-->
+                    <!--                    </div>-->
+                    <form>
+                      <div class="value-button" id="decrease" (click)="ChangeQuantity(i , false)">
+                        <i class="fa fa-minus"></i>
+                      </div>
+                      <input type="number" id="number"type="number" id="number" [value]="c.numInCart" readonly [max]="c.product.quantity" />
+                      <div class="value-button" id="increase" (click)="ChangeQuantity(i , true)">
+                        <i class="fa fa-plus"></i>
+                      </div>
 
-                      </form>
+                    </form>
 
 
                   </td>
@@ -83,20 +83,20 @@
               <div class="col-lg-4">
                 <div class="cart-buttons">
                   <a routerLink="/" class="primary-btn up-cart">Continue shopping</a>
-<!--                  <a href="#" class="primary-btn up-cart">Update cart</a>-->
+                  <!--                  <a href="#" class="primary-btn up-cart">Update cart</a>-->
                 </div>
-<!--                <div class="discount-coupon">-->
-<!--                  <h6>Discount Codes</h6>-->
-<!--                  <form action="#" class="coupon-form">-->
-<!--                    <input type="text" placeholder="Enter your codes">-->
-<!--                    <button type="submit" class="site-btn coupon-btn">Apply</button>-->
-<!--                  </form>-->
-<!--                </div>-->
+                <!--                <div class="discount-coupon">-->
+                <!--                  <h6>Discount Codes</h6>-->
+                <!--                  <form action="#" class="coupon-form">-->
+                <!--                    <input type="text" placeholder="Enter your codes">-->
+                <!--                    <button type="submit" class="site-btn coupon-btn">Apply</button>-->
+                <!--                  </form>-->
+                <!--                </div>-->
               </div>
               <div class="col-lg-4 offset-lg-4">
                 <div class="proceed-checkout">
                   <ul>
-<!--                    <li class="subtotal">Subtotal <span>$240.00</span></li>-->
+                    <!--                    <li class="subtotal">Subtotal <span>$240.00</span></li>-->
                     <li class="cart-total">Total <span>{{cartTotal | currency: 'USD'}}</span></li>
                   </ul>
                   <a routerLink="/checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>

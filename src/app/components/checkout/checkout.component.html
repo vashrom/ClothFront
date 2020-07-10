@@ -97,7 +97,7 @@
 
                 <li *ngFor="let c of cartData.data" class="fw-normal">{{c.product.name}} x {{c.numInCart}} <span>{{c.product.price * c.numInCart | currency: 'USD'}}</span></li>
 
-<!--                <li class="fw-normal">Subtotal <span>$240.00</span></li>-->
+                <!--                <li class="fw-normal">Subtotal <span>$240.00</span></li>-->
                 <li class="total-price">Total <span>{{cartTotal | currency: 'USD'}}</span></li>
               </ul>
               <div class="payment-check">
