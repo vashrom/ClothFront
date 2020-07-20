@@ -24,6 +24,6 @@ interface ProductResponseModel {
   title: string;
   description: string;
   price: number;
-  quantityOrdered: number;
+  quantity: number;
   image: string;
 }

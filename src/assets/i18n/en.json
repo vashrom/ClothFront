@@ -1,0 +1,30 @@
+{
+  "NAV": {
+    "MAIN": "MAIN",
+    "PAYMENT": "PAYMENT",
+    "RETURN": "RETURN TERMS",
+    "ABOUT": "ABOUT",
+    "CONTACTS": "CONTACTS",
+    "BLOG": "BLOG",
+    "CATALOG": "CATALOG"
+
+
+  },
+
+  "HOME": {
+    "TITLE1": "New business blouses",
+    "PARAG1": "Paragraph on English",
+    "SALE": "SALE",
+    "SHOPNOW": "SHOP NOW"
+  },
+
+  "COLLECTION": {
+    "1": "Shoes",
+    "2": "Dresses",
+    "3": "Shirts",
+    "DISCOVER": "Discover more"
+  }
+
+
+
+}

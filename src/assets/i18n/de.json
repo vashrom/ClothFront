@@ -1,0 +1,29 @@
+{
+  "NAV": {
+    "MAIN": "MAIN",
+    "PAYMENT": "ZAHLUNG",
+    "RETURN": "RÜCKGABEBEDINGUNGEN",
+    "ABOUT": "ÜBER",
+    "CONTACTS": "KONTAKTE",
+    "BLOG": "BLOG",
+    "CATALOG": "KATALOG"
+
+
+  },
+
+  "HOME": {
+    "TITLE1": "Neue Businessblusen",
+    "PARAG1": "Absatz über Deutsch",
+    "SALE": "VERKAUF",
+    "SHOPNOW": "JETZT EINKAUFEN"
+  },
+  "COLLECTION": {
+    "1": "Schuhe",
+    "2": "Kleider",
+    "3": "Hemden",
+    "DISCOVER": "Entdecke mehr"
+  }
+
+
+
+}

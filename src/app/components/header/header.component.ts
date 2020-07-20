@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";
 import {AuthenticationService} from "../../services/authentication.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   cartTotal: number;
   authState: boolean;
 
-  constructor(public cartService: CartService, public auth: AuthenticationService) { }
+  constructor(public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
 
   ngOnInit(): void {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);

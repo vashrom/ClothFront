@@ -41,11 +41,11 @@ export class ThankyouComponent implements OnInit {
 
 interface ProductResponseModel {
   id: number;
-  name: string;
+  title: string;
   description: string;
   price: number;
   image: string;
-  quantityOrdered: number;
+  quantity: number;
 }
 
 

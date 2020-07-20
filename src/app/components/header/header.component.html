@@ -26,13 +26,22 @@
           <a routerLink="/" (click)="auth.logout()" class="btn-outline-warning btn-sm btn-block text-center">Logout</a>
         </li>
 
+        <button (click)="translate.use('en')">EN</button>
+        <button (click)="translate.use('ua')">UA</button>
+        <button (click)="translate.use('de')">DE</button>
+        <button (click)="translate.use('ru')">RU</button>
 
         <div class="lan-selector">
           <select class="language_drop" name="countries" id="countries" style="width:300px;">
             <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
-                    data-title="English">English</option>
+                    data-title="English"><button  (click)="translate.use('en')">English</button></option>
             <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
                     data-title="Bangladesh">German </option>
+
+            <option  value='yu' data-image="assets/img/flag-3.jpg" data-imagecss="flag yu"
+                     data-title="Bangladesh"><button (click)="translate.use('ua')">Ukraine </button></option>
+            <option value='yu' data-image="assets/img/flag-1.jpg" data-imagecss="flag yu"
+                    data-title="Bangladesh">Russia </option>
           </select>
         </div>
 
@@ -79,11 +88,11 @@
                     <tbody *ngIf="cartData.data[0].numInCart != 0">
 
                     <tr *ngFor="let c of cartData.data; let i=index">
-                      <td class="si-pic"><img [src]="c.product ?. image" alt="{{c.product.name}}"></td>
+                      <td class="si-pic"><img [src]="c.product ?. image" alt="{{c.product.title}}"></td>
                       <td class="si-text">
                         <div class="product-selected">
                           <p>{{c.product.price | currency: 'USD'}} x {{c.numInCart}}</p>
-                          <h6>{{c.product.name}}</h6>
+                          <h6>{{c.product.title}}</h6>
                         </div>
                       </td>
                       <td class="si-close" (click)="cartService.DeleteProductFromCart(i)" >
@@ -113,46 +122,27 @@
   <div class="nav-item">
     <div class="container">
       <div class="nav-depart">
-<!--        <div class="depart-btn">-->
-<!--          <i class="ti-menu"></i>-->
-<!--          <span>All departments</span>-->
-<!--          <ul class="depart-hover">-->
-<!--            <li class="active"><a href="#">Women’s Clothing</a></li>-->
-<!--            <li><a href="#">Men’s Clothing</a></li>-->
-<!--            <li><a href="#">Underwear</a></li>-->
-<!--            <li><a href="#">Kid's Clothing</a></li>-->
-<!--            <li><a href="#">Brand Fashion</a></li>-->
-<!--            <li><a href="#">Accessories/Shoes</a></li>-->
-<!--            <li><a href="#">Luxury Brands</a></li>-->
-<!--            <li><a href="#">Brand Outdoor Apparel</a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
+
       </div>
       <nav class="nav-menu mobile-menu">
         <ul>
-          <li class="active"><a routerLink="/">Home</a></li>
-          <li><a href="./shop.html">Payment</a></li>
-          <li><a href="./shop.html">Back</a></li>
-          <li><a href="./shop.html">Shop</a></li>
-          <li><a href="#">Collection</a>
+          <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
+          <li><a routerLink="/collection">{{'NAV.CATALOG' | translate}}</a>
             <ul class="dropdown">
-              <li><a href="#">Men's</a></li>
-              <li><a href="#">Women's</a></li>
-              <li><a href="#">Kid's</a></li>
+              <li><a routerLink="category/shoes">{{'COLLECTION.1'| translate}}</a></li>
+              <li><a routerLink="category/dresses">{{'COLLECTION.2'| translate}}</a></li>
+              <li><a routerLink="category/shirts">{{'COLLECTION.3'| translate}}</a></li>
             </ul>
           </li>
-          <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-          <!--          <li><a href="#">Pages</a>-->
-          <!--            <ul class="dropdown">-->
-          <!--              <li><a href="./blog-details.html">Blog Details</a></li>-->
-          <!--              <li><a href="./shopping-cart.html">Shopping Cart</a></li>-->
-          <!--              <li><a href="./check-out.html">Checkout</a></li>-->
-          <!--              <li><a href="./faq.html">Faq</a></li>-->
-          <!--              <li><a href="./register.html">Register</a></li>-->
-          <!--              <li><a href="./login.html">Login</a></li>-->
-          <!--            </ul>-->
-          <!--          </li>-->
+          <li><a routerLink="/payinfo">{{'NAV.PAYMENT' | translate}}</a></li>
+          <li><a routerLink="/return">{{'NAV.RETURN' | translate}}</a></li>
+          <li><a routerLink="/about">{{'NAV.ABOUT' | translate}}</a></li>
+          <li><a routerLink="/contacts">{{'NAV.CONTACTS' | translate}}</a></li>
+          <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>
+
+
+
+
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>

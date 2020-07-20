@@ -22,11 +22,11 @@
         <tbody>
         <tr *ngFor="let p of products ">
           <td>
-            <img [src]="p.image" alt="{{p.name}}" class="img-thumbnail" width="100px">
+            <img [src]="p.image" alt="{{p.title}}" class="img-thumbnail" width="100px">
           </td>
-          <td>{{p.name}}</td>
+          <td>{{p.title}}</td>
           <td>{{p.price | currency:'USD'}}</td>
-          <td>{{p.quantityOrdered}}</td>
+          <td>{{p.quantity}}</td>
         </tr>
 
         <tr class="border-0">

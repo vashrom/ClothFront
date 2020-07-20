@@ -132,7 +132,7 @@
 
             <!--              <ng-template [ngIf]="thumbImages.length == 0">-->
             <div class="product-pic-zoom">
-              <img class="product-big-img" [src]="product.image" alt="{{product.name}}">
+              <img class="product-big-img" [src]="product.image" alt="{{product.title}}">
               <div class="zoom-icon">
                 <i class="fa fa-search-plus"></i>
               </div>
@@ -157,15 +157,15 @@
 
                   <div *ngFor="let t of thumbImages" class="pt active" data-imgbigurl="assets/img/product-single/product-1.jpg">
                     <img
-                      [src]="t" alt="{{product.name}}"/></div>
+                      [src]="t" alt="{{product.title}}"/></div>
 
                 </ng-template>
 
                 <ng-template [ngIf]="thumbImages.length == 0" >
 
-                  <div class="pt active" data-imgbigurl="img/product-single/product-1.jpg">
+                  <div class="pt active" data-imgbigurl="assets/img/product-single/product-1.jpg">
                     <img
-                      [src]="product.image" alt="{{product.name}}">
+                      [src]="product.image" alt="{{product.title}}">
                   </div>
 
                 </ng-template>
@@ -178,7 +178,7 @@
             <div class="product-details">
               <div class="pd-title">
                 <span>{{product.category}}</span>
-                <h3>{{product.name}}</h3>
+                <h3>{{product.title}}</h3>
               </div>
 
               <div class="pd-desc">
@@ -275,7 +275,7 @@
 
                     </div>
                     <div class="col-lg-5">
-                      <img src="img/product-single/tab-desc.jpg" alt="">
+                      <img src="assets/img/product-single/tab-desc.jpg" alt="">
                     </div>
                   </div>
                 </div>
@@ -345,7 +345,7 @@
                   <div class="comment-option">
                     <div class="co-item">
                       <div class="avatar-pic">
-                        <img src="img/product-single/avatar-1.png" alt="">
+                        <img src="assets/img/product-single/avatar-1.png" alt="">
                       </div>
                       <div class="avatar-text">
                         <div class="at-rating">
@@ -361,7 +361,7 @@
                     </div>
                     <div class="co-item">
                       <div class="avatar-pic">
-                        <img src="img/product-single/avatar-2.png" alt="">
+                        <img src="assets/img/product-single/avatar-2.png" alt="">
                       </div>
                       <div class="avatar-text">
                         <div class="at-rating">
@@ -428,7 +428,7 @@
       <div class="col-lg-3 col-sm-6">
         <div class="product-item">
           <div class="pi-pic">
-            <img src="img/products/women-1.jpg" alt="">
+            <img src="assets/img/products/women-1.jpg" alt="">
             <div class="sale">Sale</div>
             <div class="icon">
               <i class="icon_heart_alt"></i>
@@ -454,7 +454,7 @@
       <div class="col-lg-3 col-sm-6">
         <div class="product-item">
           <div class="pi-pic">
-            <img src="img/products/women-2.jpg" alt="">
+            <img src="assets/img/products/women-2.jpg" alt="">
             <div class="icon">
               <i class="icon_heart_alt"></i>
             </div>
@@ -478,7 +478,7 @@
       <div class="col-lg-3 col-sm-6">
         <div class="product-item">
           <div class="pi-pic">
-            <img src="img/products/women-3.jpg" alt="">
+            <img src="assets/img/products/women-3.jpg" alt="">
             <div class="icon">
               <i class="icon_heart_alt"></i>
             </div>
@@ -502,7 +502,7 @@
       <div class="col-lg-3 col-sm-6">
         <div class="product-item">
           <div class="pi-pic">
-            <img src="img/products/women-4.jpg" alt="">
+            <img src="assets/img/products/women-4.jpg" alt="">
             <div class="icon">
               <i class="icon_heart_alt"></i>
             </div>

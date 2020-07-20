@@ -10,7 +10,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {ToastrModule} from "ngx-toastr";
 import {FormsModule} from "@angular/forms";
@@ -20,6 +20,20 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuardService} from "./guard/auth-guard.service";
+import { IndexComponent } from './components/index/index.component';
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { PayinfoComponent } from './components/payinfo/payinfo.component';
+import { ReturnComponent } from './components/return/return.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { AboutComponent } from './components/about/about.component';
+import { CategoryComponent } from './components/category/category.component';
+
+export function HttpLoaderFactory(http:HttpClient) {
+  return new TranslateHttpLoader(http);
+
+}
 
 @NgModule({
   declarations: [
@@ -33,7 +47,14 @@ import {AuthGuardService} from "./guard/auth-guard.service";
     ThankyouComponent,
     ProfileComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    IndexComponent,
+    PayinfoComponent,
+    ReturnComponent,
+    ContactsComponent,
+    BlogComponent,
+    AboutComponent,
+    CategoryComponent
 
 
   ],
@@ -44,7 +65,15 @@ import {AuthGuardService} from "./guard/auth-guard.service";
     HttpClientModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+     loader: {
+       provide: TranslateLoader,
+       useFactory: HttpLoaderFactory,
+       deps: [HttpClient]
+     },
+      defaultLanguage: 'en'
+    })
 
   ],
   providers: [AuthenticationService, AuthGuardService],

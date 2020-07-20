@@ -16,11 +16,9 @@ export class ProductService {
 
 
   /*GET ALL PRODUCTS FROM SERVER*/
-  getAllProducts(numberOfResults=10): Observable<ServerResponse>{
+  getAllProducts(): Observable<ServerResponse>{
     return this.http.get<ServerResponse>(this.SERVER_URL + '/products', {
-      params:{
-        limit: numberOfResults.toString()
-      }
+
     });
   }
 
