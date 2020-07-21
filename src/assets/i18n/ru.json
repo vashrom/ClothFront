@@ -1,7 +1,7 @@
 {
   "NAV": {
     "MAIN": "ГЛАВНАЯ",
-    "PAYMENT": "ОПЛАТА",
+    "PAYMENT": "ЧаВо",
     "RETURN": "УСЛОВИЯ ВОЗВРАТА",
     "ABOUT": "О НАС",
     "CONTACTS": "КОНТАКТЫ",
@@ -23,6 +23,32 @@
     "3": "Рубашки",
     "DISCOVER": "Узнать больше"
 
+  },
+  "FAQ": {
+    "PAYQ1": "Первый вопрос об оплате",
+    "PAYQ2": "Второй вопрос об оплате",
+    "PAYA1": "Первый ответ об оплате",
+    "PAYA2": "Второй ответ об оплате",
+    "DELQ1": "Первый вопрос о доставке",
+    "DELQ2": "Второй вопрос о доставке",
+    "DELA1": "Первый ответ о доставке",
+    "DELA2": "Второй ответ о доставке"
+  },
+  "RETURN": {
+    "HEADER": "Условия возврата и обмена в нашем магазине",
+    "TEXT": "RUS laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit",
+    "COMMENT": "Оставить Комментарий",
+    "BUTTON": "ОТПРАВИТЬ СООБЩЕНИЕ"
+
+
+  },
+
+  "ABOUT": {
+    "HEADER": "Про Baydalini",
+    "TEXT": "Текст о нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip",
+    "QUOTE": "“Цитата“ ",
+    "QUOTEA": "- Автор Цитаты",
+    "TEXT2": "Продолжение текста о нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip"
   }
 
 

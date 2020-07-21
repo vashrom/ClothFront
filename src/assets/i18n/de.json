@@ -1,7 +1,7 @@
 {
   "NAV": {
     "MAIN": "MAIN",
-    "PAYMENT": "ZAHLUNG",
+    "PAYMENT": "FAQ",
     "RETURN": "RÜCKGABEBEDINGUNGEN",
     "ABOUT": "ÜBER",
     "CONTACTS": "KONTAKTE",
@@ -22,8 +22,32 @@
     "2": "Kleider",
     "3": "Hemden",
     "DISCOVER": "Entdecke mehr"
-  }
+  },
 
+  "FAQ": {
+    "PAYQ1": "Zahlungsfrage Eins",
+    "PAYQ2": "Zahlungsfrage Zwei",
+    "PAYA1": "Zahlungsantwort Eins",
+    "PAYA2": "Zahlungsantwort Zwei",
+    "DELQ1": "Lieferfrage Eins",
+    "DELQ2": "Lieferfrage Zwei",
+    "DELA1": "Lieferung Antwort Eins",
+    "DELA2": "Lieferung Antwort Zwei"
+  },
+  "RETURN": {
+    "HEADER": "Liefer- und Umtauschbedingungen in unserem Shop",
+    "TEXT": "DEU laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit",
+    "COMMENT": "Hinterlasse einen Kommentar",
+    "BUTTON": "NACHRICHT SENDEN"
+
+  },
+  "ABOUT": {
+    "HEADER": "Über Baydalini",
+    "TEXT": "Über uns Text laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip",
+    "QUOTE": "“Zitat Text“ ",
+    "QUOTEA": "- Zitat Autor",
+    "TEXT2": "Über uns Text weiter laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip"
+  }
 
 
 }

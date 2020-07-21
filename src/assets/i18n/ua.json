@@ -1,7 +1,7 @@
 {
   "NAV": {
     "MAIN": "ГОЛОВНА",
-    "PAYMENT": "ОПЛАТА",
+    "PAYMENT": "ЧаПи",
     "RETURN": "УМОВИ ПОВЕРНЕННЯ",
     "ABOUT": "ПРО НАС",
     "CONTACTS": "КОНТАКТИ",
@@ -24,8 +24,33 @@
     "2": "Сукні",
     "3": "Сорочки",
     "DISCOVER": "Дізнатись більше"
-  }
+  },
 
+  "FAQ": {
+    "PAYQ1": "Перше запитання про оплату",
+    "PAYQ2": "Друге запитання про оплату",
+    "PAYA1": "Перша відповідь про оплату",
+    "PAYA2": "Друга відповідь про оплату",
+    "DELQ1": "Перше запитання про доставку",
+    "DELQ2": "Друге запитання про доставку",
+    "DELA1": "Перша відповідь про доставку",
+    "DELA2": "Друга відповідь про доставку"
+  },
+  "RETURN": {
+    "HEADER": "Умови повернення та обміну в нашому магазині",
+    "TEXT": "UKR laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit",
+    "COMMENT": "Залишити коментар",
+    "BUTTON": "НАДІСЛАТИ ПОВІДОМЛЕННЯ"
+
+  },
+
+  "ABOUT": {
+    "HEADER": "Про Baydalini",
+    "TEXT": "Текст про нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip",
+    "QUOTE": "“Цитата“ ",
+    "QUOTEA": "- Автор Цитати",
+    "TEXT2": "Продовження тексту про нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip"
+  }
 
 
 }
