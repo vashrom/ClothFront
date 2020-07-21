@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {BlogModelServer} from "../../models/blog.model";
+import {Router} from "@angular/router";
+import {BlogService} from "../../services/blog.service";
+import {ServerResponse} from "../../models/blog.model";
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  blog: BlogModelServer[] = [];
+
+  constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.blogService.getAllBlogItems().subscribe((bl: ServerResponse) => {
+      this.blog = bl.blog;
+      console.log(this.blog);
+    });
+
+
   }
 
+  selectItem(id: number) {
+    this.router.navigate(['/blog',id]).then();
+  }
 }
