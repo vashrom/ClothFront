@@ -16,6 +16,7 @@ import {ContactsComponent} from "./components/contacts/contacts.component";
 import {BlogComponent} from "./components/blog/blog.component";
 import {AboutComponent} from "./components/about/about.component";
 import {CategoryComponent} from "./components/category/category.component";
+import {BlogItemComponent} from "./components/blog-item/blog-item.component";
 
 
 
@@ -61,6 +62,9 @@ const routes: Routes = [
   },
   {
     path: 'blog',component: BlogComponent
+  },
+  {
+    path: 'blog/:id',component: BlogItemComponent
   },
   {
     path: 'about',component: AboutComponent

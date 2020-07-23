@@ -1,54 +1,110 @@
 <header class="header-section">
+
+<!--  <div class="header-top">-->
+<!--    <div class="container">-->
+<!--      <div class="ht-left">-->
+<!--        <div class="mail-service">-->
+<!--          <i class=" fa fa-envelope"></i>-->
+<!--          hello@mail.com-->
+<!--        </div>-->
+<!--        <div class="phone-service">-->
+<!--          <i class=" fa fa-phone"></i>-->
+<!--          +00 00.00 000-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="ht-right">-->
+<!--        <li  *ngIf="!auth.isLoggedIn()">-->
+<!--          <a routerLink="/login" class="btn btn-outline-success btn-sm btn-block">Login</a>-->
+<!--        </li>-->
+<!--        <li  *ngIf="!auth.isLoggedIn()">-->
+<!--          <a routerLink="/register" class="btn btn-outline-success btn-sm btn-block">Register</a>-->
+<!--        </li>-->
+<!--        <li *ngIf="auth.isLoggedIn()">-->
+<!--          <a routerLink="/profile" class="btn  btn-outline-warning btn-sm btn-block">{{auth.getUserDetails()?.first_name}}</a>-->
+<!--        </li>-->
+<!--        <li  *ngIf="auth.isLoggedIn()">-->
+<!--          <a routerLink="/" (click)="auth.logout()" class="btn-outline-warning btn-sm btn-block text-center">Logout</a>-->
+<!--        </li>-->
+
+<!--        <button (click)="translate.use('en')">EN</button>-->
+<!--        <button (click)="translate.use('ua')">UA</button>-->
+<!--        <button (click)="translate.use('de')">DE</button>-->
+<!--        <button (click)="translate.use('ru')">RU</button>-->
+
+<!--        <div class="lan-selector">-->
+<!--          <select class="language_drop" name="countries" id="countries" style="width:300px;">-->
+<!--            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"-->
+<!--                    data-title="English"><button  (click)="translate.use('en')">English</button></option>-->
+<!--            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"-->
+<!--                    data-title="Bangladesh">German </option>-->
+
+<!--            <option  value='yu' data-image="assets/img/flag-3.jpg" data-imagecss="flag yu"-->
+<!--                     data-title="Bangladesh"><button (click)="translate.use('ua')">Ukraine </button></option>-->
+<!--            <option value='yu' data-image="assets/img/flag-1.jpg" data-imagecss="flag yu"-->
+<!--                    data-title="Bangladesh">Russia </option>-->
+<!--          </select>-->
+<!--        </div>-->
+
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
   <div class="header-top">
     <div class="container">
       <div class="ht-left">
         <div class="mail-service">
           <i class=" fa fa-envelope"></i>
-          hello@mail.com
+          baydalini@gmail.com
         </div>
         <div class="phone-service">
           <i class=" fa fa-phone"></i>
-          +00 00.00 000
+          +65 11.188.888
         </div>
       </div>
-
       <div class="ht-right">
-        <li  *ngIf="!auth.isLoggedIn()">
-          <a routerLink="/login" class="btn btn-outline-success btn-sm btn-block">Login</a>
-        </li>
-        <li  *ngIf="!auth.isLoggedIn()">
-          <a routerLink="/register" class="btn btn-outline-success btn-sm btn-block">Register</a>
-        </li>
-        <li *ngIf="auth.isLoggedIn()">
-          <a routerLink="/profile" class="btn  btn-outline-warning btn-sm btn-block">{{auth.getUserDetails()?.first_name}}</a>
-        </li>
-        <li  *ngIf="auth.isLoggedIn()">
-          <a routerLink="/" (click)="auth.logout()" class="btn-outline-warning btn-sm btn-block text-center">Logout</a>
-        </li>
 
-        <button (click)="translate.use('en')">EN</button>
-        <button (click)="translate.use('ua')">UA</button>
-        <button (click)="translate.use('de')">DE</button>
-        <button (click)="translate.use('ru')">RU</button>
+        <a *ngIf="!auth.isLoggedIn()" routerLink="/register" class="login-panel"><i class="fa fa-user"></i>Register</a>
+        <a *ngIf="!auth.isLoggedIn()"  routerLink="/login" class="login-panel"><i class="fa fa-user"></i>Login &nbsp; &nbsp;</a>
+        <a *ngIf="auth.isLoggedIn()" routerLink="/" (click)="auth.logout()" class="login-panel">Logout</a>
+        <a *ngIf="auth.isLoggedIn()" routerLink="/profile" class="login-panel"><i class="fa fa-user"></i>{{auth.getUserDetails()?.first_name}} &nbsp; &nbsp;</a>
+
 
         <div class="lan-selector">
+
           <select class="language_drop" name="countries" id="countries" style="width:300px;">
             <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
-                    data-title="English"><button  (click)="translate.use('en')">English</button></option>
-            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
-                    data-title="Bangladesh">German </option>
+                    data-title="English">English</option>
 
-            <option  value='yu' data-image="assets/img/flag-3.jpg" data-imagecss="flag yu"
-                     data-title="Bangladesh"><button (click)="translate.use('ua')">Ukraine </button></option>
-            <option value='yu' data-image="assets/img/flag-1.jpg" data-imagecss="flag yu"
-                    data-title="Bangladesh">Russia </option>
+            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                     data-title="Bangladesh">German</option>
           </select>
+
         </div>
+        <div class="top-social">
+          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="#"><i class="ti-twitter-alt"></i></a>
+          <a href="#"><i class="ti-linkedin"></i></a>
+          <a href="#"><i class="ti-pinterest"></i></a>
+        </div>
+
+
+<!--        <div style="display: inline-block">-->
+
+
+
+<!--        </div>-->
 
 
       </div>
     </div>
   </div>
+
+
+
+
   <div class="container">
     <div class="inner-header">
       <div class="row">

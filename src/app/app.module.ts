@@ -29,6 +29,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { AboutComponent } from './components/about/about.component';
 import { CategoryComponent } from './components/category/category.component';
+import { BlogItemComponent } from './components/blog-item/blog-item.component';
 
 export function HttpLoaderFactory(http:HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http:HttpClient) {
     ContactsComponent,
     BlogComponent,
     AboutComponent,
-    CategoryComponent
+    CategoryComponent,
+    BlogItemComponent
 
 
   ],

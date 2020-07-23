@@ -22,7 +22,7 @@ export class CartService {
     total: 0,
     prodData: [{
       incart: 0,
-      id: 0
+      id: 0,
     }]
   };
 
@@ -101,6 +101,7 @@ export class CartService {
 
   addProductToCart(id: number, quantity ?: number)
   {
+
     this.productService.getSingleProduct(id).subscribe(prod=>{
       //Cart is empty
       if(this.cartDataServer.data[0].product == undefined)
@@ -110,6 +111,7 @@ export class CartService {
         this.CalculateTotal();
         this.cartDataClient.prodData[0].incart=this.cartDataServer.data[0].numInCart;
         this.cartDataClient.prodData[0].id = prod.id;
+        //this.cartDataClient.prodData[0].size = prod.size;
         this.cartDataClient.total = this.cartDataServer.total;
         localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
         this.cartData$.next({... this.cartDataServer});

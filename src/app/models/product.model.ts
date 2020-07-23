@@ -7,6 +7,8 @@ export interface ProductModelServer {
   quantity: number;
   image: string;
   images: string;
+  size: any;
+
 
 }
 

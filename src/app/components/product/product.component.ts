@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
   id: number;
   product;
   thumbImages: any[] = [];
+  size: string;
 
   @ViewChild('quantity') quantityInput;
 
@@ -276,6 +277,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   addToCart(id: number) {
     this.cartService.addProductToCart(id, this.quantityInput.nativeElement.value);
+
+
   }
 
   Increase() {
@@ -308,4 +311,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
     }
     this.quantityInput.nativeElement.value = value.toString();
   }
+
+  Size(size: string) {
+    this.size = size;
+
+
+    console.log(this.size);
+  }
+
 }
