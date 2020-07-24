@@ -27,10 +27,7 @@
 <!--          <a routerLink="/" (click)="auth.logout()" class="btn-outline-warning btn-sm btn-block text-center">Logout</a>-->
 <!--        </li>-->
 
-<!--        <button (click)="translate.use('en')">EN</button>-->
-<!--        <button (click)="translate.use('ua')">UA</button>-->
-<!--        <button (click)="translate.use('de')">DE</button>-->
-<!--        <button (click)="translate.use('ru')">RU</button>-->
+
 
 <!--        <div class="lan-selector">-->
 <!--          <select class="language_drop" name="countries" id="countries" style="width:300px;">-->
@@ -74,11 +71,15 @@
 
         <div class="lan-selector">
 
+
+
           <select class="language_drop" name="countries" id="countries" style="width:300px;">
-            <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
+
+
+            <option value='en' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
                     data-title="English">English</option>
 
-            <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+            <option  value='de' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
                      data-title="Bangladesh">German</option>
           </select>
 
@@ -90,7 +91,10 @@
           <a href="#"><i class="ti-pinterest"></i></a>
         </div>
 
-
+        <button (click)="translate.use('en')">EN</button>
+        <button (click)="translate.use('ua')">UA</button>
+        <button (click)="translate.use('de')">DE</button>
+        <button (click)="translate.use('ru')">RU</button>
 <!--        <div style="display: inline-block">-->
 
 

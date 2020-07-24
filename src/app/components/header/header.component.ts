@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   cartData: CartModelServer;
   cartTotal: number;
   authState: boolean;
+  selectedLang: string = '';
 
   constructor(public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
 
@@ -22,8 +23,14 @@ export class HeaderComponent implements OnInit {
 
     this.cartService.cartData$.subscribe(data=> this.cartData = data);
 
-
+  console.log(this.selectedLang);
 
   }
+
+  chooseLanguage(value:string) {
+      console.log("the selected value is " + value);
+
+  }
+
 
 }

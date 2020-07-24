@@ -81,28 +81,28 @@
           <h4 class="fw-title">Color</h4>
           <div class="fw-color-choose">
             <div class="cs-item">
-              <input type="radio" id="cs-black">
-              <label class="cs-black" for="cs-black">Black</label>
+              <input type="radio" id="s-cs-black">
+              <label class="cs-black" for="s-cs-black">Black</label>
             </div>
             <div class="cs-item">
-              <input type="radio" id="cs-violet">
-              <label class="cs-violet" for="cs-violet">Violet</label>
+              <input type="radio" id="s-cs-violet">
+              <label class="cs-violet" for="s-cs-violet">Violet</label>
             </div>
             <div class="cs-item">
-              <input type="radio" id="cs-blue">
-              <label class="cs-blue" for="cs-blue">Blue</label>
+              <input type="radio" id="s-cs-blue">
+              <label class="cs-blue" for="s-cs-blue">Blue</label>
             </div>
             <div class="cs-item">
-              <input type="radio" id="cs-yellow">
-              <label class="cs-yellow" for="cs-yellow">Yellow</label>
+              <input type="radio" id="s-cs-yellow">
+              <label class="cs-yellow" for="s-cs-yellow">Yellow</label>
             </div>
             <div class="cs-item">
-              <input type="radio" id="cs-red">
-              <label class="cs-red" for="cs-red">Red</label>
+              <input type="radio" id="s-cs-red">
+              <label class="cs-red" for="s-cs-red">Red</label>
             </div>
             <div class="cs-item">
-              <input type="radio" id="cs-green">
-              <label class="cs-green" for="cs-green">Green</label>
+              <input type="radio" id="s-cs-green">
+              <label class="cs-green" for="s-cs-green">Green</label>
             </div>
           </div>
         </div>
@@ -216,57 +216,73 @@
                   <!--                  <span>629.99</span>-->
                 </h4>
               </div>
+
               <div class="pd-color">
                 <h6>Color</h6>
                 <div class="pd-color-choose">
                   <div class="cc-item">
-                    <input type="radio" id="cc-black">
+                    <input (click)="ClothColor('Black')" type="radio" id="cc-black">
                     <label for="cc-black"></label>
                   </div>
                   <div class="cc-item">
-                    <input type="radio" id="cc-yellow">
+                    <input (click)="ClothColor('Yellow')" type="radio" id="cc-yellow">
                     <label for="cc-yellow" class="cc-yellow"></label>
                   </div>
                   <div class="cc-item">
-                    <input type="radio" id="cc-violet">
+                    <input (click)="ClothColor('Violet')" type="radio" id="cc-violet">
                     <label for="cc-violet" class="cc-violet"></label>
+                  </div>
+                  <div class="cc-item">
+                    <input (click)="ClothColor('Red')" type="radio" id="cc-red">
+                    <label for="cc-red" class="cc-red"></label>
+                  </div>
+                  <div class="cc-item">
+                    <input (click)="ClothColor('Green')" type="radio" id="cc-green">
+                    <label for="cc-green" class="cc-green"></label>
+                  </div>
+                  <div class="cc-item">
+                    <input (click)="ClothColor('Blue')" type="radio" id="cc-blue">
+                    <label for="cc-blue" class="cc-blue"></label>
+                  </div>
+                  <div class="cc-item">
+                    <input (click)="ClothColor('White')" type="radio" id="cc-white">
+                    <label for="cc-white" class="cc-white"></label>
                   </div>
                 </div>
               </div>
+
+
               <div class="pd-size-choose">
 
                 <div class="sc-item">
-                  <input (click)="Size('XS')" type="radio" id="xs-size">
+                  <input (click)="ClothSize('XS')" type="radio" id="xs-size">
                   <label for="xs-size">xs</label>
                 </div>
+
                 <div class="sc-item">
-                  <input (click)="Size('S')" type="radio" id="sm-size">
+                  <input (click)="ClothSize('S')" type="radio" id="sm-size">
                   <label for="sm-size">s</label>
                 </div>
                 <div class="sc-item">
-                  <input (click)="Size('M')" type="radio" id="md-size">
+                  <input (click)="ClothSize('M')" type="radio" id="md-size">
                   <label for="md-size">m</label>
                 </div>
                 <div class="sc-item">
-                  <input (click)="Size('L')" type="radio" id="lg-size">
+                  <input (click)="ClothSize('L')" type="radio" id="lg-size">
                   <label for="lg-size">l</label>
                 </div>
                 <div class="sc-item">
-                  <input (click)="Size('XL')" type="radio" id="xl-size">
+                  <input (click)="ClothSize('XL')" type="radio" id="xl-size">
                   <label for="xl-size">xl</label>
                 </div>
                 <div class="sc-item">
-                  <input (click)="Size('XXL')"  type="radio" id="xxl-size">
+                  <input (click)="ClothSize('XXL')"  type="radio" id="xxl-size">
                   <label for="xxl-size">xxl</label>
                 </div>
-<!--                <div class="sc-item">-->
-<!--                  <input type="radio" id="xxxl-size">-->
-<!--                  <label for="xxxl-size">xxxl</label>-->
-<!--                </div>-->
-
-
 
               </div>
+
+
               <div class="quantity">
                 <!--                <div class="pro-qty">-->
                 <!--                  <input type="text" value="1">-->

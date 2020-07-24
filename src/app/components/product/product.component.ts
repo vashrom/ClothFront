@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
   product;
   thumbImages: any[] = [];
   size: string;
+  color: string;
 
   @ViewChild('quantity') quantityInput;
 
@@ -23,6 +24,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+
     this.route.paramMap.pipe(
       map((param: ParamMap) => {
         // @ts-ignore
@@ -38,6 +40,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
       });
     });
+
+
+
+
   }
 
   ngAfterViewInit(): void {
@@ -276,7 +282,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   addToCart(id: number) {
-    this.cartService.addProductToCart(id, this.quantityInput.nativeElement.value);
+    this.cartService.addProductToCart(id, this.quantityInput.nativeElement.value, this.size, this.color);
+    //console.log(this.size);
 
 
   }
@@ -312,11 +319,15 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.quantityInput.nativeElement.value = value.toString();
   }
 
-  Size(size: string) {
+  ClothSize(size: string) {
     this.size = size;
 
+  }
 
-    console.log(this.size);
+  ClothColor(color: string) {
+    this.color = color;
+    console.log(this.color);
+
   }
 
 }

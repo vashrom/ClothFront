@@ -1,3 +1,6 @@
+import {SizeModelServer} from "./size.model";
+
+
 export interface ProductModelServer {
   id: number;
   title: string;
@@ -7,7 +10,8 @@ export interface ProductModelServer {
   quantity: number;
   image: string;
   images: string;
-  size: any;
+  size: string;
+  color: string;
 
 
 }

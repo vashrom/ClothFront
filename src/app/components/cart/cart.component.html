@@ -38,6 +38,7 @@
                   <th>Image</th>
                   <th class="p-name">Title</th>
                   <th>Price</th>
+<!--                  <th>Size</th>-->
                   <th>Quantity</th>
                   <th>Total</th>
                   <th><i class="ti-close"></i></th>
@@ -47,11 +48,21 @@
 
 
                 <tr *ngFor="let c of cartData.data; let i=index">
-                  <td class="cart-pic first-row"><img [src]="c.product.image" alt="{{c.product.name}}"></td>
+                  <td class="cart-pic first-row"><img [src]="c.product.image" alt="{{c.product.title}}"></td>
                   <td class="cart-title first-row">
-                    <h5>{{c.product.name}}</h5>
+                    <h5>{{c.product.title}}</h5>
                   </td>
                   <td class="p-price first-row">{{c.product.price | currency: 'USD'}}</td>
+
+<!--                -->
+<!--                  <td class="cart-title first-row">-->
+
+<!--                  </td>-->
+<!--                  -->
+<!--                  -->
+
+
+
                   <td class="qua-col first-row">
                     <!--                    <div class="quantity" (click)="ChangeQuantity(i , false)" >-->
                     <!--                      <div class="pro-qty">-->

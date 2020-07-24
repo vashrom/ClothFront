@@ -23,6 +23,8 @@ export class CartService {
     prodData: [{
       incart: 0,
       id: 0,
+      size: null,
+      color: null
     }]
   };
 
@@ -31,7 +33,9 @@ export class CartService {
 
     data: [{
       numInCart: 0,
-      product: undefined
+      product: undefined,
+      size: null,
+      color: null
     }],
     total: 0
   };
@@ -72,6 +76,8 @@ export class CartService {
               {
                 this.cartDataServer.data[0].numInCart = p.incart;
                 this.cartDataServer.data[0].product = actualProductInfo;
+                this.cartDataServer.data[0].size = p.size;
+                this.cartDataServer.data[0].color = p.color;
 
                 this.CalculateTotal();
 
@@ -82,7 +88,9 @@ export class CartService {
               else {
                 this.cartDataServer.data.push({
                   numInCart: p.incart,
-                  product: actualProductInfo
+                  product: actualProductInfo,
+                  size: p.size,
+                  color: p.color
                 });
 
                 this.CalculateTotal();
@@ -99,7 +107,7 @@ export class CartService {
   }
 
 
-  addProductToCart(id: number, quantity ?: number)
+  addProductToCart(id: number, quantity ?: number, size?: string, color?: string)
   {
 
     this.productService.getSingleProduct(id).subscribe(prod=>{
@@ -108,10 +116,14 @@ export class CartService {
       {
         this.cartDataServer.data[0].product = prod;
         this.cartDataServer.data[0].numInCart = quantity != undefined ? quantity : 1;
+        this.cartDataServer.data[0].size = size != undefined ? size : '';
+        this.cartDataServer.data[0].color = color != undefined ? color:'';
         this.CalculateTotal();
         this.cartDataClient.prodData[0].incart=this.cartDataServer.data[0].numInCart;
         this.cartDataClient.prodData[0].id = prod.id;
-        //this.cartDataClient.prodData[0].size = prod.size;
+        this.cartDataClient.prodData[0].size = this.cartDataServer.data[0].size;
+        this.cartDataClient.prodData[0].color = this.cartDataServer.data[0].color;
+
         this.cartDataClient.total = this.cartDataServer.total;
         localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
         this.cartData$.next({... this.cartDataServer});
@@ -162,12 +174,16 @@ export class CartService {
         else {
           this.cartDataServer.data.push({
             numInCart:1,
-            product: prod
+            product: prod,
+            size: size,
+            color: color
           });
 
           this.cartDataClient.prodData.push({
             incart: 1,
-            id: prod.id
+            id: prod.id,
+            size: size,
+            color: color
           });
 
 
@@ -228,7 +244,7 @@ export class CartService {
 
 
       if(this.cartDataClient.total ==0){
-        this.cartDataClient = {total: 0, prodData: [{incart: 0, id: 0}]};
+        this.cartDataClient = {total: 0, prodData: [{incart: 0, id: 0, size:'', color: ''}]};
         localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
       }
       else
@@ -237,7 +253,7 @@ export class CartService {
       }
 
       if(this.cartDataServer.total == 0) {
-        this.cartDataServer = {total: 0, data:[{numInCart: 0, product: undefined}]};
+        this.cartDataServer = {total: 0, data:[{numInCart: 0, product: undefined, size: null, color: null}]};
         this.cartData$.next({...this.cartDataServer});
       }
 
@@ -291,7 +307,7 @@ export class CartService {
 
               this.spinner.hide().then();
               this.router.navigate(['/thankyou'], navigationExtras).then(p => {
-                this.cartDataClient = {prodData: [{incart: 0, id: 0}], total: 0};
+                this.cartDataClient = {prodData: [{incart: 0, id: 0, size: '', color: ''}], total: 0};
                 this.cartTotal$.next(0);
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
               });
@@ -319,7 +335,9 @@ export class CartService {
       total: 0,
       data: [{
         numInCart: 0,
-        product: undefined
+        product: undefined,
+        size: null,
+        color: null
       }]
     };
 

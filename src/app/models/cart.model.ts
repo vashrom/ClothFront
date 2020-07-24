@@ -6,7 +6,9 @@ export interface CartModelServer {
   total: number;
   data: [{
     product: ProductModelServer,
-    numInCart: number
+    numInCart: number,
+    size: string,
+    color: string
   }];
 
 
@@ -17,7 +19,9 @@ export interface CartModelPublic {
   prodData: [
     {
       id: number,
-      incart: number
+      incart: number,
+      size: string,
+      color: string
     }
   ];
 }
