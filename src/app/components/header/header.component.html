@@ -71,16 +71,16 @@
 
         <div class="lan-selector">
 
+          <select id="dropdaun" class="dropdaun" (change)="selectChangeHandler($event)" >
 
-
-          <select class="language_drop" name="countries" id="countries" style="width:300px;">
-
-
-            <option value='en' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
+            <option id="en" value="en" data-imagecss="flag yu"
                     data-title="English">English</option>
-
-            <option  value='de' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+            <option id="de" value="de"   data-image-src="assets/img/flag-2.jpg" data-imagecss="flag yu"
                      data-title="Bangladesh">German</option>
+            <option value="ua"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                    data-title="Ukrainian">Ukrainian</option>
+            <option value="ru"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                    data-title="Russian">Russian</option>
           </select>
 
         </div>
@@ -91,10 +91,10 @@
           <a href="#"><i class="ti-pinterest"></i></a>
         </div>
 
-        <button (click)="translate.use('en')">EN</button>
-        <button (click)="translate.use('ua')">UA</button>
-        <button (click)="translate.use('de')">DE</button>
-        <button (click)="translate.use('ru')">RU</button>
+<!--        <button (click)="translate.use('en')">EN</button>-->
+<!--        <button (click)="translate.use('ua')">UA</button>-->
+<!--        <button (click)="translate.use('de')">DE</button>-->
+<!--        <button (click)="translate.use('ru')">RU</button>-->
 <!--        <div style="display: inline-block">-->
 
 

@@ -19,7 +19,15 @@ export class CartService {
 
   // Data var to store cart info on the client's local storage
   private cartDataClient: CartModelPublic = {
-    total: 0,
+     total: 0,
+    // fname: null,
+    // lname: null,
+    // country: null,
+    // street: null,
+    // postcode: null,
+    // city: null,
+    // email: null,
+    // phone: null,
     prodData: [{
       incart: 0,
       id: 0,
@@ -283,14 +291,23 @@ export class CartService {
     this.cartTotal$.next(this.cartDataServer.total);
   }
 
-  CheckoutFromCart(userId: number) {
+  CheckoutFromCart(userId: number, fname: string, lname: string, country: string,street: string, postcode: string, city:string, email:string, phone: string) {
     this.http.post(`${this.serverURL}/orders/payment`, null).subscribe((res:{success: boolean}) => {
       if(res.success)
       {
         this.resetServerData();
         this.http.post(`${this.serverURL}/orders/new`, {
           userId: userId,
-          products: this.cartDataClient.prodData
+          fname: fname,
+          lname: lname,
+          country: country,
+          street: street,
+          postcode: postcode,
+          city: city,
+          email: email,
+          phone: phone,
+          products: this.cartDataClient.prodData,
+
         }).subscribe((data: OrderResponse) => {
 
           this.orderService.getSingleOrder(data.order_id).then(prods => {

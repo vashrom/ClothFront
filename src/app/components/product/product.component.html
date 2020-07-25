@@ -161,7 +161,7 @@
 
             <!--              <ng-template [ngIf]="thumbImages.length == 0">-->
             <div class="product-pic-zoom">
-              <img class="product-big-img" [src]="product.image" alt="{{product.title}}">
+              <img class="product-big-img" [src]="product?.image" alt="{{product?.title}}">
               <div class="zoom-icon">
                 <i class="fa fa-search-plus"></i>
               </div>
@@ -206,13 +206,13 @@
           <div class="col-lg-6">
             <div class="product-details">
               <div class="pd-title">
-                <span>{{product.category}}</span>
-                <h3>{{product.title}}</h3>
+                <span>{{product?.category}}</span>
+                <h3>{{product?.title}}</h3>
               </div>
 
               <div class="pd-desc">
-                <p>{{product.description}}</p>
-                <h4>{{product.price | currency: 'USD'}}
+                <p>{{product?.description}}</p>
+                <h4>{{product?.price | currency: 'USD'}}
                   <!--                  <span>629.99</span>-->
                 </h4>
               </div>
@@ -332,7 +332,7 @@
                   <div class="row">
                     <div class="col-lg-7">
                       <h5>Introduction</h5>
-                      <p>{{product.description}} </p>
+                      <p>{{product?.description}} </p>
 
                     </div>
                     <div class="col-lg-5">

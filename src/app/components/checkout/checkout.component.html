@@ -29,6 +29,7 @@
 <!-- Shopping Cart Section Begin -->
 <section class="checkout-section spad" *ngIf="cartTotal > 0">
   <div class="container">
+   <form>
     <div  class="checkout-form">
       <div class="row">
         <div class="col-lg-6">
@@ -39,40 +40,37 @@
           <div class="row">
             <div class="col-lg-6">
               <label for="fir">First Name<span>*</span></label>
-              <input type="text" id="fir">
+              <input  [(ngModel)]="fname"  [ngModelOptions]="{ standalone: true }"  type="text" id="fir">
             </div>
             <div class="col-lg-6">
               <label for="last">Last Name<span>*</span></label>
-              <input type="text" id="last">
+              <input  [(ngModel)]="lname"  [ngModelOptions]="{ standalone: true }" type="text" id="last">
             </div>
-            <div class="col-lg-12">
-              <label for="cun-name">Company Name</label>
-              <input type="text" id="cun-name">
-            </div>
+
             <div class="col-lg-12">
               <label for="cun">Country<span>*</span></label>
-              <input type="text" id="cun">
+              <input  [(ngModel)]="country"  [ngModelOptions]="{ standalone: true }"  type="text" id="cun">
             </div>
             <div class="col-lg-12">
               <label for="street">Street Address<span>*</span></label>
-              <input type="text" id="street" class="street-first">
-              <input type="text">
+              <input  [(ngModel)]="street"  [ngModelOptions]="{ standalone: true }" type="text" id="street" class="street-first">
+
             </div>
             <div class="col-lg-12">
               <label for="zip">Postcode / ZIP (optional)</label>
-              <input type="text" id="zip">
+              <input  [(ngModel)]="postcode"  [ngModelOptions]="{ standalone: true }"  type="text" id="zip">
             </div>
             <div class="col-lg-12">
               <label for="town">Town / City<span>*</span></label>
-              <input type="text" id="town">
+              <input  [(ngModel)]="city"  [ngModelOptions]="{ standalone: true }"  type="text" id="town">
             </div>
             <div class="col-lg-6">
               <label for="email">Email Address<span>*</span></label>
-              <input type="text" id="email">
+              <input  [(ngModel)]="userEmail"  [ngModelOptions]="{ standalone: true }" type="text" id="email">
             </div>
             <div class="col-lg-6">
               <label for="phone">Phone<span>*</span></label>
-              <input type="text" id="phone">
+              <input  [(ngModel)]="userPhone" [ngModelOptions]="{ standalone: true }"  type="text" id="phone">
             </div>
             <div class="col-lg-12">
               <div class="create-item">
@@ -124,6 +122,7 @@
         </div>
       </div>
     </div>
+   </form>
   </div>
 </section>
 

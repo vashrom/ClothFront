@@ -3,6 +3,7 @@ import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {map} from "rxjs/operators";
+import {ProductModelServer} from "../../models/product.model";
 
 declare let $: any;
 
@@ -186,28 +187,28 @@ export class ProductComponent implements OnInit, AfterViewInit {
     // /*----------------------------------------------------
     //  Language Flag js
     // ----------------------------------------------------*/
-    // $(document).ready(function(e) {
-    //   //no use
-    //   try {
-    //     var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
+    //  $(document).ready(function(e) {
+    //    //no use
+    //    try {
+    //      var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
     //           var val = data.value;
     //           if(val!="")
-    //             window.location = val;
+    //              window.location = val;
     //         }}}).data("dd");
     //
-    //     var pagename = document.location.pathname.toString();
+    //      var pagename = document.location.pathname.toString();
     //     pagename = pagename.split("/");
-    //     pages.setIndexByValue(pagename[pagename.length-1]);
-    //     $("#ver").html(msBeautify.version.msDropdown);
-    //   } catch(e) {
-    //     // console.log(e);
-    //   }
+    //      pages.setIndexByValue(pagename[pagename.length-1]);
+    //      $("#ver").html(msBeautify.version.msDropdown);
+    //    } catch(e) {
+    //      // console.log(e);
+    //    }
     //   $("#ver").html(msBeautify.version.msDropdown);
     //
     //   //convert
-    //   $(".language_drop").msDropdown({roundedBorder:false});
-    //   $("#tech").data("dd");
-    // });
+    //    $(".language_drop").msDropdown({roundedBorder:false});
+    //    $("#tech").data("dd");
+    //  });
     /*-------------------
 		Range Slider
 	--------------------- */

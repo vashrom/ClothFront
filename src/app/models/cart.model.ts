@@ -15,7 +15,15 @@ export interface CartModelServer {
 }
 
 export interface CartModelPublic {
-  total: number;
+   total: number,
+  // fname: null;
+  // lname: null;
+  // country: null;
+  // street: null;
+  // postcode: null;
+  // city: null;
+  // email: null;
+  // phone: null;
   prodData: [
     {
       id: number,

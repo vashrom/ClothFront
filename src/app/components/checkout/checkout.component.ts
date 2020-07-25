@@ -14,6 +14,15 @@ export class CheckoutComponent implements OnInit {
 
   cartTotal: number;
   cartData: CartModelServer;
+  fname: string;
+  lname: string;
+  country: string;
+  street: string;
+  postcode: string;
+  city: string;
+  userEmail: string;
+  userPhone: string;
+
 
 
   constructor(private cartService: CartService,
@@ -29,8 +38,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   onCheckout() {
+
     this.spinner.show().then(p => {
-      this.cartService.CheckoutFromCart(2); //add userId
+      this.cartService.CheckoutFromCart(2, this.fname, this.lname, this.country,this.street,this.postcode,this.city,this.userEmail, this.userPhone); //add userId
+      console.log('piymavs')
+
     });
+
+
+
   }
+
+
 }
+
+
