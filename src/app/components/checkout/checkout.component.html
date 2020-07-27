@@ -93,7 +93,7 @@
               <ul class="order-table" >
                 <li>Product <span>Total</span></li>
 
-                <li *ngFor="let c of cartData.data" class="fw-normal">{{c.product.title}} x {{c.numInCart}} <span>{{c.product.price * c.numInCart | currency: 'USD'}}</span></li>
+                <li *ngFor="let c of cartData.data" class="fw-normal">{{c.product?.title}} x {{c.numInCart}} <span>{{c.product?.price * c.numInCart | currency: 'USD'}}</span></li>
 
                 <!--                <li class="fw-normal">Subtotal <span>$240.00</span></li>-->
                 <li class="total-price">Total <span>{{cartTotal | currency: 'USD'}}</span></li>

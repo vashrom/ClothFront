@@ -98,7 +98,7 @@
 
           <div class="product-item">
             <div class="pi-pic">
-              <img (click)="selectProduct(products[0].id)" [src]="products[0].image" alt="{{products[0].title}}">
+              <img (click)="selectProduct(products[0].id)" [src]="products[0]?.image" alt="{{products[0]?.title}}">
               <div class="icon">
                 <i class="icon_heart_alt"></i>
               </div>
@@ -106,27 +106,27 @@
 
                             <ul>
                                  <li class="quick-view"><a class="btn btn-light"
-                                                        [class.disabled]="products[0].quantity<1"
-                                                         [class.btn-outline-danger]="products[0].quantity<1"
+                                                        [class.disabled]="products[0]?.quantity<1"
+                                                         [class.btn-outline-danger]="products[0]?.quantity<1"
                                                      (click)="AddToCart(products[0].id)">
-                                   {{products[0].quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+                                   {{products[0]?.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
                               </ul>
 
             </div>
             <div class="pi-text">
-              <div class="catagory-name">{{products[0].category}}</div>
+              <div class="catagory-name">{{products[0]?.category}}</div>
               <a href="#">
-                <h5>{{products[0].title}}</h5>
+                <h5>{{products[0]?.title}}</h5>
               </a>
               <div class="product-price">
-                {{products[0].price | currency: 'USD'}}
+                {{products[0]?.price | currency: 'USD'}}
               </div>
             </div>
           </div>
 
           <div class="product-item">
             <div class="pi-pic">
-              <img (click)="selectProduct(products[1].id)" [src]="products[1].image" alt="{{products[1].title}}">
+              <img (click)="selectProduct(products[1].id)" [src]="products[1]?.image" alt="{{products[1]?.title}}">
               <div class="icon">
                 <i class="icon_heart_alt"></i>
               </div>
@@ -134,27 +134,27 @@
 
               <ul>
                 <li class="quick-view"><a class="btn btn-light"
-                                          [class.disabled]="products[1].quantity<1"
-                                          [class.btn-outline-danger]="products[1].quantity<1"
+                                          [class.disabled]="products[1]?.quantity<1"
+                                          [class.btn-outline-danger]="products[1]?.quantity<1"
                                           (click)="AddToCart(products[1].id)">
-                  {{products[1].quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+                  {{products[1]?.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
               </ul>
 
             </div>
             <div class="pi-text">
-              <div class="catagory-name">{{products[1].category}}</div>
+              <div class="catagory-name">{{products[1]?.category}}</div>
               <a href="#">
-                <h5>{{products[1].title}}</h5>
+                <h5>{{products[1]?.title}}</h5>
               </a>
               <div class="product-price">
-                {{products[1].price | currency: 'USD'}}
+                {{products[1]?.price | currency: 'USD'}}
               </div>
             </div>
           </div>
 
           <div class="product-item">
             <div class="pi-pic">
-              <img (click)="selectProduct(products[2].id)" [src]="products[2].image" alt="{{products[2].title}}">
+              <img (click)="selectProduct(products[2].id)" [src]="products[2]?.image" alt="{{products[2]?.title}}">
               <div class="icon">
                 <i class="icon_heart_alt"></i>
               </div>
@@ -162,27 +162,27 @@
 
               <ul>
                 <li class="quick-view"><a class="btn btn-light"
-                                          [class.disabled]="products[2].quantity<1"
-                                          [class.btn-outline-danger]="products[2].quantity<1"
+                                          [class.disabled]="products[2]?.quantity<1"
+                                          [class.btn-outline-danger]="products[2]?.quantity<1"
                                           (click)="AddToCart(products[2].id)">
-                  {{products[2].quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+                  {{products[2]?.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
               </ul>
 
             </div>
             <div class="pi-text">
-              <div class="catagory-name">{{products[2].category}}</div>
+              <div class="catagory-name">{{products[2]?.category}}</div>
               <a href="#">
-                <h5>{{products[2].title}}</h5>
+                <h5>{{products[2]?.title}}</h5>
               </a>
               <div class="product-price">
-                {{products[2].price | currency: 'USD'}}
+                {{products[2]?.price | currency: 'USD'}}
               </div>
             </div>
           </div>
 
           <div class="product-item">
             <div class="pi-pic">
-              <img (click)="selectProduct(products[3].id)" [src]="products[3].image" alt="{{products[3].title}}">
+              <img (click)="selectProduct(products[3].id)" [src]="products[3]?.image" alt="{{products[3]?.title}}">
               <div class="icon">
                 <i class="icon_heart_alt"></i>
               </div>
@@ -190,20 +190,20 @@
 
               <ul>
                 <li class="quick-view"><a class="btn btn-light"
-                                          [class.disabled]="products[3].quantity<1"
-                                          [class.btn-outline-danger]="products[3].quantity<1"
+                                          [class.disabled]="products[3]?.quantity<1"
+                                          [class.btn-outline-danger]="products[3]?.quantity<1"
                                           (click)="AddToCart(products[3].id)">
-                  {{products[3].quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+                  {{products[3]?.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
               </ul>
 
             </div>
             <div class="pi-text">
-              <div class="catagory-name">{{products[3].category}}</div>
+              <div class="catagory-name">{{products[3]?.category}}</div>
               <a href="#">
-                <h5>{{products[3].title}}</h5>
+                <h5>{{products[3]?.title}}</h5>
               </a>
               <div class="product-price">
-                {{products[3].price | currency: 'USD'}}
+                {{products[3]?.price | currency: 'USD'}}
               </div>
             </div>
           </div>

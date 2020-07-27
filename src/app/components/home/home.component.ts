@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((prods: ServerResponse) => {
-      this.products = prods.products;
+      this.products = prods.products.reverse();
       console.log(this.products);
     });
 

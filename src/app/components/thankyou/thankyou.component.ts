@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {OrderService} from "../../services/order.service";
 import {ProductModelServer, ServerResponse} from "../../models/product.model";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-thankyou',
@@ -26,9 +27,11 @@ export class ThankyouComponent implements OnInit {
 
     this.message = state.message;
     this.products = state.products;
-    console.log(this.products);
     this.orderId = state.orderId;
     this.cartTotal = state.total;
+    console.log(navigation);
+
+    console.log(state);
 
 
 
@@ -42,10 +45,11 @@ export class ThankyouComponent implements OnInit {
 interface ProductResponseModel {
   id: number;
   title: string;
+  category: string;
   description: string;
   price: number;
-  image: string;
   quantity: number;
+  image: string;
+  size: string;
+  color: string;
 }
-
-

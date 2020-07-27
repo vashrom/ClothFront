@@ -310,7 +310,13 @@ export class CartService {
 
         }).subscribe((data: OrderResponse) => {
 
+
+
+
           this.orderService.getSingleOrder(data.order_id).then(prods => {
+
+
+
             if(data.success) {
 
               const navigationExtras: NavigationExtras = {
@@ -329,6 +335,7 @@ export class CartService {
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
               });
             }
+
           });
 
         });
