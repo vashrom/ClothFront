@@ -50,6 +50,22 @@
     "QUOTE": "“Цитата“ ",
     "QUOTEA": "- Автор Цитати",
     "TEXT2": "Продовження тексту про нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip"
+  },
+
+  "CONTACT": {
+    "BREADCRUMP1":"Головна",
+    "BREADCRUMP2":"Контакти",
+    "HEADER": "Зв'яжіться з нами",
+    "PAR1": "Всупереч поширеній думці, Лорем Іпсум - це просто випадковий текст. Він має коріння у творі класичної латинської літератури 45 років до н.е., макі років",
+    "CARD1H": "Адреса:",
+    "CARD2H": "Телефон:",
+    "CARD3H": "Електронна скринька:",
+    "COMMHEAD": "Залиште коментар",
+    "COMMPAR": "Наш персонал передзвонить пізніше і відповість на ваші запитання",
+    "PLACEHOLDER1": "Ваше ім'я",
+    "PLACEHOLDER2": "Ваша електронна скринька",
+    "PLACEHOLDER3": "Ваше повідомлення",
+    "BUTTON": "НАДІСЛАТИ ПОВІДОМЛЕННЯ"
   }
 
 

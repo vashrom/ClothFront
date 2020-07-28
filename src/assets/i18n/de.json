@@ -47,7 +47,24 @@
     "QUOTE": "“Zitat Text“ ",
     "QUOTEA": "- Zitat Autor",
     "TEXT2": "Über uns Text weiter laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip"
+  },
+
+  "CONTACT": {
+    "BREADCRUMP1":"Main",
+    "BREADCRUMP2":"Kontakt",
+    "HEADER": "Kontaktiere uns",
+    "PAR1": "Entgegen der landläufigen Meinung ist Lorem Ipsum einfach zufälliger Text. Es hat Wurzeln in einem Stück klassischer lateinischer Literatur aus dem Jahr 45 v. Chr., Maki Jahre alt",
+    "CARD1H": "Adresse:",
+    "CARD2H": "Telefon:",
+    "CARD3H": "Email:",
+    "COMMHEAD": "Hinterlasse einen Kommentar",
+    "COMMPAR": "Unsere Mitarbeiter rufen später zurück und beantworten Ihre Fragen",
+    "PLACEHOLDER1": "Dein Name",
+    "PLACEHOLDER2": "Deine E-Mail",
+    "PLACEHOLDER3": "Deine Nachricht",
+    "BUTTON": "NACHRICHT SENDEN"
   }
+
 
 
 }

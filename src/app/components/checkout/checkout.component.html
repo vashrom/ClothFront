@@ -29,7 +29,7 @@
 <!-- Shopping Cart Section Begin -->
 <section class="checkout-section spad" *ngIf="cartTotal > 0">
   <div class="container">
-   <form>
+   <form [formGroup]="form" (ngSubmit)="submit()">
     <div  class="checkout-form">
       <div class="row">
         <div class="col-lg-6">
@@ -40,37 +40,72 @@
           <div class="row">
             <div class="col-lg-6">
               <label for="fir">First Name<span>*</span></label>
-              <input  [(ngModel)]="fname"  [ngModelOptions]="{ standalone: true }"  type="text" id="fir">
+              <input  [(ngModel)]="fname" formControlName="fname" class="form-control" type="text" id="fir">
+              <div *ngIf="f.fname.touched && f.fname.invalid" class="alert alert-danger">
+                <div *ngIf="f.fname.errors.required">Name is required</div>
+                <div *ngIf="f.fname.errors.minlength">Name should be 3 character</div>
+              </div>
             </div>
             <div class="col-lg-6">
               <label for="last">Last Name<span>*</span></label>
-              <input  [(ngModel)]="lname"  [ngModelOptions]="{ standalone: true }" type="text" id="last">
+              <input  [(ngModel)]="lname"  formControlName="lname" class="form-control" type="text" id="last">
+              <div *ngIf="f.lname.touched && f.lname.invalid" class="alert alert-danger">
+                <div *ngIf="f.lname.errors.required">Surname is required</div>
+                <div *ngIf="f.lname.errors.minlength">Surname should be 3 character</div>
+              </div>
             </div>
 
             <div class="col-lg-12">
               <label for="cun">Country<span>*</span></label>
-              <input  [(ngModel)]="country"  [ngModelOptions]="{ standalone: true }"  type="text" id="cun">
+              <input  [(ngModel)]="country"  formControlName="country" class="form-control" type="text" id="cun">
+              <div *ngIf="f.country.touched && f.country.invalid" class="alert alert-danger">
+                <div *ngIf="f.country.errors.required">Country is required</div>
+                <div *ngIf="f.country.errors.minlength">Country should be 3 character</div>
+              </div>
             </div>
             <div class="col-lg-12">
               <label for="street">Street Address<span>*</span></label>
-              <input  [(ngModel)]="street"  [ngModelOptions]="{ standalone: true }" type="text" id="street" class="street-first">
-
+              <input  [(ngModel)]="street"  formControlName="street" class="form-control street-first" type="text" id="street">
+              <div *ngIf="f.street.touched && f.street.invalid" class="alert alert-danger">
+                <div *ngIf="f.street.errors.required">Street address is required</div>
+                <div *ngIf="f.street.errors.minlength">Street should be 3 character</div>
+              </div>
             </div>
             <div class="col-lg-12">
               <label for="zip">Postcode / ZIP (optional)</label>
-              <input  [(ngModel)]="postcode"  [ngModelOptions]="{ standalone: true }"  type="text" id="zip">
+              <input  [(ngModel)]="postcode"  formControlName="postcode" class="form-control" type="text" id="zip">
+              <div *ngIf="f.postcode.touched && f.postcode.invalid" class="alert alert-danger">
+                <div *ngIf="f.postcode.errors.minlength">Postcode should be 3 character</div>
+                <div *ngIf="f.postcode.errors.maxlength">Postcode should be less then 10 character</div>
+
+              </div>
             </div>
             <div class="col-lg-12">
               <label for="town">Town / City<span>*</span></label>
-              <input  [(ngModel)]="city"  [ngModelOptions]="{ standalone: true }"  type="text" id="town">
+              <input  [(ngModel)]="city"   formControlName="city" class="form-control" type="text" id="town">
+              <div *ngIf="f.city.touched && f.city.invalid" class="alert alert-danger">
+                <div *ngIf="f.city.errors.required">City is required</div>
+                <div *ngIf="f.city.errors.minlength">City should be 3 character</div>
+              </div>
             </div>
             <div class="col-lg-6">
               <label for="email">Email Address<span>*</span></label>
-              <input  [(ngModel)]="userEmail"  [ngModelOptions]="{ standalone: true }" type="text" id="email">
+              <input  [(ngModel)]="userEmail"  formControlName="email" id="email" type="text" class="form-control">
+              <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Please, enter valid email address </div>
+                <div *ngIf="f.email.errors.minLength">Please, enter valid email address </div>
+
+              </div>
             </div>
             <div class="col-lg-6">
               <label for="phone">Phone<span>*</span></label>
-              <input  [(ngModel)]="userPhone" [ngModelOptions]="{ standalone: true }"  type="text" id="phone">
+              <input  [(ngModel)]="userPhone" formControlName="phone" class="form-control" type="text" id="phone">
+              <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                <div *ngIf="f.phone.errors.required">Email is required</div>
+                <div *ngIf="f.phone.errors.minlength">Postcode should be 3 character</div>
+
+              </div>
             </div>
             <div class="col-lg-12">
               <div class="create-item">
@@ -115,7 +150,8 @@
                 </div>
               </div>
               <div class="order-btn">
-                <button (click)="onCheckout()"  class="site-btn place-btn">Place Order</button>
+                <button type="submit" [disabled]="!form.valid"   class="site-btn place-btn">Place Order</button>
+<!--                (click)="onCheckout()"-->
               </div>
             </div>
           </div>
