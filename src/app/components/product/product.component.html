@@ -157,44 +157,46 @@
         <div class="row">
           <div class="col-lg-6">
 
-            <!--            //MAIN IMAGES-->
 
-            <!--              <ng-template [ngIf]="thumbImages.length == 0">-->
-            <div class="product-pic-zoom">
-              <img class="product-big-img" [src]="product?.image" alt="{{product?.title}}">
-              <div class="zoom-icon">
-                <i class="fa fa-search-plus"></i>
-              </div>
-            </div>
-            <!--              </ng-template>-->
 
-            <!--              <ng-template [ngIf]="thumbImages.length > 0">-->
-            <!--                <div class="product-pic-zoom" *ngFor="let t of thumbImages">-->
-            <!--                  <img class="product-big-img" [src]="t" alt="{{product.name}}">-->
 
-            <!--                  <div class="zoom-icon">-->
-            <!--                    <i class="fa fa-search-plus"></i>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </ng-template>-->
+             <ng-template [ngIf]="thumbImages.length === 0">
+               <div class="product-pic-zoom">
+               <img class="product-big-img" [src]="product?.image" alt="">
+               <div class="zoom-icon">
+                 <i class="fa fa-search-plus"></i>
+               </div>
+               </div>
+             </ng-template>
+              <ng-template [ngIf]="thumbImages.length > 0">
+<!--                <div class="product-pic-zoom" *ngFor="let t of thumbImages">-->
+                <div class="product-pic-zoom"><img class="product-big-img" [src]="product?.image" alt="">
+                <div class="zoom-icon">
+                  <i class="fa fa-search-plus"></i>
+                </div>
+                </div>
 
-            <!--            THUMBZ-->
+              </ng-template>
+
+
+
+
 
             <div class="product-thumbs">
               <div class="product-thumbs-track ps-slider owl-carousel">
                 <ng-template [ngIf]="thumbImages.length > 0" >
 
-                  <div *ngFor="let t of thumbImages" class="pt active" data-imgbigurl="assets/img/product-single/product-1.jpg">
+                  <div *ngFor="let t of thumbImages" class="pt active">
                     <img
-                      [src]="t" alt="{{product.title}}"/></div>
+                      [src]="t" alt=""/></div>
 
                 </ng-template>
 
-                <ng-template [ngIf]="thumbImages.length == 0" >
+                <ng-template [ngIf]="thumbImages.length === 0" >
 
-                  <div class="pt active" data-imgbigurl="assets/img/product-single/product-1.jpg">
+                  <div class="pt active" data-imgbigurl="">
                     <img
-                      [src]="product.image" alt="{{product?.title}}">
+                      [src]="product.image" alt="">
                   </div>
 
                 </ng-template>

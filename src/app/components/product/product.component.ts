@@ -39,10 +39,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
           this.thumbImages = prod.images.split(';');
         }
 
+
+
       });
     });
-
-
 
 
   }
