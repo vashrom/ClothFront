@@ -63,6 +63,16 @@
     "PLACEHOLDER2": "Deine E-Mail",
     "PLACEHOLDER3": "Deine Nachricht",
     "BUTTON": "NACHRICHT SENDEN"
+  },
+
+  "VALIDATION_MESSAGE": {
+    "EMAIL": "E-Mail ist erforderlich",
+    "NAME": "Name ist erforderlich",
+    "TEXT": "Text ist erforderlich",
+    "NAME_MIN": "Der Name sollte mehr als 3 Zeichen enthalten",
+    "NAME_MAX": "Der Name sollte weniger als 30 Zeichen enthalten",
+    "EMAIL_ERR": "Bitte geben Sie eine gültige Email Adresse an",
+    "SUCCESS": "Nachricht erfolgreich gesendet"
   }
 
 

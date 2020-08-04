@@ -17,6 +17,11 @@ import {BlogComponent} from "./components/blog/blog.component";
 import {AboutComponent} from "./components/about/about.component";
 import {CategoryComponent} from "./components/category/category.component";
 import {BlogItemComponent} from "./components/blog-item/blog-item.component";
+import {ProductAdminComponent} from "./components/product-admin/product-admin.component";
+import {CommentAdminComponent} from "./components/comment-admin/comment-admin.component";
+import {BlogAdminComponent} from "./components/blog-admin/blog-admin.component";
+import {OrderAdminComponent} from "./components/order-admin/order-admin.component";
+import {UserAdminComponent} from "./components/user-admin/user-admin.component";
 
 
 
@@ -69,6 +74,22 @@ const routes: Routes = [
   {
     path: 'about',component: AboutComponent
   },
+  {
+    path: 'productAdmin',component: ProductAdminComponent
+  },
+  {
+    path: 'commentAdmin',component: CommentAdminComponent
+  },
+  {
+    path: 'blogAdmin',component: BlogAdminComponent
+  },
+  {
+    path: 'orderAdmin',component: OrderAdminComponent
+  },
+  {
+    path: 'usersAdmin',component: UserAdminComponent
+  },
+
 
 
 ];

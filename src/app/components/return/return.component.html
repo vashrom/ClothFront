@@ -39,23 +39,23 @@
                 <div class="col-lg-6">
                   <input [(ngModel)]="name"  formControlName="name" id="name" type="text" class="form-control" placeholder="{{'CONTACT.PLACEHOLDER1' | translate}}">
                   <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
-                    <div *ngIf="f.name.errors.required">Name is required</div>
-                    <div *ngIf="f.name.errors.minlength">Name should be 3 character</div>
-                    <div *ngIf="f.name.errors.maxlength">Name should be less then 30 character</div>
+                    <div *ngIf="f.name.errors.required">{{'VALIDATION_MESSAGE.NAME' | translate}}</div>
+                    <div *ngIf="f.name.errors.minlength">{{'VALIDATION_MESSAGE.NAME_MIN' | translate}}</div>
+                    <div *ngIf="f.name.errors.maxlength">{{'VALIDATION_MESSAGE.NAME_MAX' | translate}}</div>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <input [(ngModel)]="email"  formControlName="email" id="email" type="text" class="form-control" placeholder="{{'CONTACT.PLACEHOLDER2' | translate}}">
                   <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.email">Please, enter valid email address </div>
-                    <div *ngIf="f.email.errors.minLength">Please, enter valid email address </div>
+                    <div *ngIf="f.email.errors.required">{{'VALIDATION_MESSAGE.EMAIL' | translate}}</div>
+                    <div *ngIf="f.email.errors.email">{{'VALIDATION_MESSAGE.EMAIL_ERR' | translate}}</div>
+                    <div *ngIf="f.email.errors.minLength">{{'VALIDATION_MESSAGE.EMAIL_ERR' | translate}}</div>
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <textarea [(ngModel)]="text"  formControlName="text" id="text" type="text" class="form-control" placeholder="{{'CONTACT.PLACEHOLDER3' | translate}}"></textarea>
                   <div *ngIf="f.text.touched && f.text.invalid" class="alert alert-danger">
-                    <div *ngIf="f.text.errors.required">Message is required</div>
+                    <div *ngIf="f.text.errors.required">{{'VALIDATION_MESSAGE.TEXT' | translate}}</div>
                   </div>
                   <button type="submit" [disabled]="!form.valid"  class="site-btn">{{'CONTACT.BUTTON' | translate}}</button>
                 </div>
@@ -63,11 +63,12 @@
             </form>
           </div>
 
-
         </div>
       </div>
     </div>
   </div>
 
 </section>
+<flash-messages></flash-messages>
+
 <!-- Blog Details Section End -->

@@ -70,6 +70,17 @@ export class AuthenticationService {
     }
   }
 
+  public isAdmin(): boolean {
+    const user= this.getUserDetails()
+    if(user.role == 777)
+    {
+      return user.exp > Date.now() / 1000
+    }
+    else {
+      return false
+    }
+  }
+
   public register (user: TokenPayload): Observable<any> {
     const base = this.http.post(`${this.SERVER_URL}/users/register`, user)
 

@@ -1,10 +1,11 @@
 
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {CommentModelServer, ServerResponse} from "../models/comment.model";
+import {CommentModelServer, CommentServerResponse} from "../models/comment.model";
+import {Product, ProductModelServer} from "../models/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class CommentService {
 
 
 
-  getAllComments(): Observable<ServerResponse>{
-    return this.http.get<ServerResponse>(this.SERVER_URL + '/comments', {
+  getAllComments(): Observable<CommentServerResponse>{
+    return this.http.get<CommentServerResponse>(this.SERVER_URL + '/comments', {
 
     });
   }
@@ -36,6 +37,23 @@ export class CommentService {
       cat_id: cat_id
     })
 
+  }
+
+  getCommentsFromCategory(catName: string) : Observable<CommentModelServer[]>
+  {
+    return this.http.get<CommentModelServer[]>(this.SERVER_URL + '/comments/category/'+catName);
+  }
+
+
+
+  // updateProduct(id: number, prod: Product) {
+  //   const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
+  //   return this.http.put(this.SERVER_URL + '/products/' + id, JSON.stringify(prod), {headers:myHeaders});
+  // }
+
+
+  deleteComment(id: number){
+    return this.http.delete(this.SERVER_URL + '/comments/' + id);
   }
 
 

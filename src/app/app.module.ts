@@ -30,6 +30,12 @@ import { BlogComponent } from './components/blog/blog.component';
 import { AboutComponent } from './components/about/about.component';
 import { CategoryComponent } from './components/category/category.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { ProductAdminComponent } from './components/product-admin/product-admin.component';
+import { CommentAdminComponent } from './components/comment-admin/comment-admin.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { OrderAdminComponent } from './components/order-admin/order-admin.component';
+import { BlogAdminComponent } from './components/blog-admin/blog-admin.component';
+import { UserAdminComponent } from './components/user-admin/user-admin.component';
 
 
 export function HttpLoaderFactory(http:HttpClient) {
@@ -57,7 +63,13 @@ export function HttpLoaderFactory(http:HttpClient) {
     BlogComponent,
     AboutComponent,
     CategoryComponent,
-    BlogItemComponent
+    BlogItemComponent,
+    ProductAdminComponent,
+    CommentAdminComponent,
+    OrderAdminComponent,
+    BlogAdminComponent,
+    UserAdminComponent,
+
 
 
   ],
@@ -70,6 +82,7 @@ export function HttpLoaderFactory(http:HttpClient) {
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    FlashMessagesModule.forRoot(),
     TranslateModule.forRoot({
      loader: {
        provide: TranslateLoader,

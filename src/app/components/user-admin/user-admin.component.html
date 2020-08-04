@@ -1,0 +1,82 @@
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Пароль</td>
+      <td>Email</td>
+      <td>Ім'я</td>
+      <td>Прізвище</td>
+      <td>Роль</td>
+      <td>Створений</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <ng-template [ngTemplateOutlet]="loadTemplate(user)"
+                   [ngTemplateOutletContext]="{ $implicit: user}">
+      </ng-template>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #readOnlyTemplate let-user>
+
+    <td>{{user.id}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.first_name }}</td>
+    <td>{{user.last_name }}</td>
+    <td>{{user.role}}</td>
+    <td>{{user.created}}</td>
+    <td>
+      <input type="button" value="Змінити" class="btn btn-outline-primary" (click)="editUser(user)" />
+    </td>
+    <td>
+      <input type="button" value="Видалити" (click)="deleteUser(user)" class="btn btn-outline-danger" />
+    </td>
+
+  </ng-template>
+
+  <ng-template #editTemplate>
+
+    <td>
+      <input type="number" [(ngModel)]="editedUser.id" readonly disabled class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedUser.password" readonly disabled class="form-control" />
+    </td>
+
+    <td>
+      <input type="text" [(ngModel)]="editedUser.email" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedUser.first_name" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedUser.last_name" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedUser.role" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedUser.created" class="form-control" />
+    </td>
+
+    <td>
+      <input type="button" value="Зберегти" (click)="saveUser()" class="btn btn-outline-success" />
+    </td>
+    <td>
+      <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
+    </td>
+
+  </ng-template>
+
+
+</div>
+
+

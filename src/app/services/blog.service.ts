@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {BlogModelServer, ServerResponse} from "../models/blog.model";
+import {Blog, BlogModelServer, ServerResponse} from "../models/blog.model";
+import {Product} from "../models/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,18 @@ export class BlogService {
   }
 
   /*PLACE FOR POST*/
+  createBlog(blog: Blog)
+  {
+    const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post(this.SERVER_URL + '/blog/new', JSON.stringify(blog),{headers:myHeaders});
+  }
 
+  updateBlog(id: number, blog: Blog) {
+    const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.put(this.SERVER_URL + '/blog/' + id, JSON.stringify(blog), {headers:myHeaders});
+  }
+  deleteBlog(id: number){
+    return this.http.delete(this.SERVER_URL + '/blog/' + id);
+  }
 
 }

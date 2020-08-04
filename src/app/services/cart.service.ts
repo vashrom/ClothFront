@@ -291,7 +291,7 @@ export class CartService {
     this.cartTotal$.next(this.cartDataServer.total);
   }
 
-  CheckoutFromCart(userId: number, fname: string, lname: string, country: string,street: string, postcode: string, city:string, email:string, phone: string) {
+  CheckoutFromCart(userId: number, fname: string, lname: string, country: string,street: string, postcode: string, city:string, email:string, phone: string, message: string) {
     this.http.post(`${this.serverURL}/orders/payment`, null).subscribe((res:{success: boolean}) => {
       if(res.success)
       {
@@ -306,6 +306,7 @@ export class CartService {
           city: city,
           email: email,
           phone: phone,
+          message: message,
           products: this.cartDataClient.prodData,
 
         }).subscribe((data: OrderResponse) => {

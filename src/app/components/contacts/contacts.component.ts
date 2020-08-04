@@ -1,10 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {} from 'googlemaps';
-import {ServerResponse} from "../../models/comment.model";
+import {CommentServerResponse} from "../../models/comment.model";
 import {Router} from "@angular/router";
 import {CommentService} from "../../services/comment.service";
 import {CommentModelServer} from "../../models/comment.model";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-contacts',
@@ -21,7 +22,7 @@ export class ContactsComponent implements OnInit {
   email: string;
   text: string;
 
-  constructor(private commentService: CommentService, private router: Router) {
+  constructor(private commentService: CommentService, private router: Router,private flashMessage: FlashMessagesService) {
   }
 
   ngOnInit(): void {
@@ -42,7 +43,8 @@ export class ContactsComponent implements OnInit {
       comm.cat_id = 1;
     });
 
-
+    this.form.reset();
+    this.flashMessage.show("Message succesfully sended", { cssClass: 'alert-success', timeout: 2000 });
 
   }
 

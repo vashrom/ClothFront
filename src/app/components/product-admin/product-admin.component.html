@@ -1,0 +1,121 @@
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+  <input type="button" value="Додати" class="btn btn-outline-dark m-3" (click)="addProduct()" />
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Назва</td>
+      <td>Категорія</td>
+      <td></td>
+      <td>Опис</td>
+      <td>Короткий опис</td>
+      <td>Ціна</td>
+      <td>Кількість</td>
+      <td>Основне зображення</td>
+      <td>Зображення</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+    <ng-template [ngTemplateOutlet]="loadTemplate(product)"
+                 [ngTemplateOutletContext]="{ $implicit: product}">
+    </ng-template>
+    </tbody>
+  </table>
+
+
+  <ng-template #readOnlyTemplate let-product>
+    <tr>
+      <td>{{product.id}}</td>
+      <td>{{product.title}}</td>
+      <td>{{product.cat_id}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.description | slice:0:20}}</td>
+      <td>{{product.short_desc | slice:0:20}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      <td>{{product.image | slice:0:20}}</td>
+      <td>{{product.images | slice:0:20}}</td>
+
+      <td>
+        <input type="button" value="Змінити" class="btn btn-outline-primary" (click)="editProduct(product)" />
+      </td>
+      <td>
+        <input type="button" value="Видалити" (click)="deleteProduct(product)" class="btn btn-outline-danger" />
+      </td>
+    </tr>
+  </ng-template>
+
+
+  <ng-template #editTemplate>
+    <tr>
+      <td>
+        <input type="number" [(ngModel)]="editedProduct.id" readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.title" class="form-control" />
+      </td>
+      <td>
+        <input type="number" min="1" [(ngModel)]="editedProduct.cat_id" class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.category" readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.description" class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.short_desc" class="form-control" />
+      </td>
+      <td>
+        <input type="number" min="0" [(ngModel)]="editedProduct.price" class="form-control" />
+      </td>
+      <td>
+        <input type="number" min="0" [(ngModel)]="editedProduct.quantity"   readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.image"  class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedProduct.images" class="form-control" />
+      </td>
+
+      <td>
+        <input type="button" value="Зберегти" (click)="saveProduct()" class="btn btn-outline-success" />
+      </td>
+      <td>
+        <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>XS:</label>
+        <input placeholder="XS" min="0" type="number" [(ngModel)]="editedProduct.xs"   class="form-control" />
+      </td>
+      <td>
+        <label>S:</label>
+        <input placeholder="S" min="0" type="number" [(ngModel)]="editedProduct.s"   class="form-control" />
+      </td>
+      <td>
+        <label>M:</label>
+        <input placeholder="M" min="0" type="number" [(ngModel)]="editedProduct.m"   class="form-control" />
+      </td>
+      <td>
+        <label>L:</label>
+        <input placeholder="L" min="0" type="number" [(ngModel)]="editedProduct.l"   class="form-control" />
+      </td>
+      <td>
+        <label>XL:</label>
+        <input placeholder="XL" min="0" type="number" [(ngModel)]="editedProduct.xl"   class="form-control" />
+      </td>
+      <td>
+        <label>XXL:</label>
+        <input placeholder="XXL" min="0" type="number" [(ngModel)]="editedProduct.xxl"   class="form-control" />
+      </td>
+    </tr>
+  </ng-template>
+
+</div>

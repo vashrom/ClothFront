@@ -16,3 +16,19 @@ export interface ServerResponse {
   blog: BlogModelServer[];
 
 }
+
+export class Blog{
+  constructor(
+    public id: number,
+    public title: string,
+    public image: string,
+    public images: string,
+    public text: string,
+    public category: string,
+    public date: string
+
+
+
+  ) {
+  }
+}

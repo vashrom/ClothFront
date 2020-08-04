@@ -67,8 +67,18 @@
     "PLACEHOLDER2": "Your email",
     "PLACEHOLDER3": "Your message",
     "BUTTON": "SEND MESSAGE"
-  }
+  },
 
+
+  "VALIDATION_MESSAGE": {
+    "EMAIL": "Email is required",
+    "NAME": "Name is required",
+    "TEXT": "Text is required",
+    "NAME_MIN": "Name should be more than 3 character",
+    "NAME_MAX": "Name should be less than 30 character",
+    "EMAIL_ERR": "Please, enter valid email address",
+    "SUCCESS": "Message succesfully sended"
+  }
 
 
 }

@@ -1,0 +1,95 @@
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>ID Користувача</td>
+      <td>Ім'я</td>
+      <td>Прізвище</td>
+      <td>Країна</td>
+      <td>Вулиця</td>
+      <td>Індекс</td>
+      <td>Місто</td>
+      <td>Email</td>
+      <td>Телефон</td>
+      <td>Повідомлення</td>
+
+      <td></td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let order of orders">
+    <ng-template [ngTemplateOutlet]="loadTemplate(order)"
+                 [ngTemplateOutletContext]="{$implicit: order}">
+    </ng-template>
+    </tbody>
+  </table>
+
+  <!--шаблон для чтения-->
+  <ng-template #readOnlyTemplate let-order>
+    <tr>
+      <td>{{order.id}}</td>
+      <td>{{order.user_id}}</td>
+      <td>{{order.fname}}</td>
+      <td>{{order.lname}}</td>
+      <td>{{order.country}}</td>
+      <td>{{order.street}}</td>
+      <td>{{order.postcode}}</td>
+      <td>{{order.city}}</td>
+      <td>{{order.email}}</td>
+      <td>{{order.phone}}</td>
+      <td>{{order.message}}</td>
+
+      <td>
+        <input  type="button" value="Деталі" class="btn btn-outline-primary" (click)="editOrder(order)"  />
+      </td>
+      <td>
+        <input type="button" value="Видалити" (click)="deleteOrder(order.id)" class="btn btn-outline-danger" />
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template #editTemplate let-order>
+
+    <tr>
+
+      <td>{{order.id}}</td>
+      <td>{{order.user_id}}</td>
+      <td>{{order.fname}}</td>
+      <td>{{order.lname}}</td>
+      <td>{{order.country}}</td>
+      <td>{{order.street}}</td>
+      <td>{{order.postcode}}</td>
+      <td>{{order.city}}</td>
+      <td>{{order.email}}</td>
+      <td>{{order.phone}}</td>
+      <td>{{order.message}}</td>
+
+      <td>
+        <input type="button" value="Закрити" (click)="cancel()" class="btn btn-outline-danger" />
+      </td>
+    </tr>
+
+
+    <tr class="ml-2" *ngFor="let orderDetails of orderDetails">
+      <td></td>
+      <td></td>
+
+      <!--      <td><b>id: </b> {{orderDetails.id}}</td>-->
+      <td>Назва: <b> {{orderDetails.title}} </b></td>
+      <td>Опис: <b> {{orderDetails.description}}</b></td>
+      <td>Ціна: <b> {{orderDetails.price}}</b></td>
+      <td>Кількість: <b> {{orderDetails.quantity}}</b></td>
+      <td>Розмір: <b> {{orderDetails.size}}</b></td>
+      <td>Колір: <b> {{orderDetails.color}}</b></td>
+
+    </tr>
+
+  </ng-template>
+
+
+
+
+</div>
+

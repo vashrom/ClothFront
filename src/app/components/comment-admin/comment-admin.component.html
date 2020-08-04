@@ -1,0 +1,37 @@
+<div class="container-fluid m-3">
+
+  <input type="button" value="Всі" class="btn btn-outline-dark m-3" (click)="loadComments()" />
+  <input type="button" value="Контакти" class="btn btn-outline-dark m-3" (click)="loadContact()" />
+  <input type="button" value="Повернення" class="btn btn-outline-dark m-3" (click)="loadReturn()" />
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Ім'я</td>
+      <td>Email</td>
+      <td>Текст</td>
+      <td>ID Категорії</td>
+      <td>Категорія</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let comment of comments">
+    <td>{{comment.id}}</td>
+    <td>{{comment.name}}</td>
+    <td>{{comment.email}}</td>
+    <td>{{comment.text}}</td>
+    <td>{{comment.cat_id}}</td>
+    <td>
+      <input type="button" value="Видалити" (click)="deleteProduct(comment)" class="btn btn-outline-danger" />
+    </td>
+    </tbody>
+  </table>
+  <flash-messages></flash-messages>
+
+
+
+
+</div>
+

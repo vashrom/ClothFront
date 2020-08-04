@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CommentService} from "../../services/comment.service";
+import {Router} from "@angular/router";
+import {ProductService} from "../../services/product.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-return',
@@ -17,7 +20,7 @@ export class ReturnComponent implements OnInit {
   email: string;
   text: string;
 
-  constructor(private commentService: CommentService) { }
+  constructor(private commentService: CommentService,private router: Router,private flashMessage: FlashMessagesService) { }
 
   ngOnInit(): void {
   }
@@ -33,8 +36,11 @@ export class ReturnComponent implements OnInit {
       comm.email = this.email;
       comm.text = this.text;
       comm.cat_id = 2;
+
     });
 
+    this.form.reset();
+    this.flashMessage.show("Message succesfully sended", { cssClass: 'alert-success', timeout: 2000 });
 
 
   }

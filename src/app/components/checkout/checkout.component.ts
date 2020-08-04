@@ -22,6 +22,8 @@ export class CheckoutComponent implements OnInit {
     city: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(4)]),
     phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    message: new FormControl('', [Validators.minLength(3)]),
+
   });
 
   cartTotal: number;
@@ -34,6 +36,7 @@ export class CheckoutComponent implements OnInit {
   city: string;
   userEmail: string;
   userPhone: string;
+  userMessage: string;
 
 
 
@@ -64,7 +67,7 @@ export class CheckoutComponent implements OnInit {
 
   submit() {
     this.spinner.show().then(p => {
-      this.cartService.CheckoutFromCart(2, this.fname, this.lname, this.country,this.street,this.postcode,this.city,this.userEmail, this.userPhone); //add userId
+      this.cartService.CheckoutFromCart(30, this.fname, this.lname, this.country,this.street,this.postcode,this.city,this.userEmail, this.userPhone, this.userMessage); //add userId
     });
 
     console.log(this.city);
