@@ -9,17 +9,26 @@ export interface ProductModelServer {
   image: string;
   images: string;
   size: string;
-  // color: string;
   cat_id: number;
   short_desc: string;
+  xs: number;
+  s: number;
+  m:number;
+  l:number;
+  xl: number;
+  xxl: number;
+  title_ua: string;
+  title_ru: string;
+  title_de: string;
+  description_ua: string;
+  description_ru: string;
+  description_de: string;
+  price_ua: number;
+  price_ru: number;
+  price_de: number;
 
-     xs: number;
-     s: number;
-     m:number;
-     l:number;
-     xl: number;
-     xxl: number;
 
+  // color: string;
 
 
 }
@@ -35,7 +44,7 @@ export interface ServerResponse {
 export class Product{
   constructor(
     public id: number,
-    public  title: string,
+    public title: string,
     public category: string,
     public description: string,
     public price: number,
@@ -51,6 +60,15 @@ export class Product{
     public l: number,
     public xl: number,
     public xxl: number,
+    public title_ua: string,
+    public title_ru: string,
+    public title_de: string,
+    public description_ua: string,
+    public description_ru: string,
+    public description_de: string,
+    public price_ua: number,
+    public price_ru: number,
+    public price_de: number,
 
 
   ) {

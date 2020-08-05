@@ -1,9 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {map} from "rxjs/operators";
-import {ProductModelServer} from "../../models/product.model";
+import {ProductModelServer, ServerResponse} from "../../models/product.model";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 declare let $: any;
 
@@ -18,10 +20,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
   thumbImages: any[] = [];
   size: string;
   color: string;
+  private SERVER_URL = environment.SERVER_URL;
+
 
   @ViewChild('quantity') quantityInput;
 
-  constructor( private productService: ProductService, private cartService: CartService, private route: ActivatedRoute) { }
+  constructor( private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private http: HttpClient) { }
 
 
   ngOnInit(): void {
@@ -33,15 +37,23 @@ export class ProductComponent implements OnInit, AfterViewInit {
       })
     ).subscribe(prodId => {
       this.id = prodId;
-      this.productService.getSingleProduct(this.id).subscribe(prod => {
+
+      this.http.get<ProductModelServer>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language')+'/'+this.id,{
+      }).subscribe(prod =>{
         this.product = prod;
-        if (prod.images !== null) {
+        if(prod.images !== null){
           this.thumbImages = prod.images.split(';');
         }
+      })
 
+      // this.productService.getSingleProduct(this.id).subscribe(prod => {
+      //   this.product = prod;
+      //   if (prod.images !== null) {
+      //     this.thumbImages = prod.images.split(';');
+      //   }
 
+      //
 
-      });
     });
 
 

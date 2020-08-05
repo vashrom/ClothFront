@@ -28,7 +28,7 @@
 
         <div class="lan-selector">
 
-          <select id="dropdaun" class="dropdaun" (change)="selectChangeHandler($event)" >
+          <select [selectedIndex]="dropIndex" id="dropdaun" class="dropdaun" (change)="selectChangeHandler($event)" >
 
             <option id="en" value="en" data-imagecss="flag yu"
                     data-title="English">English</option>

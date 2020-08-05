@@ -90,6 +90,40 @@
         <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <input placeholder="Назва UA" min="0" type="text" [(ngModel)]="editedProduct.title_ua"   class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Назва RU" min="0" type="text" [(ngModel)]="editedProduct.title_ru"   class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Назва DE" min="0" type="text" [(ngModel)]="editedProduct.title_de"   class="form-control" />
+      </td>
+      <td>
+        <input  placeholder="Ціна UA" type="number" min="0" [(ngModel)]="editedProduct.price_ua" class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Ціна RU" type="number" min="0" [(ngModel)]="editedProduct.price_ru" class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Ціна DE" type="number" min="0" [(ngModel)]="editedProduct.price_de" class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Опис UA" type="text" [(ngModel)]="editedProduct.description_ua" class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Опис RU" type="text" [(ngModel)]="editedProduct.description_ru" class="form-control" />
+      </td>
+      <td>
+        <input placeholder="Опис DE" type="text" [(ngModel)]="editedProduct.description_de" class="form-control" />
+      </td>
+
+    </tr>
+
+
+
     <tr>
       <td>
         <label>XS:</label>
@@ -116,6 +150,8 @@
         <input placeholder="XXL" min="0" type="number" [(ngModel)]="editedProduct.xxl"   class="form-control" />
       </td>
     </tr>
+
+
   </ng-template>
 
 </div>

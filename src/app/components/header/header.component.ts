@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   cartTotal: number;
   authState: boolean;
   selectedLang: string ='en';
+  dropIndex: number;
 
 
 
@@ -24,6 +25,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
     this.cartService.cartData$.subscribe(data=> this.cartData = data);
+    this.translate.use(window.localStorage.getItem('language'));
+    this.selectIndex();
+
   }
 
 
@@ -31,8 +35,29 @@ export class HeaderComponent implements OnInit {
   selectChangeHandler(event: any){
     this.selectedLang = event.target.value;
     this.translate.use(this.selectedLang)
-console.log(this.selectedLang);
+    localStorage.setItem('language', this.selectedLang);
+    console.log(this.selectedLang);
+    window.location.reload();
   }
 
+  selectIndex()
+  {
+    switch (window.localStorage.getItem('language')) {
+      case 'en':
+        this.dropIndex = 0 ;
+        break;
+      case 'de':
+        this.dropIndex = 1 ;
+        break;
+      case 'ua':
+        this.dropIndex = 2 ;
+        break;
+      case 'ru':
+        this.dropIndex = 3 ;
+        break;
+      default:
+        this.dropIndex = 0 ;
+    }
+  }
 
 }

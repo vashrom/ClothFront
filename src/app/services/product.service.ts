@@ -17,20 +17,22 @@ export class ProductService {
 
   /*GET ALL PRODUCTS FROM SERVER*/
   getAllProducts(): Observable<ServerResponse>{
-    return this.http.get<ServerResponse>(this.SERVER_URL + '/products', {
+    return this.http.get<ServerResponse>(this.SERVER_URL + '/products/en', {
 
     });
   }
 
+
+
   /*GET SINGLE PRODUCT FROM SERVER*/
   getSingleProduct(id: number): Observable<ProductModelServer>{
-    return this.http.get<ProductModelServer>(this.SERVER_URL + '/products/' + id);
+    return this.http.get<ProductModelServer>(this.SERVER_URL + '/products/en/' + id);
   }
 
   /*GET PRODUCT FROM ONE CATEGORY*/
   getProductsFromCategory(catName: string) : Observable<ProductModelServer[]>
 {
-  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/category/'+catName);
+  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/en/products/category/'+catName);
 }
 
 /* CREATE PRODUCT FROM SERVER */

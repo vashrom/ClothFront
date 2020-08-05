@@ -78,7 +78,9 @@
     "NAME_MAX": "Name should be less than 30 character",
     "EMAIL_ERR": "Please, enter valid email address",
     "SUCCESS": "Message succesfully sended"
-  }
+  },
+  "WALLET": "$"
+
 
 
 }
