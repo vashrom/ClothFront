@@ -1,3 +1,4 @@
+import {ProductModelServer} from "./product.model";
 
 export interface OrderDetailsModelServer {
   id: number;
@@ -76,3 +77,39 @@ export interface OrderModelServer {
   message: string;
 
 }
+
+
+export interface UserOrderModelServer {
+   id: number,
+   order_id: number,
+   product_id: number,
+   quantity: number,
+   size: string,
+   color: string,
+
+  Order: OrderModelServer,
+  Product: ProductModelServer
+
+}
+
+
+export interface UserOrderServerResponse {
+
+  orders: UserOrderModelServer[];
+
+}
+
+//Order: {
+//   id: number,
+//   user_id: number,
+//   fname: string,
+//   lname: string,
+//   country: string,
+//   street: string,
+//   postcode: string,
+//   city: string,
+//   email: string,
+//   phone: string,
+//   message: string
+// },
+

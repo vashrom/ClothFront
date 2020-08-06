@@ -14,6 +14,7 @@ export interface UserDetails {
   role: number
   exp: number
   iat: number
+  phone: string
 }
 
 interface TokenResponse {
@@ -25,7 +26,8 @@ export interface TokenPayload {
   first_name: string
   last_name: string
   email: string
-  password: string
+  password: string,
+  phone: string
 }
 
 @Injectable()
@@ -72,13 +74,15 @@ export class AuthenticationService {
 
   public isAdmin(): boolean {
     const user= this.getUserDetails()
-    if(user.role == 777)
-    {
-      return user.exp > Date.now() / 1000
-    }
-    else {
-      return false
-    }
+   if(this.isLoggedIn()) {
+     if (user.role == 777) {
+       return user.exp > Date.now() / 1000
+     } else {
+
+       return false
+
+     }
+   }
   }
 
   public register (user: TokenPayload): Observable<any> {

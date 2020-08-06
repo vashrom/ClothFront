@@ -102,8 +102,8 @@
               <label for="phone">Phone<span>*</span></label>
               <input  [(ngModel)]="userPhone" formControlName="phone" class="form-control" type="text" id="phone">
               <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
-                <div *ngIf="f.phone.errors.required">Email is required</div>
-                <div *ngIf="f.phone.errors.minlength">Postcode should be 3 character</div>
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                <div *ngIf="f.phone.errors.minlength">Phone should be 3 character</div>
               </div>
             </div>
 

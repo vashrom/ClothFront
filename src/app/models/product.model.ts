@@ -26,9 +26,7 @@ export interface ProductModelServer {
   price_ua: number;
   price_ru: number;
   price_de: number;
-
-
-  // color: string;
+  color: string;
 
 
 }
@@ -69,7 +67,7 @@ export class Product{
     public price_ua: number,
     public price_ru: number,
     public price_de: number,
-
+    public color: string
 
   ) {
   }

@@ -6,6 +6,7 @@ export interface UserModelServer {
   last_name: string;
   role: number;
   created: string;
+  phone: string;
 
 
 
@@ -26,6 +27,7 @@ export class User{
    public last_name: string,
    public role: number,
    public created: string,
+   public phone: string
 
 
 

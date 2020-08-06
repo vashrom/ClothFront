@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <a routerLink="/"><i class="fa fa-home"></i> Home</a>
-          <span>Register</span>
+          <a routerLink="/"><i class="fa fa-home"></i> {{'REGISTER.BREADCRUMP1'|translate}}</a>
+          <span>{{'REGISTER.BREADCRUMP2'|translate}}</span>
         </div>
       </div>
     </div>
@@ -16,43 +16,60 @@
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
         <div class="register-form">
-          <h2>Register</h2>
+          <h2>{{'REGISTER.HEADER'|translate}}</h2>
 
-
-          <form (submit)="register()">
+<!--          (submit)="register()"-->
+          <form [formGroup]="form" (ngSubmit)="submit()">
             <div class="group-input">
-              <label>First Name</label>
-              <input type="text" class="form-control" name="first_name" placeholder="Enter first name" [(ngModel)]="credentials.first_name">
+              <label>{{'REGISTER.FNAME'|translate}}</label>
+              <input  type="text" class="form-control" formControlName="fname" name="first_name" [(ngModel)]="credentials.first_name">
+              <div *ngIf="f.fname.touched && f.fname.invalid" class="alert alert-danger">
+                <div *ngIf="f.fname.errors.required">{{'VALIDATION_MESSAGE.FNAME'|translate}}</div>
+                <div *ngIf="f.fname.errors.minlength">{{'VALIDATION_MESSAGE.FNAME_MIN'|translate}}</div>
+              </div>
             </div>
             <div class="group-input">
-              <label>Last Name</label>
-              <input type="text" class="form-control" name="last_name" placeholder="Enter last name" [(ngModel)]="credentials.last_name">
+              <label>{{'REGISTER.LNAME'|translate}}</label>
+              <input type="text" formControlName="lname" class="form-control" name="last_name" [(ngModel)]="credentials.last_name">
+              <div *ngIf="f.lname.touched && f.lname.invalid" class="alert alert-danger">
+                <div *ngIf="f.lname.errors.required">{{'VALIDATION_MESSAGE.LNAME'|translate}}</div>
+                <div *ngIf="f.lname.errors.minlength">{{'VALIDATION_MESSAGE.LNAME_MIN'|translate}}</div>
+              </div>
             </div>
             <div class="group-input">
-              <label>Email address *</label>
-              <input type="email" class="form-control" id="username" name="email" placeholder="Enter Email" [(ngModel)]="credentials.email">
+              <label>{{'REGISTER.EMAIL'|translate}}</label>
+              <input type="email" formControlName="email" class="form-control" id="username" name="email" [(ngModel)]="credentials.email">
+              <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors.required">{{'VALIDATION_MESSAGE.EMAIL'|translate}}</div>
+                <div *ngIf="f.email.errors.email">{{'VALIDATION_MESSAGE.EMAIL_ERR'|translate}}</div>
+                <div *ngIf="f.email.errors.minLength">{{'VALIDATION_MESSAGE.EMAIL_ERR'|translate}}</div>
+
+              </div>
             </div>
             <div class="group-input">
-              <label>Password *</label>
-              <input type="password" class="form-control" id="pass" name="password" placeholder="Enter Password" [(ngModel)]="credentials.password">
+              <label>{{'REGISTER.PASSWORD'|translate}}</label>
+              <input type="password" class="form-control" formControlName="password" id="pass" name="password" [(ngModel)]="credentials.password">
+              <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                <div *ngIf="f.password.errors.required">{{'VALIDATION_MESSAGE.PASSWORD'|translate}}</div>
+                <div *ngIf="f.password.errors.minlength">{{'VALIDATION_MESSAGE.PASSWORD_MIN'|translate}}</div>
+              </div>
+            </div>
+            <div class="group-input">
+              <label>{{'REGISTER.PHONE'|translate}}</label>
+              <input type="text" class="form-control" id="phone" formControlName="phone" name="phone" [(ngModel)]="credentials.phone">
+              <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                <div *ngIf="f.phone.errors.required">{{'VALIDATION_MESSAGE.PHONE'|translate}}</div>
+                <div *ngIf="f.phone.errors.minlength">{{'VALIDATION_MESSAGE.PHONE_MIN'|translate}}</div>
+              </div>
             </div>
 
 
-<!--            <div class="group-input">-->
-<!--              <label for="pass">Password *</label>-->
-<!--              <input type="text" id="pass">-->
-<!--            </div>-->
-<!--            <div class="group-input">-->
-<!--              <label for="con-pass">Confirm Password *</label>-->
-<!--              <input type="text" id="con-pass">-->
-<!--            </div>-->
-
-            <button type="submit" class="site-btn register-btn">REGISTER</button>
+            <button [disabled]="!form.valid" type="submit" class="site-btn register-btn">{{'REGISTER.BUTTON'|translate}}</button>
           </form>
 
 
              <div class="switch-login">
-            <a routerLink="/login" class="or-login">Or Login</a>
+            <a routerLink="/login" class="or-login">{{'REGISTER.LINK'|translate}}</a>
           </div>
         </div>
       </div>

@@ -46,13 +46,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
         }
       })
 
-      // this.productService.getSingleProduct(this.id).subscribe(prod => {
-      //   this.product = prod;
-      //   if (prod.images !== null) {
-      //     this.thumbImages = prod.images.split(';');
-      //   }
 
-      //
 
     });
 

@@ -72,9 +72,51 @@
     "NAME_MIN": "Der Name sollte mehr als 3 Zeichen enthalten",
     "NAME_MAX": "Der Name sollte weniger als 30 Zeichen enthalten",
     "EMAIL_ERR": "Bitte geben Sie eine gültige Email Adresse an",
-    "SUCCESS": "Nachricht erfolgreich gesendet"
+    "SUCCESS": "Nachricht erfolgreich gesendet",
+    "FNAME": "Vorname ist erforderlich",
+    "FNAME_MIN": "Der Vorname sollte mehr als 3 Zeichen umfassen",
+    "LNAME": "Nachname ist erforderlich",
+    "LNAME_MIN": "Der Nachname sollte mehr als 3 Zeichen umfassen",
+    "PASSWORD": "Passwort wird benötigt",
+    "PASSWORD_MIN": "Das Passwort sollte mehr als 6 Zeichen umfassen",
+    "PHONE": "Telefon ist erforderlich",
+    "PHONE_MIN": "Das Telefon sollte mehr als 6 Zeichen umfassen"
   },
 
-  "WALLET": "€"
+  "WALLET": "€",
+
+  "REGISTER": {
+    "FNAME": "Vorname",
+    "LNAME": "Nachname",
+    "EMAIL": "E-Mail-Addresse",
+    "PASSWORD": "Passwort",
+    "PHONE": "Telefon",
+    "BUTTON": "REGISTRIEREN",
+    "LINK": "ODER ANMELDEN",
+    "HEADER": "Registrieren",
+    "BREADCRUMP1":"Main",
+    "BREADCRUMP2":"Registrieren"
+  },
+
+  "LOGIN": {
+    "HEADER": "Anmeldung",
+    "BUTTON": "EINLOGGEN",
+    "LINK": "ODER ERSTELLEN SIE EIN KONTO",
+    "BREADCRUMP1":"Main",
+    "BREADCRUMP2":"Anmeldung"
+
+  },
+
+  "PROFILE": {
+    "HEADER": "Aufträge:",
+    "ID": "Auftrag ID",
+    "IMAGE": "Image",
+    "TITLE": "Titel",
+    "DESCRIPTION": "Beschreibung",
+    "PRICE": "Preis",
+    "QUANTITY": "Menge",
+    "SIZE": "Größe",
+    "COLOR": "Farbe"
+  }
 
 }

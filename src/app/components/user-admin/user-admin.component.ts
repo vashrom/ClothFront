@@ -35,7 +35,7 @@ export class UserAdminComponent implements OnInit {
   }
 
   editUser(user: User) {
-    this.editedUser = new User(user.id,user.password,user.email,user.first_name,user.last_name,user.role,user.created);
+    this.editedUser = new User(user.id,user.password,user.email,user.first_name,user.last_name,user.role,user.created, user.phone);
   }
 
   loadTemplate(user: User){

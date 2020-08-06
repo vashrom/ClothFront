@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {OrderDetailsModelServer, OrderDetailsServerResponse, OrderServerResponse} from "../models/order.model";
+import {
+  OrderDetailsModelServer,
+  OrderDetailsServerResponse,
+  OrderServerResponse,
+  UserOrderServerResponse
+} from "../models/order.model";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +20,12 @@ export class OrderService {
 
   getAllOrderDetails(): Observable<OrderDetailsServerResponse>{
     return this.http.get<OrderDetailsServerResponse>(this.ServerURL + '/orders', {
+
+    });
+  }
+
+  getUserOrders(id: number): Observable<UserOrderServerResponse>{
+    return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/user/' + id, {
 
     });
   }
@@ -40,6 +51,8 @@ export class OrderService {
   deleteOrderDetails(id: number){
     return this.http.delete(this.ServerURL + '/ordersinfo/od/' + id);
   }
+
+
 
 }
 

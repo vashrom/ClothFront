@@ -22,6 +22,7 @@ import {CommentAdminComponent} from "./components/comment-admin/comment-admin.co
 import {BlogAdminComponent} from "./components/blog-admin/blog-admin.component";
 import {OrderAdminComponent} from "./components/order-admin/order-admin.component";
 import {UserAdminComponent} from "./components/user-admin/user-admin.component";
+import {AuthAdminGuardService} from "./guard/auth-admin-guard.service";
 
 
 
@@ -75,19 +76,19 @@ const routes: Routes = [
     path: 'about',component: AboutComponent
   },
   {
-    path: 'productAdmin',component: ProductAdminComponent
+    path: 'productAdmin',component: ProductAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'commentAdmin',component: CommentAdminComponent
+    path: 'commentAdmin',component: CommentAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'blogAdmin',component: BlogAdminComponent
+    path: 'blogAdmin',component: BlogAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'orderAdmin',component: OrderAdminComponent
+    path: 'orderAdmin',component: OrderAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'usersAdmin',component: UserAdminComponent
+    path: 'usersAdmin',component: UserAdminComponent, canActivate: [AuthAdminGuardService]
   },
 
 

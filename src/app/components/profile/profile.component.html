@@ -1,23 +1,42 @@
 <div class="container">
-  <div class="jumbotron mt-5">
-    <div class="col-sm-8 mx-auto">
-      <h1 class="text-center">PROFILE</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron text-center">
+        <h1 class="display-3">{{'PROFILE.HEADER'|translate}}</h1>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>{{'PROFILE.ID'|translate}}</th>
+          <th>{{'PROFILE.IMAGE'|translate}}</th>
+          <th>{{'PROFILE.TITLE'|translate}}</th>
+          <th>{{'PROFILE.DESCRIPTION'|translate}}</th>
+          <th>{{'PROFILE.PRICE'|translate}}</th>
+          <th>{{'PROFILE.QUANTITY'|translate}}</th>
+          <th>{{'PROFILE.SIZE'|translate}}</th>
+          <th>{{'PROFILE.COLOR'|translate}}</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of orders ">
+          <td>{{order.order_id}}</td>
+          <td>
+            <img [src]="order.Product.image" class="img-thumbnail" width="100px">
+          </td>
+          <td>{{order.Product.title}}</td>
+          <td>{{order.Product.short_desc | slice:0:30}}</td>
+          <td>{{order.Product.price}} {{ 'WALLET' | translate}}</td>
+          <td>{{order.quantity}}</td>
+          <td>{{order.size}}</td>
+          <td>{{order.color}}</td>
+
+        </tr>
+
+
+        </tbody>
+      </table>
     </div>
-    <table class="table col-md-6 mx-auto">
-      <tr>
-        <td>First Name</td>
-        <td>{{details?.first_name}}</td>
-      </tr>
-      <tr>
-        <td>Last Name</td>
-        <td>{{details?.last_name}}</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>{{details?.email}}</td>
-      </tr>
-
-
-    </table>
   </div>
 </div>

@@ -54,7 +54,7 @@
   },
 
   "CONTACT": {
-    "BREADCRUMP1":"Home",
+    "BREADCRUMP1":"Main",
     "BREADCRUMP2":"Contact",
     "HEADER": "Contact Us",
     "PAR1": "Contrary to popular belief, Lorem Ipsum is simply random text. It has roots in a piece of classical Latin literature from 45 BC, maki years old",
@@ -74,12 +74,55 @@
     "EMAIL": "Email is required",
     "NAME": "Name is required",
     "TEXT": "Text is required",
-    "NAME_MIN": "Name should be more than 3 character",
-    "NAME_MAX": "Name should be less than 30 character",
+    "NAME_MIN": "Name should be more than 3 characters",
+    "NAME_MAX": "Name should be less than 30 characters",
     "EMAIL_ERR": "Please, enter valid email address",
-    "SUCCESS": "Message succesfully sended"
+    "SUCCESS": "Message succesfully sended",
+    "FNAME": "First name is required",
+    "FNAME_MIN": "First name should be more than 3 characters",
+    "LNAME": "Last name is required",
+    "LNAME_MIN": "Last name should be more than 3 characters",
+    "PASSWORD": "Password is required",
+    "PASSWORD_MIN": "Password should be more than 6 characters",
+    "PHONE": "Phone is required",
+    "PHONE_MIN": "Phone should be more than 6 characters"
   },
-  "WALLET": "$"
+
+  "WALLET": "$",
+
+  "REGISTER": {
+    "FNAME": "First Name",
+    "LNAME": "Last Name",
+    "EMAIL": "Email address",
+    "PASSWORD": "Password",
+    "PHONE": "Phone",
+    "BUTTON": "REGISTER",
+    "LINK": "OR LOGIN",
+    "HEADER": "Register",
+    "BREADCRUMP1":"Main",
+    "BREADCRUMP2":"Register"
+  },
+  "LOGIN": {
+    "HEADER": "Login",
+    "BUTTON": "SIGN IN",
+    "LINK": "OR CREATE AN ACCOUNT",
+    "BREADCRUMP1":"Main",
+    "BREADCRUMP2":"Login"
+
+  },
+
+  "PROFILE": {
+    "HEADER": "Orders:",
+    "ID": "Order ID",
+    "IMAGE": "Image",
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "PRICE": "Price",
+    "QUANTITY": "Quantity",
+    "SIZE": "Size",
+    "COLOR": "Color"
+  }
+
 
 
 
