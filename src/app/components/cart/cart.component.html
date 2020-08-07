@@ -1,30 +1,29 @@
 <div class="container">
+
+  <div class="breacrumb-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb-text product-more">
+            <a routerLink="/"><i class="fa fa-home"></i>{{'LOGIN.BREADCRUMP1' | translate}}</a>
+            <a routerLink="/">{{'CART.BREADCRUMP2' | translate}}</a>
+            <span>{{'CART.BREADCRUMP3' | translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--  Cart is  empty-->
 
-  <div class="text-center my-5" *ngIf="cartData.data[0].numInCart == 0;" >
-    <h4>Your Cart Is Empty</h4>
+  <div class="text-center my-5 " *ngIf="cartData.data[0].numInCart == 0;" >
+    <h4>{{'CART.EMPTY' | translate}}</h4>
 
-    <button class="btn btn-warning btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+    <button class="btn btn-warning btn-lg mt-3" style="color: white; font-weight: bold" routerLink="/">{{'CART.BUTTON' | translate}}</button>
   </div>
 
 
   <!--  Cart with items-->
   <ng-container *ngIf="cartData.data[0].numInCart != 0">
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumb-text product-more">
-              <a routerLink="/"><i class="fa fa-home"></i> Home</a>
-              <a routerLink="/">Shop</a>
-              <span>Shopping Cart</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
 
     <!-- Shopping Cart Section Begin -->
     <section class="shopping-cart spad">
@@ -35,40 +34,39 @@
               <table>
                 <thead>
                 <tr>
-                  <th>Image</th>
-                  <th class="p-name">Title</th>
-                  <th>Price</th>
-<!--                  <th>Size</th>-->
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th><i class="ti-close"></i></th>
+                  <th>{{'CART.IMAGE' | translate}}</th>
+                  <th class="p-name text-center">{{'CART.TITLE' | translate}}</th>
+                  <th>{{'CART.PRICE' | translate}}</th>
+                  <th>{{'CART.SIZE' | translate}}</th>
+                  <th>{{'CART.COLOR' | translate}}</th>
+                  <th>{{'CART.QUANTITY' | translate}}</th>
+                  <th>{{'CART.TOTAL' | translate}}</th>
+                  <th><i class="ti-close" (click)="cartService.DeleteAllProductsFromCart()"></i></th>
                 </tr>
                 </thead>
                 <tbody>
 
 
                 <tr *ngFor="let c of cartData.data; let i=index">
-                  <td class="cart-pic first-row"><img [src]="c.product.image" alt="{{c.product.title}}"></td>
-                  <td class="cart-title first-row">
+                  <td class="cart-pic first-row "><img [src]="c.product.image" alt="{{c.product.title}}"></td>
+                  <td class="cart-title first-row w-25 text-center">
                     <h5>{{c.product.title}}</h5>
                   </td>
-                  <td class="p-price first-row">{{c.product.price | currency: 'USD'}}</td>
+                  <td class="p-price first-row">{{c.product.price}}{{'WALLET'|translate}}</td>
 
-<!--                -->
-<!--                  <td class="cart-title first-row">-->
 
-<!--                  </td>-->
-<!--                  -->
-<!--                  -->
+                  <td class="cart-title first-row p-4 text-center">
+                    {{c.size}}
+                  </td>
+                  <td class="cart-title first-row p-3">
+                    {{c.color}}
+                  </td>
+
+
 
 
 
                   <td class="qua-col first-row">
-                    <!--                    <div class="quantity" (click)="ChangeQuantity(i , false)" >-->
-                    <!--                      <div class="pro-qty">-->
-                    <!--                        <input type="text" [value]="c.numInCart" readonly [max]="c.product.quantity"] />-->
-                    <!--                      </div>-->
-                    <!--                    </div>-->
                     <form>
                       <div class="value-button" id="decrease" (click)="ChangeQuantity(i , false)">
                         <i class="fa fa-minus"></i>
@@ -82,8 +80,9 @@
 
 
                   </td>
-                  <td class="total-price first-row">{{cartService.CalculateSubTotal(i)| currency: 'USD'}}</td>
+                  <td class="total-price first-row">{{cartService.CalculateSubTotal(i)}} {{'WALLET'|translate}}</td>
                   <td class="close-td first-row"><i class="ti-close" style="cursor: pointer" (click)="cartService.DeleteProductFromCart(i)"></i></td>
+
                 </tr>
 
 
@@ -93,24 +92,17 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="cart-buttons">
-                  <a routerLink="/" class="primary-btn up-cart">Continue shopping</a>
-                  <!--                  <a href="#" class="primary-btn up-cart">Update cart</a>-->
+                  <a routerLink="/collection" class="primary-btn up-cart">{{'CART.BUTTON1' | translate}}</a>
                 </div>
-                <!--                <div class="discount-coupon">-->
-                <!--                  <h6>Discount Codes</h6>-->
-                <!--                  <form action="#" class="coupon-form">-->
-                <!--                    <input type="text" placeholder="Enter your codes">-->
-                <!--                    <button type="submit" class="site-btn coupon-btn">Apply</button>-->
-                <!--                  </form>-->
-                <!--                </div>-->
+
               </div>
               <div class="col-lg-4 offset-lg-4">
                 <div class="proceed-checkout">
                   <ul>
                     <!--                    <li class="subtotal">Subtotal <span>$240.00</span></li>-->
-                    <li class="cart-total">Total <span>{{cartTotal | currency: 'USD'}}</span></li>
+                    <li class="cart-total">{{'CART.TOTAL' | translate}} <span>{{cartTotal}} {{'WALLET'|translate}}</span></li>
                   </ul>
-                  <a routerLink="/checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                  <a routerLink="/checkout" class="proceed-btn">{{'CART.BUTTON2' | translate}}</a>
                 </div>
               </div>
             </div>

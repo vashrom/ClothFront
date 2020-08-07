@@ -36,7 +36,7 @@ export class ProductAdminComponent implements OnInit {
 
 
   private loadProducts() {
-    this.productService.getAllProducts().subscribe((prods: ServerResponse) => {
+    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ServerResponse) => {
       this.products = prods.products.reverse();
     });
   }

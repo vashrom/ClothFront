@@ -76,8 +76,6 @@ export class CheckoutComponent implements OnInit {
 
   submit() {
 
-
-
     this.spinner.show().then(p => {
       this.cartService.CheckoutFromCart(this.userId, this.fname, this.lname, this.country,this.street,this.postcode,this.city,this.userEmail, this.userPhone, this.userMessage); //add userId
     });

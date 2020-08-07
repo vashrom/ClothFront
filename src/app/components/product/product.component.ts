@@ -38,8 +38,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     ).subscribe(prodId => {
       this.id = prodId;
 
-      this.http.get<ProductModelServer>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language')+'/'+this.id,{
-      }).subscribe(prod =>{
+      this.productService.getSingleProduct(this.id,window.localStorage.getItem('language')).subscribe(prod =>{
         this.product = prod;
         if(prod.images !== null){
           this.thumbImages = prod.images.split(';');

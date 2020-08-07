@@ -21,16 +21,16 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductService, private cartService: CartService ,private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    // this.productService.getAllProducts().subscribe((prods: ServerResponse) => {
-    //   this.products = prods.products.reverse();
-    //   console.log(this.products);
-    // });
-    this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
-
-    }).subscribe((prods: ServerResponse) => {
+    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ServerResponse) => {
       this.products = prods.products.reverse();
       console.log(this.products);
     });
+    // this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
+    //
+    // }).subscribe((prods: ServerResponse) => {
+    //   this.products = prods.products.reverse();
+    //   console.log(this.products);
+    // });
 
   }
 

@@ -3,6 +3,8 @@ import {Router} from "@angular/router";
 import {OrderService} from "../../services/order.service";
 import {ProductModelServer, ServerResponse} from "../../models/product.model";
 import {Observable} from "rxjs";
+import {CartModelServer} from "../../models/cart.model";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-thankyou',
@@ -14,6 +16,8 @@ export class ThankyouComponent implements OnInit {
   orderId: number;
   products: ProductResponseModel[] = [];
   cartTotal: number;
+
+
   constructor(private router: Router,
               private orderService: OrderService) {
     const navigation = this.router.getCurrentNavigation();
@@ -38,6 +42,7 @@ export class ThankyouComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 }

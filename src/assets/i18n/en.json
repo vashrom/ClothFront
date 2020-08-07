@@ -85,7 +85,16 @@
     "PASSWORD": "Password is required",
     "PASSWORD_MIN": "Password should be more than 6 characters",
     "PHONE": "Phone is required",
-    "PHONE_MIN": "Phone should be more than 6 characters"
+    "PHONE_MIN": "Phone should be more than 6 characters",
+    "COUNTRY": "Country is required",
+    "STREET": "Street is required",
+    "CITY": "City is required",
+    "COUNTRY_MIN": "Country should be more than 3 characters",
+    "STREET_MIN": "Street should be more than 3 characters",
+    "CITY_MIN": "City should be more than 3 characters",
+    "MESSAGE_MIN": "Message should be more than 3 characters",
+    "POSTCODE_MIN": "Postcode should be more than 3 characters",
+    "POSTCODE_MAX": "Postcode should be less than 10 characters"
   },
 
   "WALLET": "$",
@@ -121,6 +130,37 @@
     "QUANTITY": "Quantity",
     "SIZE": "Size",
     "COLOR": "Color"
+  },
+
+  "CART": {
+    "BREADCRUMP2":"Shop",
+    "BREADCRUMP3":"Shopping Cart",
+    "IMAGE": "IMAGE",
+    "TITLE": "TITLE",
+    "PRICE": "PRICE",
+    "SIZE": "SIZE",
+    "COLOR": "COLOR",
+    "QUANTITY": "QUANTITY",
+    "TOTAL": "TOTAL",
+    "BUTTON1": "CONTINUE SHOPPING",
+    "BUTTON2": "PROCEED TO CHECKOUT",
+    "EMPTY": "Your Cart Is Empty",
+    "BUTTON": "GO TO SHOP"
+  },
+
+  "CHECKOUT": {
+    "BREADCRUMP3":"Check Out",
+    "HEADER1": "Contacts",
+    "COUNTRY": "Country",
+    "STREET": "Street Address",
+    "POSTCODE": "Postcode / ZIP (optional)",
+    "CITY": "City",
+    "MESSAGE": "Message",
+    "HEADER2": "Your Order",
+    "PRODUCT": "PRODUCT",
+    "TOTAL": "TOTAL",
+    "BUTTON": "PLACE ORDER",
+    "BOOKING": "Booking order ..."
   }
 
 

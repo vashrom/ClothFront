@@ -20,14 +20,6 @@ export class CartService {
   // Data var to store cart info on the client's local storage
   private cartDataClient: CartModelPublic = {
      total: 0,
-    // fname: null,
-    // lname: null,
-    // country: null,
-    // street: null,
-    // postcode: null,
-    // city: null,
-    // email: null,
-    // phone: null,
     prodData: [{
       incart: 0,
       id: 0,
@@ -79,7 +71,7 @@ export class CartService {
 
           //Put each entry into cartDataSerer obj
           this.cartDataClient.prodData.forEach(p=>{
-            this.productService.getSingleProduct(p.id).subscribe((actualProductInfo: ProductModelServer) => {
+            this.productService.getSingleProduct(p.id,window.localStorage.getItem('language')).subscribe((actualProductInfo: ProductModelServer) => {
               if(this.cartDataServer.data[0].numInCart == 0)
               {
                 this.cartDataServer.data[0].numInCart = p.incart;
@@ -118,7 +110,7 @@ export class CartService {
   addProductToCart(id: number, quantity ?: number, size?: string, color?: string)
   {
 
-    this.productService.getSingleProduct(id).subscribe(prod=>{
+    this.productService.getSingleProduct(id,window.localStorage.getItem('language')).subscribe(prod=>{
       //Cart is empty
       if(this.cartDataServer.data[0].product == undefined)
       {
@@ -276,6 +268,13 @@ export class CartService {
       //if user choose cancel button
       return;
     }
+  }
+
+  DeleteAllProductsFromCart()
+  {
+    localStorage.removeItem('cart');
+    window.location.reload();
+
   }
 
   private CalculateTotal() {

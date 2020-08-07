@@ -48,7 +48,7 @@ export class IndexComponent implements OnInit {
       })
     ).subscribe(catName => {
       this.cat_name = catName;
-      this.productService.getProductsFromCategory(categoryName).subscribe(prods => {
+      this.productService.getProductsFromCategory(categoryName,window.localStorage.getItem('language')).subscribe(prods => {
         this.products = prods;
         console.log(this.products);
 

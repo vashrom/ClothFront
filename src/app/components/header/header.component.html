@@ -56,6 +56,7 @@
 
 
 
+
 <!--        </div>-->
 
 
@@ -101,14 +102,19 @@
               </a>
               <div class="cart-hover">
                 <div class="select-items">
+
                   <table>
+
+
+
+
                     <tbody *ngIf="cartData.data[0].numInCart != 0">
 
                     <tr *ngFor="let c of cartData.data; let i=index">
                       <td class="si-pic"><img [src]="c.product ?. image" alt="{{c.product.title}}"></td>
                       <td class="si-text">
                         <div class="product-selected">
-                          <p>{{c.product.price | currency: 'USD'}} x {{c.numInCart}}</p>
+                          <p>{{c.product.price}} {{'WALLET'|translate}} x {{c.numInCart}}</p>
                           <h6>{{c.product.title}}</h6>
                         </div>
                       </td>
@@ -122,7 +128,7 @@
                 </div>
                 <div class="select-total">
                   <span>total:</span>
-                  <h5>{{ cartTotal | currency: 'USD'}}</h5>
+                  <h5>{{ cartTotal}} {{'WALLET'|translate}}</h5>
                 </div>
                 <div class="select-button">
                   <a routerLink="/cart" class="primary-btn view-card">VIEW CART</a>
@@ -130,7 +136,7 @@
                 </div>
               </div>
             </li>
-            <li class="cart-price">{{cartTotal | currency: 'USD'}}</li>
+            <li class="cart-price">{{cartTotal}} {{'WALLET'|translate}}</li>
           </ul>
         </div>
       </div>

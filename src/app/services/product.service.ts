@@ -16,8 +16,8 @@ export class ProductService {
 
 
   /*GET ALL PRODUCTS FROM SERVER*/
-  getAllProducts(): Observable<ServerResponse>{
-    return this.http.get<ServerResponse>(this.SERVER_URL + '/products/en', {
+  getAllProducts(lang: string): Observable<ServerResponse>{
+    return this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+lang, {
 
     });
   }
@@ -25,14 +25,14 @@ export class ProductService {
 
 
   /*GET SINGLE PRODUCT FROM SERVER*/
-  getSingleProduct(id: number): Observable<ProductModelServer>{
-    return this.http.get<ProductModelServer>(this.SERVER_URL + '/products/en/' + id);
+  getSingleProduct(id: number, lang: string): Observable<ProductModelServer>{
+    return this.http.get<ProductModelServer>(this.SERVER_URL + '/products/'+lang+'/' + id);
   }
 
   /*GET PRODUCT FROM ONE CATEGORY*/
-  getProductsFromCategory(catName: string) : Observable<ProductModelServer[]>
+  getProductsFromCategory(catName: string, lang: string) : Observable<ProductModelServer[]>
 {
-  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/en/products/category/'+catName);
+  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/'+lang+'/products/category/'+catName);
 }
 
 /* CREATE PRODUCT FROM SERVER */

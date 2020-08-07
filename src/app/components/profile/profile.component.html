@@ -26,7 +26,7 @@
             <img [src]="order.Product.image" class="img-thumbnail" width="100px">
           </td>
           <td>{{order.Product.title}}</td>
-          <td>{{order.Product.short_desc | slice:0:30}}</td>
+          <td>{{order.Product.description | slice:0:30}}</td>
           <td>{{order.Product.price}} {{ 'WALLET' | translate}}</td>
           <td>{{order.quantity}}</td>
           <td>{{order.size}}</td>

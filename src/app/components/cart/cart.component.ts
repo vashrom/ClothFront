@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -13,13 +14,13 @@ export class CartComponent implements OnInit {
   subTotal: number;
   size: string;
 
-  constructor(public cartService: CartService) { }
+  constructor(public cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
 
     this.cartService.cartData$.subscribe((data: CartModelServer) => this.cartData = data);
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
-
+    console.log(this.cartData)
   }
 
 
@@ -32,4 +33,7 @@ export class CartComponent implements OnInit {
     this.size = size;
 
   }
+
+
+
 }
