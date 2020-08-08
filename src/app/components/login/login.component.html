@@ -14,6 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
+
         <div class="login-form">
           <h2>{{'LOGIN.HEADER' | translate}}</h2>
 
@@ -48,10 +49,12 @@
             </div>
             <button [disabled]="!form.valid" type="submit"  class="site-btn login-btn">{{'LOGIN.BUTTON' | translate}}</button>
           </form>
+          <flash-messages></flash-messages>
 
           <div class="switch-login">
             <a routerLink="/register" class="or-login">{{'LOGIN.LINK' | translate}}</a>
           </div>
+
         </div>
       </div>
     </div>

@@ -25,12 +25,7 @@ export class HomeComponent implements OnInit {
       this.products = prods.products.reverse();
       console.log(this.products);
     });
-    // this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
-    //
-    // }).subscribe((prods: ServerResponse) => {
-    //   this.products = prods.products.reverse();
-    //   console.log(this.products);
-    // });
+
 
   }
 

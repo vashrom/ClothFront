@@ -6,7 +6,7 @@
     "ABOUT": "ÜBER",
     "CONTACTS": "KONTAKTE",
     "BLOG": "BLOG",
-    "CATALOG": "KATALOG"
+    "CATALOG": "SAMMLUNG"
 
 
   },
@@ -159,6 +159,14 @@
     "BUTTON": "BESTELLUNG AUFGEBEN",
     "BOOKING": "Buchungsauftrag ..."
 
+  },
+
+  "PRODUCT": {
+    "BREADCRUMP2":"Sammlung",
+    "BREADCRUMP3":"Detail",
+    "COLOR": "Farbe",
+    "BUTTON": "IN DEN WARENKORB LEGEN",
+    "HEADER": "Angebotene Ware"
   }
 
 

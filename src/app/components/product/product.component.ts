@@ -17,6 +17,8 @@ declare let $: any;
 export class ProductComponent implements OnInit, AfterViewInit {
   id: number;
   product;
+  offeredProducts: ProductModelServer[] = [];
+
   thumbImages: any[] = [];
   size: string;
   color: string;
@@ -25,7 +27,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   @ViewChild('quantity') quantityInput;
 
-  constructor( private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor( private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -44,11 +46,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
           this.thumbImages = prod.images.split(';');
         }
       })
-
-
-
     });
 
+    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ServerResponse) => {
+      this.offeredProducts = prods.products;
+      console.log(this.offeredProducts);
+    });
 
   }
 
@@ -334,6 +337,13 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.color = color;
     console.log(this.color);
 
+  }
+
+  selectProduct(id: number) {
+    this.router.navigate(['/product',id]).then();
+  }
+  AddToCart(id: number) {
+    this.cartService.addProductToCart(id);
   }
 
 }

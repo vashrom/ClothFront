@@ -6,7 +6,7 @@
     "ABOUT": "ABOUT",
     "CONTACTS": "CONTACTS",
     "BLOG": "BLOG",
-    "CATALOG": "CATALOG"
+    "CATALOG": "COLLECTION"
 
 
   },
@@ -161,6 +161,14 @@
     "TOTAL": "TOTAL",
     "BUTTON": "PLACE ORDER",
     "BOOKING": "Booking order ..."
+  },
+
+  "PRODUCT": {
+    "BREADCRUMP2":"Collection",
+    "BREADCRUMP3":"Detail",
+    "COLOR": "Color",
+    "BUTTON": "ADD TO CART",
+    "HEADER": "Offered Products"
   }
 
 

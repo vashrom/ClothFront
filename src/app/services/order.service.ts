@@ -25,9 +25,15 @@ export class OrderService {
   }
 
   getUserOrders(id: number): Observable<UserOrderServerResponse>{
-    return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/user/' + id, {
 
-    });
+
+   if(window.localStorage.getItem('language')!='en') {
+     return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/'+window.localStorage.getItem('language')+'/user/' + id, {});
+   }
+   else {
+     return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/user/' + id, {});
+
+   }
   }
 
   getAllOrders(): Observable<OrderServerResponse>{
