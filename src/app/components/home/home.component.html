@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="breadcrumb-text">
-          <a routerLink="/"><i class="fa fa-home"></i> Home</a>
-          <span>Catalog</span>
+          <a routerLink="/"><i class="fa fa-home"></i> {{'BREADCRUMP.MAIN'|translate}}</a>
+          <span>{{'BREADCRUMP.COLLECTION'|translate}}</span>
         </div>
       </div>
     </div>
@@ -192,8 +192,8 @@
 
 <!-- COPYPASTE COPYPASTE-->
 
-            <div class="col-lg-3 col-sm-6" *ngFor="let p of products.reverse()">
-              <div class="product-item">
+            <div class="col-lg-3 col-sm-6 justify-content-center text-center" *ngFor="let p of products.reverse()">
+              <div class="product-item justify-content-center text-center">
                 <div class="pi-pic">
                   <img [src]="p.image" alt="{{p.title}}}" (click)="selectProduct(p.id)">
 
@@ -205,7 +205,7 @@
                     >{{p.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
                   </ul>
                 </div>
-                <div class="pi-text">
+                <div class="pi-text justify-content-center text-center">
                   <div class="catagory-name">{{p.category}}</div>
                   <a (click)="selectProduct(p.id)">
                     <h5>{{p.title | titlecase}}</h5>

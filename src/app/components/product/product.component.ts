@@ -22,7 +22,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
   thumbImages: any[] = [];
   size: string;
   color: string;
-  private SERVER_URL = environment.SERVER_URL;
 
 
   @ViewChild('quantity') quantityInput;
@@ -72,10 +71,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
     /*------------------
 		Navigation
 	--------------------*/
-    $(".mobile-menu").slicknav({
-      prependTo: '#mobile-menu-wrap',
-      allowParentLinks: true
-    });
+    // $(".mobile-menu").slicknav({
+    //   prependTo: '#mobile-menu-wrap',
+    //   allowParentLinks: true
+    // });
 
     /*------------------
         Hero Slider

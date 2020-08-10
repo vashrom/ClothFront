@@ -4,6 +4,7 @@ import {CartService} from "../../services/cart.service";
 import {AuthenticationService} from "../../services/authentication.service";
 import {TranslateService} from "@ngx-translate/core";
 
+declare let $: any;
 
 @Component({
   selector: 'app-header',
@@ -28,6 +29,15 @@ export class HeaderComponent implements OnInit {
     this.translate.use(window.localStorage.getItem('language'));
     this.selectIndex();
 
+  }
+
+  ngAfterViewInit(): void {
+
+
+    // $(".mobile-menu").slicknav({
+    //   prependTo: '#mobile-menu-wrap',
+    //   allowParentLinks: true
+    // });
   }
 
 

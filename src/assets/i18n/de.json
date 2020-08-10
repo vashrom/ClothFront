@@ -167,6 +167,46 @@
     "COLOR": "Farbe",
     "BUTTON": "IN DEN WARENKORB LEGEN",
     "HEADER": "Angebotene Ware"
+  },
+
+  "HEADER": {
+    "REGISTER": "Registrieren",
+    "LOGIN": "Anmeldung",
+    "LOGOUT": "Ausloggen",
+    "ENGLISH": "Englisch",
+    "GERMAN": "Deutsche",
+    "UKRAINIAN": "Ukrainisch",
+    "RUSSIAN": "Russisch",
+    "TOTAL": "SUMME",
+    "CART": "WARENKORB ANSEHEN",
+    "CHECKOUT": "AUSCHECKEN"
+  },
+
+  "THANKYOU": {
+    "HEADER": "Danke!",
+    "MESSAGE": "Bitte überprüfen Sie Ihre E-Mails",
+    "MESSAGEC": "zur Auftragsbestätigung.",
+    "ORDERID": "Auftragsnummer :",
+    "IMAGE": "Image",
+    "TITLE": "Titel",
+    "PRICE": "Preis",
+    "QUANTITY": "Menge",
+    "TOTAL": "GESAMT",
+    "HOME": "NACH HAUSE"
+
+
+  },
+
+  "BREADCRUMP": {
+    "MAIN": "Main",
+    "COLLECTION": "Sammlung",
+    "FAQ": "FAQs",
+    "ABOUT": "Über",
+    "RETURN": "Rückgabebedingungen",
+    "BLOG": "Blog",
+    "BLOGITEM": "Detail",
+    "SHOP": "Geschäft"
+
   }
 
 

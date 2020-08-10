@@ -169,7 +169,47 @@
     "COLOR": "Color",
     "BUTTON": "ADD TO CART",
     "HEADER": "Offered Products"
+  },
+
+  "HEADER": {
+    "REGISTER": "Register",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "ENGLISH": "English",
+    "GERMAN": "German",
+    "UKRAINIAN": "Ukrainian",
+    "RUSSIAN": "Russian",
+    "TOTAL": "TOTAL",
+    "CART": "VIEW CART",
+    "CHECKOUT": "CHECKOUT"
+  },
+
+  "THANKYOU": {
+    "HEADER": "Thank You!",
+    "MESSAGE": "Please check your email",
+    "MESSAGEC": "for order confirmation.",
+    "ORDERID": "Order ID :",
+    "IMAGE": "Image",
+    "TITLE": "Title",
+    "PRICE": "Price",
+    "QUANTITY": "Quantity",
+    "TOTAL": "TOTAL",
+    "HOME": "TO HOME"
+  },
+
+  "BREADCRUMP": {
+    "MAIN": "Main",
+    "COLLECTION": "Collection",
+    "FAQ": "FAQs",
+    "ABOUT": "About",
+    "RETURN": "Return Terms",
+    "BLOG": "Blog",
+    "BLOGITEM": "Detail",
+    "SHOP": "Shop"
+
   }
+
+
 
 
 

@@ -18,9 +18,25 @@ li{
 {
   border: 0px;
 
-
-
 }
+
+
+
+#logo:active
+{
+  border: 0px;
+}
+
+#cart
+{
+  /*vertical-align: center;*/
+}
+.dropdown-item, .dropdown-menu
+{
+  background-color: #2b2b2b;
+  color: white;
+}
+
 
 
 

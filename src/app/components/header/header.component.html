@@ -20,9 +20,9 @@
 
       <div class="ht-right">
 
-        <a *ngIf="!auth.isLoggedIn()" routerLink="/register" class="login-panel"><i class="fa fa-user"></i>Register</a>
-        <a *ngIf="!auth.isLoggedIn()"  routerLink="/login" class="login-panel"><i class="fa fa-user"></i>Login &nbsp; &nbsp;</a>
-        <a *ngIf="auth.isLoggedIn()" routerLink="/" (click)="auth.logout()" class="login-panel">Logout</a>
+        <a *ngIf="!auth.isLoggedIn()" routerLink="/register" class="login-panel"><i class="fa fa-user"></i>{{'HEADER.REGISTER'|translate}}</a>
+        <a *ngIf="!auth.isLoggedIn()"  routerLink="/login" class="login-panel"><i class="fa fa-user"></i>{{'HEADER.LOGIN'|translate}} &nbsp; &nbsp;</a>
+        <a *ngIf="auth.isLoggedIn()" routerLink="/" (click)="auth.logout()" class="login-panel">{{'HEADER.LOGOUT'|translate}}</a>
         <a *ngIf="auth.isLoggedIn()" routerLink="/profile" class="login-panel"><i class="fa fa-user"></i>{{auth.getUserDetails()?.first_name}} &nbsp; &nbsp;</a>
 
 
@@ -31,14 +31,15 @@
           <select [selectedIndex]="dropIndex" id="dropdaun" class="dropdaun" (change)="selectChangeHandler($event)" >
 
             <option id="en" value="en" data-imagecss="flag yu"
-                    data-title="English">English</option>
+                    data-title="English">{{'HEADER.ENGLISH'|translate}}</option>
             <option id="de" value="de"   data-image-src="assets/img/flag-2.jpg" data-imagecss="flag yu"
-                     data-title="Bangladesh">German</option>
+                     data-title="Bangladesh">{{'HEADER.GERMAN'|translate}}</option>
             <option value="ua"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
-                    data-title="Ukrainian">Ukrainian</option>
+                    data-title="Ukrainian">{{'HEADER.UKRAINIAN'|translate}}</option>
             <option value="ru"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
-                    data-title="Russian">Russian</option>
+                    data-title="Russian">{{'HEADER.RUSSIAN'|translate}}</option>
           </select>
+
 
         </div>
         <div class="top-social">
@@ -67,27 +68,19 @@
 
 
 
-  <div class="container">
-    <div class="inner-header">
-      <div class="row">
-        <div class="col-lg-2 col-md-2">
+  <div  class="container ">
+    <div  class="inner-header">
+      <div  class="row">
+        <div  class="col-lg-12 col-md-12" >
 
 
-          <a routerLink="/" id="demoFont">Baydalini</a>
+<!--          <a routerLink="/" id="demoFont">Baydalini</a>-->
+          <img routerLink="/" id="logo" src="assets/img/baydalini.jpg" style="border: white;" class="mx-auto d-block w-25 ml-3" />
 
+<!--        </div>-->
 
-        </div>
-        <div class="col-lg-7 col-md-7">
-          <div class="advanced-search">
-            <button type="button" class="category-btn">All Categories</button>
-            <div class="input-group">
-              <input type="text" placeholder="What do you need?">
-              <button type="button"><i class="ti-search"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 text-right col-md-3">
-          <ul class="nav-right">
+<!--        <div class="col-lg-2 text-right col-md-2">-->
+          <ul id="cart" class="nav-right float-right centered">
 
 <!--            <li class="heart-icon">-->
 <!--              <a href="#">-->
@@ -127,12 +120,12 @@
                   </table>
                 </div>
                 <div class="select-total">
-                  <span>total:</span>
+                  <span>{{'HEADER.TOTAL'|translate}}:</span>
                   <h5>{{ cartTotal}} {{'WALLET'|translate}}</h5>
                 </div>
                 <div class="select-button">
-                  <a routerLink="/cart" class="primary-btn view-card">VIEW CART</a>
-                  <a routerLink="/checkout" class="primary-btn checkout-btn">CHECK OUT</a>
+                  <a routerLink="/cart" class="primary-btn view-card">{{'HEADER.CART'|translate}}</a>
+                  <a routerLink="/checkout" class="primary-btn checkout-btn">{{'HEADER.CHECKOUT'|translate}}</a>
                 </div>
               </div>
             </li>
@@ -142,11 +135,13 @@
       </div>
     </div>
   </div>
+
+
+
+
   <div class="nav-item">
     <div class="container">
-      <div class="nav-depart">
 
-      </div>
       <nav class="nav-menu mobile-menu">
         <ul>
           <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
@@ -163,17 +158,60 @@
           <li><a routerLink="/contacts">{{'NAV.CONTACTS' | translate}}</a></li>
           <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>
 
-          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">PRODUCTS ADMIN</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">BLOG ADMIN</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ORDER ADMIN</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">USER ADMIN</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">MESSAGES ADMIN</a></li>
-
-
-
+          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАРИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ЗАМОВЛЕННЯ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧІ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">ПОВІДОМЛЕННЯ</a></li>
         </ul>
       </nav>
-      <div id="mobile-menu-wrap"></div>
     </div>
   </div>
+
+  <nav id="slickna" class="navbar navbar-expand-lg navbar-dark slicknav_menu" style="background-color: #252525;">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">{{'NAV.MAIN' | translate}}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" routerLink="/collection" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{'NAV.CATALOG' | translate}}<span class="sr-only">(current)</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="category/shoes">{{'COLLECTION.1'| translate}}</a>
+            <a class="dropdown-item" routerLink="category/dresses">{{'COLLECTION.2'| translate}}</a>
+            <a class="dropdown-item" routerLink="category/shirts">{{'COLLECTION.3'| translate}}</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/payinfo">{{'NAV.PAYMENT' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/return">{{'NAV.RETURN' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/about">{{'NAV.ABOUT' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/contacts">{{'NAV.CONTACTS' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/blog">{{'NAV.BLOG' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+
+
 </header>
