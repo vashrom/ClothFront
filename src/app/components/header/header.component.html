@@ -147,9 +147,7 @@
           <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
           <li><a routerLink="/collection">{{'NAV.CATALOG' | translate}}</a>
             <ul class="dropdown">
-              <li><a routerLink="category/shoes">{{'COLLECTION.1'| translate}}</a></li>
-              <li><a routerLink="category/dresses">{{'COLLECTION.2'| translate}}</a></li>
-              <li><a routerLink="category/shirts">{{'COLLECTION.3'| translate}}</a></li>
+              <li *ngFor="let c of categories"><a routerLink="/category/{{c.title_en}}"> {{c.title}}</a></li>
             </ul>
           </li>
           <li><a routerLink="/payinfo">{{'NAV.PAYMENT' | translate}}</a></li>
@@ -163,6 +161,8 @@
           <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ЗАМОВЛЕННЯ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧІ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">ПОВІДОМЛЕННЯ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/categoryAdmin">КАТЕГОРІЇ</a></li>
+
         </ul>
       </nav>
     </div>

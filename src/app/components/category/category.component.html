@@ -18,144 +18,16 @@
     <div class="row">
       <div class="col-lg-2 col-md-5 col-sm-7 order-2 order-lg-1 produts-sidebar-filter">
 
-      <!--      <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">-->
-<!--        &lt;!&ndash;        <div class="filter-widget">&ndash;&gt;-->
-<!--        &lt;!&ndash;          <h4 class="fw-title">Categories</h4>&ndash;&gt;-->
-<!--        &lt;!&ndash;          <ul class="filter-catagories">&ndash;&gt;-->
-<!--        &lt;!&ndash;            <li><a href="#">Men</a></li>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <li><a href="#">Women</a></li>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <li><a href="#">Kids</a></li>&ndash;&gt;-->
-<!--        &lt;!&ndash;          </ul>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--        <div class="filter-widget">-->
-<!--          <h4 class="fw-title">Brand</h4>-->
-<!--          <div class="fw-brand-check">-->
-<!--            <div class="bc-item">-->
-<!--              <label for="bc-calvin">-->
-<!--                Calvin Klein-->
-<!--                <input type="checkbox" id="bc-calvin">-->
-<!--                <span class="checkmark"></span>-->
-<!--              </label>-->
-<!--            </div>-->
-<!--            <div class="bc-item">-->
-<!--              <label for="bc-diesel">-->
-<!--                Diesel-->
-<!--                <input type="checkbox" id="bc-diesel">-->
-<!--                <span class="checkmark"></span>-->
-<!--              </label>-->
-<!--            </div>-->
-<!--            <div class="bc-item">-->
-<!--              <label for="bc-polo">-->
-<!--                Polo-->
-<!--                <input type="checkbox" id="bc-polo">-->
-<!--                <span class="checkmark"></span>-->
-<!--              </label>-->
-<!--            </div>-->
-<!--            <div class="bc-item">-->
-<!--              <label for="bc-tommy">-->
-<!--                Tommy Hilfiger-->
-<!--                <input type="checkbox" id="bc-tommy">-->
-<!--                <span class="checkmark"></span>-->
-<!--              </label>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="filter-widget">-->
-<!--          <h4 class="fw-title">Price</h4>-->
-<!--          <div class="filter-range-wrap">-->
-<!--            <div class="range-slider">-->
-<!--              <div class="price-input">-->
-<!--                <input type="text" id="minamount">-->
-<!--                <input type="text" id="maxamount">-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"-->
-<!--                 data-min="33" data-max="98">-->
-<!--              <div class="ui-slider-range ui-corner-all ui-widget-header"></div>-->
-<!--              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>-->
-<!--              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <a href="#" class="filter-btn">Filter</a>-->
-<!--        </div>-->
-<!--        <div class="filter-widget">-->
-<!--          <h4 class="fw-title">Color</h4>-->
-<!--          <div class="fw-color-choose">-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-black">-->
-<!--              <label class="cs-black" for="cs-black">Black</label>-->
-<!--            </div>-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-violet">-->
-<!--              <label class="cs-violet" for="cs-violet">Violet</label>-->
-<!--            </div>-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-blue">-->
-<!--              <label class="cs-blue" for="cs-blue">Blue</label>-->
-<!--            </div>-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-yellow">-->
-<!--              <label class="cs-yellow" for="cs-yellow">Yellow</label>-->
-<!--            </div>-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-red">-->
-<!--              <label class="cs-red" for="cs-red">Red</label>-->
-<!--            </div>-->
-<!--            <div class="cs-item">-->
-<!--              <input type="radio" id="cs-green">-->
-<!--              <label class="cs-green" for="cs-green">Green</label>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="filter-widget">-->
-<!--          <h4 class="fw-title">Size</h4>-->
-<!--          <div class="fw-size-choose">-->
-<!--            <div class="sc-item">-->
-<!--              <input type="radio" id="s-size">-->
-<!--              <label for="s-size">s</label>-->
-<!--            </div>-->
-<!--            <div class="sc-item">-->
-<!--              <input type="radio" id="m-size">-->
-<!--              <label for="m-size">m</label>-->
-<!--            </div>-->
-<!--            <div class="sc-item">-->
-<!--              <input type="radio" id="l-size">-->
-<!--              <label for="l-size">l</label>-->
-<!--            </div>-->
-<!--            <div class="sc-item">-->
-<!--              <input type="radio" id="xs-size">-->
-<!--              <label for="xs-size">xs</label>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="filter-widget">-->
-<!--          <h4 class="fw-title">Tags</h4>-->
-<!--          <div class="fw-tags">-->
-<!--            <a href="#">Towel</a>-->
-<!--            <a href="#">Shoes</a>-->
-<!--            <a href="#">Coat</a>-->
-<!--            <a href="#">Dresses</a>-->
-<!--            <a href="#">Trousers</a>-->
-<!--            <a href="#">Men's hats</a>-->
-<!--            <a href="#">Backpack</a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
 
         <details>
-          <summary>Collection</summary>
-          <p><a routerLink="/category/shoes">
-            Shoes
+          <summary>{{'SIDEBAR.CATEGORY'|translate}}</summary>
+
+
+          <p *ngFor="let c of categories"><a routerLink="/category/{{c.title_en}}">
+            {{c.title}}
           </a>
           </p>
-          <p><a routerLink="/category/dresses">
-            Dresses
-          </a>
-          </p>
-          <p><a routerLink="/category/shirts">
-            Shirts
-          </a>
-          </p>
+
         </details>
 
 
@@ -171,11 +43,17 @@
                   <img [src]="p.image" alt="{{p.title}}}" (click)="selectProduct(p.id)">
 
                   <ul>
-                    <li class="quick-view"><a class="btn btn-light"
-                                              [class.disabled]="p.quantity<1"
-                                              [class.btn-outline-danger]="p.quantity<1"
-                                              (click)="AddToCart(p.id)"
-                    >{{p.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+                    <li class="quick-view ">
+
+                      <div class="p-0">
+                        <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
+                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "S" }}</a>
+                        <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
+                        <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
+                        <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
+                        <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 <div class="pi-text">

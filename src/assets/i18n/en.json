@@ -207,8 +207,11 @@
     "BLOGITEM": "Detail",
     "SHOP": "Shop"
 
-  }
+  },
 
+  "SIDEBAR": {
+    "CATEGORY": "Categories"
+  }
 
 
 

@@ -3,8 +3,9 @@ import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";
 import {AuthenticationService} from "../../services/authentication.service";
 import {TranslateService} from "@ngx-translate/core";
+import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
+import {CategoryService} from "../../services/category.service";
 
-declare let $: any;
 
 @Component({
   selector: 'app-header',
@@ -18,10 +19,11 @@ export class HeaderComponent implements OnInit {
   authState: boolean;
   selectedLang: string ='en';
   dropIndex: number;
+  categories: CategoryModelServer[] = [];
 
 
 
-  constructor(public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
+  constructor(private categoryService: CategoryService,public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
 
   ngOnInit(): void {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
@@ -29,16 +31,15 @@ export class HeaderComponent implements OnInit {
     this.translate.use(window.localStorage.getItem('language'));
     this.selectIndex();
 
+    this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
+      this.categories = cats.category;
+      console.log(this.categories);
+
+    });
+
   }
 
-  ngAfterViewInit(): void {
 
-
-    // $(".mobile-menu").slicknav({
-    //   prependTo: '#mobile-menu-wrap',
-    //   allowParentLinks: true
-    // });
-  }
 
 
 

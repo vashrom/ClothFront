@@ -4,7 +4,6 @@ import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Blog, BlogModelServer, ServerResponse} from "../models/blog.model";
-import {Product} from "../models/product.model";
 
 @Injectable({
   providedIn: 'root'
