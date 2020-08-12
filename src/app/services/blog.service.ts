@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Blog, BlogModelServer, BlogServerResponse} from "../models/blog.model";
+import {CategoryServerResponse} from "../models/category.model";
 
 @Injectable({
   providedIn: 'root'
@@ -17,14 +18,26 @@ export class BlogService {
 
   /*GET ALL BLOG ITEMS FROM SERVER*/
   getAllBlogItems(): Observable<BlogServerResponse>{
-    return this.http.get<BlogServerResponse>(this.SERVER_URL + '/blog', {
 
-    });
+    if(window.localStorage.getItem('language')!='en') {
+      return this.http.get<BlogServerResponse>(this.SERVER_URL + '/blog/'+window.localStorage.getItem('language'), {});
+    }
+
+    else {
+      return this.http.get<BlogServerResponse>(this.SERVER_URL + '/blog/en', {});
+    }
   }
+
+
 
   /*GET SINGLE BLOG ITEM FROM SERVER*/
   getSingleBlogItem(id: number): Observable<BlogModelServer>{
-    return this.http.get<BlogModelServer>(this.SERVER_URL + '/blog/' + id);
+    if(window.localStorage.getItem('language')!='en') {
+      return this.http.get<BlogModelServer>(this.SERVER_URL + '/blog/'+window.localStorage.getItem('language')+'/'+ id);
+    }
+    else {
+      return this.http.get<BlogModelServer>(this.SERVER_URL + '/blog/en/' + id);
+    }
   }
 
   /*PLACE FOR POST*/

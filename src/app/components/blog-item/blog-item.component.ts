@@ -30,7 +30,7 @@ export class BlogItemComponent implements OnInit {
         if (bl.images !== null) {
           this.thumbImages = bl.images.split(';');
         }
-
+        console.log(this.blog)
       });
     });
   }
