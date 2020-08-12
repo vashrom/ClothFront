@@ -1,5 +1,5 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Product, ProductModelServer, ServerResponse} from "../../models/product.model";
+import {Product, ProductModelServer, ProductServerResponse} from "../../models/product.model";
 import {ProductService} from "../../services/product.service";
 import {CommentService} from "../../services/comment.service";
 import {FlashMessagesService} from "angular2-flash-messages";
@@ -36,7 +36,7 @@ export class ProductAdminComponent implements OnInit {
 
 
   private loadProducts() {
-    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ServerResponse) => {
+    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ProductServerResponse) => {
       this.products = prods.products.reverse();
     });
   }
@@ -65,7 +65,7 @@ export class ProductAdminComponent implements OnInit {
   saveProduct(){
     if(this.isNewRecord){
       this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
-      this.productService.createProduct(this.editedProduct).subscribe((prods: ServerResponse) =>{
+      this.productService.createProduct(this.editedProduct).subscribe((prods: ProductServerResponse) =>{
         this.statusMessage = "Товар успішно додано", this.loadProducts()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -78,7 +78,7 @@ export class ProductAdminComponent implements OnInit {
     else {
 
       this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
-      this.productService.updateProduct(this.editedProduct.id,this.editedProduct).subscribe((prods: ServerResponse) => {
+      this.productService.updateProduct(this.editedProduct.id,this.editedProduct).subscribe((prods: ProductServerResponse) => {
         this.statusMessage = "Товар успішно оновлено", this.loadProducts()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -97,7 +97,7 @@ export class ProductAdminComponent implements OnInit {
   }
 
   deleteProduct(prod: Product) {
-    this.productService.deleteProduct(prod.id).subscribe((prods: ServerResponse) => {
+    this.productService.deleteProduct(prod.id).subscribe((prods: ProductServerResponse) => {
       this.statusMessage = "Товар успішно видалено", this.loadProducts();
       this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 

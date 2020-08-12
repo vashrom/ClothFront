@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BlogModelServer} from "../../models/blog.model";
 import {Router} from "@angular/router";
 import {BlogService} from "../../services/blog.service";
-import {ServerResponse} from "../../models/blog.model";
+import {BlogServerResponse} from "../../models/blog.model";
 
 @Component({
   selector: 'app-blog',
@@ -17,9 +17,8 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.blogService.getAllBlogItems().subscribe((bl: ServerResponse) => {
-      this.blog = bl.blog;
-      console.log(this.blog);
+    this.blogService.getAllBlogItems().subscribe((bl: BlogServerResponse) => {
+      this.blog = bl.blog.reverse();
     });
 
 

@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {Product, ProductModelServer, ServerResponse} from "../models/product.model";
+import {Product, ProductModelServer, ProductServerResponse} from "../models/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,8 @@ export class ProductService {
 
 
   /*GET ALL PRODUCTS FROM SERVER*/
-  getAllProducts(lang: string): Observable<ServerResponse>{
-    return this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+lang, {
+  getAllProducts(lang: string): Observable<ProductServerResponse>{
+    return this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/'+lang, {
 
     });
   }
@@ -32,7 +32,7 @@ export class ProductService {
   /*GET PRODUCT FROM ONE CATEGORY*/
   getProductsFromCategory(catName: string, lang: string) : Observable<ProductModelServer[]>
 {
-  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/'+lang+'/products/category/'+catName);
+  return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/'+lang+'/category/'+catName);
 }
 
 /* CREATE PRODUCT FROM SERVER */

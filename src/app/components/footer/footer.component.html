@@ -1,57 +1,95 @@
-<footer class="footer-section">
+<footer class="footer-section pb-4">
   <div class="container">
     <div class="row">
+
+
       <div class="col-lg-3">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <a routerLink="/" id="demoFont">Baydalini</a>
-          </div>
+        <div class="footer-widget">
+          <h5>{{'FOOTER.HELP'|translate}}</h5>
           <ul>
-            <li>Address: 60-49 Road 11378 New York</li>
-            <li>Phone: +65 11.188.888</li>
-            <li>Email: hello@gmail.com</li>
+            <li><a routerLink="/">{{'FOOTER.LINKH1'|translate}}</a></li>
+            <li><a routerLink="/collection">{{'FOOTER.LINKH2'|translate}}</a></li>
+            <li><a routerLink="/payinfo">{{'FOOTER.LINKH3'|translate}}</a></li>
+            <li><a routerLink="/payinfo">{{'FOOTER.LINKH4'|translate}}</a></li>
+            <li><a routerLink="/return">{{'FOOTER.LINKH5'|translate}}</a></li>
+            <li><a routerLink="/about">{{'FOOTER.LINKH6'|translate}}</a></li>
+
+
+
+
           </ul>
-          <div class="footer-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-          </div>
         </div>
       </div>
-      <div class="col-lg-2 offset-lg-1">
+
+
+      <div class="col-lg-2">
         <div class="footer-widget">
-          <h5>Information</h5>
+          <h5>{{'FOOTER.COMPANY'|translate}}</h5>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Checkout</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Serivius</a></li>
+            <li><a routerLink="/about">{{'FOOTER.LINKC1'|translate}}</a></li>
+            <li><a routerLink="/collection">{{'FOOTER.LINKC2'|translate}}</a></li>
+            <li><a routerLink="/payinfo">{{'FOOTER.LINKC3'|translate}}</a></li>
           </ul>
         </div>
       </div>
       <div class="col-lg-2">
         <div class="footer-widget">
-          <h5>My Account</h5>
+          <h5>{{'FOOTER.POLICIES'|translate}}</h5>
           <ul>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Shopping Cart</a></li>
-            <li><a href="#">Shop</a></li>
+            <li><a href="#">{{'FOOTER.LINKP1'|translate}}</a></li>
+            <li><a href="#">{{'FOOTER.LINKP2'|translate}}</a></li>
+
           </ul>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4" >
         <div class="newslatter-item">
-          <h5>Join Our Newsletter Now</h5>
-          <p>Get E-mail updates about our latest shop and special offers.</p>
-          <form action="#" class="subscribe-form">
-            <input type="text" placeholder="Enter Your Mail">
-            <button type="button">Subscribe</button>
+          <h5>{{'FOOTER.JOIN'|translate}}</h5>
+          <p>{{'FOOTER.JTEXT'|translate}}</p>
+          <form [formGroup]="form" (ngSubmit)="submit()" class="subscribe-form">
+            <input [(ngModel)]="email" formControlName="email" type="text" placeholder="{{'FOOTER.PLACEHOLDER'|translate}}">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+              <div *ngIf="f.email.errors.required">{{'VALIDATION_MESSAGE.EMAIL' | translate}}</div>
+              <div *ngIf="f.email.errors.email">{{'VALIDATION_MESSAGE.EMAIL_ERR' | translate}}</div>
+              <div *ngIf="f.email.errors.minLength">{{'VALIDATION_MESSAGE.EMAIL_ERR' | translate}}</div>
+            </div>
+            <button type="submit" [disabled]="!form.valid">{{'FOOTER.BUTTON'|translate}}</button>
           </form>
+          <flash-messages></flash-messages>
         </div>
+
+        <div class="footer-social footer-left">
+          <a href="https://www.facebook.com/BAYDALINI"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/baydalini_boutique/"><i class="fa fa-instagram"></i></a>
+<!--          <a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--          <a href="#"><i class="fa fa-pinterest"></i></a>-->
+        </div>
+
+        <a class="m-2 lng" (click)="chooseLang('en')">{{'FOOTER.L1'|translate}}</a>
+        <a class="m-2 lng" (click)="chooseLang('de')">{{'FOOTER.L2'|translate}}</a>
+        <a class="m-2 lng" (click)="chooseLang('ua')">{{'FOOTER.L3'|translate}}</a>
+        <a class="m-2 lng" (click)="chooseLang('ru')">{{'FOOTER.L4'|translate}}</a>
+
+
+
       </div>
     </div>
   </div>
 
+
 </footer>
+
+<!--      <div class="col-lg-3">-->
+<!--        <div class="footer-left">-->
+<!--          <div class="footer-logo">-->
+<!--            <a routerLink="/" id="demoFont">Baydalini</a>-->
+<!--          </div>-->
+<!--          <ul>-->
+<!--            <li>Address: 60-49 Road 11378 New York</li>-->
+<!--            <li>Phone: +65 11.188.888</li>-->
+<!--            <li>Email: hello@gmail.com</li>-->
+<!--          </ul>-->
+
+
+<!--        </div>-->
+<!--      </div>-->

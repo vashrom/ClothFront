@@ -1,5 +1,5 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Blog, BlogModelServer, ServerResponse} from "../../models/blog.model";
+import {Blog, BlogModelServer, BlogServerResponse} from "../../models/blog.model";
 import {BlogService} from "../../services/blog.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 
@@ -28,7 +28,7 @@ export class BlogAdminComponent implements OnInit {
 
 
   private loadBlogs() {
-    this.blogService.getAllBlogItems().subscribe((blog: ServerResponse) => {
+    this.blogService.getAllBlogItems().subscribe((blog: BlogServerResponse) => {
       this.blogs = blog.blog.reverse();
     });
   }
@@ -54,7 +54,7 @@ export class BlogAdminComponent implements OnInit {
   saveProduct(){
     if(this.isNewRecord){
 
-      this.blogService.createBlog(this.editedBlog).subscribe((blog: ServerResponse) =>{
+      this.blogService.createBlog(this.editedBlog).subscribe((blog: BlogServerResponse) =>{
         this.statusMessage = "Запис блогу успішно додано", this.loadBlogs()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -66,7 +66,7 @@ export class BlogAdminComponent implements OnInit {
     }
     else {
 
-      this.blogService.updateBlog(this.editedBlog.id,this.editedBlog).subscribe((blog: ServerResponse) => {
+      this.blogService.updateBlog(this.editedBlog.id,this.editedBlog).subscribe((blog: BlogServerResponse) => {
         this.statusMessage = "Запис блогу успішно оновлено", this.loadBlogs()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -85,7 +85,7 @@ export class BlogAdminComponent implements OnInit {
   }
 
   deleteBlog(blog: Blog) {
-    this.blogService.deleteBlog(blog.id).subscribe((blog: ServerResponse) => {
+    this.blogService.deleteBlog(blog.id).subscribe((blog: BlogServerResponse) => {
       this.statusMessage = "Запис блогу успішно видалено", this.loadBlogs();
       this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 

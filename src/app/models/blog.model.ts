@@ -11,7 +11,7 @@ export interface BlogModelServer {
 
 }
 
-export interface ServerResponse {
+export interface BlogServerResponse {
 
   blog: BlogModelServer[];
 

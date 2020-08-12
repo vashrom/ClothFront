@@ -3,7 +3,7 @@ import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {map} from "rxjs/operators";
-import {ProductModelServer, ServerResponse} from "../../models/product.model";
+import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 
@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
       })
     });
 
-    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ServerResponse) => {
+    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ProductServerResponse) => {
       this.offeredProducts = prods.products;
       console.log(this.offeredProducts);
     });

@@ -24,6 +24,7 @@ import {OrderAdminComponent} from "./components/order-admin/order-admin.componen
 import {UserAdminComponent} from "./components/user-admin/user-admin.component";
 import {AuthAdminGuardService} from "./guard/auth-admin-guard.service";
 import {CategoryAdminComponent} from "./components/category-admin/category-admin.component";
+import {NewsAdminComponent} from "./components/news-admin/news-admin.component";
 
 
 
@@ -94,6 +95,10 @@ const routes: Routes = [
   {
     path: 'categoryAdmin',component: CategoryAdminComponent, canActivate: [AuthAdminGuardService]
   },
+  {
+    path: 'newsAdmin',component: NewsAdminComponent, canActivate: [AuthAdminGuardService]
+  },
+
 
 
 

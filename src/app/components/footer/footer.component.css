@@ -11,3 +11,20 @@
   text-transform: capitalize;
 }
 
+a:hover{
+  color:whitesmoke;
+}
+
+.lng{
+  color:#b2afb2;
+  cursor: pointer;
+
+}
+
+.lng:hover
+{
+  color:whitesmoke;
+
+}
+
+

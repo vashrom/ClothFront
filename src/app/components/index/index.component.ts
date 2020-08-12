@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {ProductModelServer, ServerResponse} from "../../models/product.model";
+import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
 import {map} from "rxjs/operators";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
+import {BlogModelServer} from "../../models/blog.model";
+import {BlogService} from "../../services/blog.service";
+import {BlogServerResponse} from "../../models/blog.model";
 
 declare let $: any;
 
@@ -20,44 +23,68 @@ export class IndexComponent implements OnInit {
   cat_name: string;
   products: ProductModelServer[] = [];
   name: string;
+  blog: BlogModelServer[] = [];
+  shirts: ProductModelServer[] =[];
+  shoes: ProductModelServer[] =[];
+  dresses: ProductModelServer[] =[];
+
 
   private SERVER_URL = environment.SERVER_URL;
 
 
-  constructor(private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
+  constructor(private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private router: Router, private http: HttpClient,private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.http.get<ServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
+    this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
 
-    }).subscribe((prods: ServerResponse) => {
+    }).subscribe((prods: ProductServerResponse) => {
       this.products = prods.products.reverse();
-      console.log(this.products);
     });
 
+    this.blogService.getAllBlogItems().subscribe((bl: BlogServerResponse) => {
+      this.blog = bl.blog.reverse();
+    });
 
+    this.getShirts();
+    this.getDresses();
+    this.getShoes();
 
 
   }
 
-  getProductsFromCategoryName(categoryName: string)
+  getShirts()
   {
-    this.route.paramMap.pipe(
-      map((param: ParamMap) => {
-        // @ts-ignore
-        return param.params.id;
-      })
-    ).subscribe(catName => {
-      this.cat_name = catName;
-      this.productService.getProductsFromCategory(categoryName,window.localStorage.getItem('language')).subscribe(prods => {
-        this.products = prods;
-        console.log(this.products);
-
+      this.productService.getProductsFromCategory('shirts',window.localStorage.getItem('language')).subscribe(prods => {
+        this.shirts = prods;
+        console.log(this.shirts);
       });
+  }
+
+  getShoes()
+  {
+    this.productService.getProductsFromCategory('shoes',window.localStorage.getItem('language')).subscribe(prods => {
+      this.shoes = prods;
+      console.log(this.shoes);
     });
   }
+
+  getDresses()
+  {
+    this.productService.getProductsFromCategory('dresses',window.localStorage.getItem('language')).subscribe(prods => {
+      this.dresses = prods;
+      console.log(this.dresses);
+    });
+  }
+
+
+
 
   selectProduct(id: number) {
     this.router.navigate(['/product',id]).then();
+  }
+
+  selectBlog(id: number) {
+    this.router.navigate(['/blog',id]).then();
   }
 
   AddToCart(id: number) {

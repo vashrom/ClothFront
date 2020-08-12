@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {Blog, BlogModelServer, ServerResponse} from "../models/blog.model";
+import {Blog, BlogModelServer, BlogServerResponse} from "../models/blog.model";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,8 @@ export class BlogService {
 
 
   /*GET ALL BLOG ITEMS FROM SERVER*/
-  getAllBlogItems(): Observable<ServerResponse>{
-    return this.http.get<ServerResponse>(this.SERVER_URL + '/blog', {
+  getAllBlogItems(): Observable<BlogServerResponse>{
+    return this.http.get<BlogServerResponse>(this.SERVER_URL + '/blog', {
 
     });
   }
