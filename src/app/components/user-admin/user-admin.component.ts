@@ -2,7 +2,7 @@ import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {User, UserModelServer, UserServerResponse} from "../../models/user.model";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {UserService} from "../../services/user.service";
-import {ServerResponse} from "../../models/blog.model";
+import {BlogServerResponse} from "../../models/blog.model";
 
 @Component({
   selector: 'app-user-admin',

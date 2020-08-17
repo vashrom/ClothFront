@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {OrderService} from "../../services/order.service";
-import {ProductModelServer, ServerResponse} from "../../models/product.model";
+import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
 import {Observable} from "rxjs";
 import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";

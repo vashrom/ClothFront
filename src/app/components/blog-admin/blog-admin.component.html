@@ -12,34 +12,31 @@
       <td>ID</td>
       <td>Назва</td>
       <td>Категорія</td>
+      <td>Текст</td>
       <td>Основне зображення</td>
       <td>Зображення</td>
-      <td>Текст</td>
       <td>Дата</td>
       <td></td>
       <td></td>
     </tr>
     </thead>
-      <tbody>
-    <tr *ngFor="let blog of blogs">
+      <tbody *ngFor="let blog of blogs">
     <ng-template [ngTemplateOutlet]="loadTemplate(blog)"
                  [ngTemplateOutletContext]="{ $implicit: blog}">
     </ng-template>
-    </tr>
       </tbody>
   </table>
 
 
   <!--шаблон для чтения-->
   <ng-template #readOnlyTemplate let-blog>
-
+<tr>
       <td>{{blog.id}}</td>
     <td>{{blog.title}}</td>
-
     <td>{{blog.category}}</td>
-      <td>{{blog.image | slice:0:20}}</td>
+    <td>{{blog.text| slice:0:20}}</td>
+    <td>{{blog.image | slice:0:20}}</td>
       <td>{{blog.images | slice:0:20}}</td>
-      <td>{{blog.text| slice:0:20}}</td>
       <td>{{blog.date}}</td>
 
       <td>
@@ -48,12 +45,12 @@
       <td>
         <input type="button" value="Видалити" (click)="deleteBlog(blog)" class="btn btn-outline-danger" />
       </td>
-
+</tr>
   </ng-template>
 
   <!--шаблон для редактирования-->
   <ng-template #editTemplate>
-
+<tr>
       <td>
         <input type="number" [(ngModel)]="editedBlog.id" readonly disabled class="form-control" />
       </td>
@@ -64,15 +61,16 @@
       <td>
         <input type="text" [(ngModel)]="editedBlog.category" class="form-control" />
       </td>
+    <td>
+      <input type="text" [(ngModel)]="editedBlog.text" class="form-control" />
+    </td>
       <td>
         <input type="text" [(ngModel)]="editedBlog.image" class="form-control" />
       </td>
       <td>
         <input type="text" [(ngModel)]="editedBlog.images" class="form-control" />
       </td>
-      <td>
-        <input type="text" [(ngModel)]="editedBlog.text" class="form-control" />
-      </td>
+
       <td>
         <input type="text" [(ngModel)]="editedBlog.date" class="form-control" />
       </td>
@@ -83,6 +81,56 @@
       <td>
         <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
       </td>
+</tr>
+    <tr>
+      <td>
+        <input type="text" value="UKR" readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.title_ua" class="form-control" />
+      </td>
+
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.category_ua" class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.text_ua" class="form-control" />
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <input type="text" value="RUS" readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.title_ru" class="form-control" />
+      </td>
+
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.category_ru" class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.text_ru" class="form-control" />
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+        <input type="text" value="DEU" readonly disabled class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.title_de" class="form-control" />
+      </td>
+
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.category_de" class="form-control" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="editedBlog.text_de" class="form-control" />
+      </td>
+
+    </tr>
+
 
   </ng-template>
 

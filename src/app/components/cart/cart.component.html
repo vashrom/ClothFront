@@ -33,12 +33,12 @@
             <div class="cart-table">
               <table>
                 <thead>
-                <tr>
+                <tr class="justify-content-center">
                   <th>{{'CART.IMAGE' | translate}}</th>
                   <th class="p-name text-center">{{'CART.TITLE' | translate}}</th>
                   <th>{{'CART.PRICE' | translate}}</th>
-                  <th>{{'CART.SIZE' | translate}}</th>
-                  <th>{{'CART.COLOR' | translate}}</th>
+                  <th class="pr-2 pl-2">{{'CART.SIZE' | translate}}</th>
+                  <th class="pr-2 pl-2">{{'CART.COLOR' | translate}}</th>
                   <th>{{'CART.QUANTITY' | translate}}</th>
                   <th>{{'CART.TOTAL' | translate}}</th>
                   <th><i class="ti-close" (click)="cartService.DeleteAllProductsFromCart()"></i></th>
@@ -49,16 +49,16 @@
 
                 <tr *ngFor="let c of cartData.data; let i=index">
                   <td class="cart-pic first-row "><img [src]="c.product.image" alt="{{c.product.title}}"></td>
-                  <td class="cart-title first-row w-25 text-center">
+                  <td class="cart-title first-row w-25 text-center cart-col">
                     <h5>{{c.product.title}}</h5>
                   </td>
-                  <td class="p-price first-row">{{c.product.price}}{{'WALLET'|translate}}</td>
+                  <td class="p-price first-row cart-col">{{c.product.price}}{{'WALLET'|translate}}</td>
 
 
-                  <td class="cart-title first-row p-4 text-center">
+                  <td class="cart-title first-row p-4 text-center cart-col">
                     {{c.size}}
                   </td>
-                  <td class="cart-title first-row p-3">
+                  <td class="cart-title first-row p-3 cart-col">
                     {{c.color}}
                   </td>
 
@@ -66,7 +66,7 @@
 
 
 
-                  <td class="qua-col first-row">
+                  <td class="qua-col first-row cart-col">
                     <form>
                       <div class="value-button" id="decrease" (click)="ChangeQuantity(i , false)">
                         <i class="fa fa-minus"></i>
@@ -80,8 +80,8 @@
 
 
                   </td>
-                  <td class="total-price first-row">{{cartService.CalculateSubTotal(i)}} {{'WALLET'|translate}}</td>
-                  <td class="close-td first-row"><i class="ti-close" style="cursor: pointer" (click)="cartService.DeleteProductFromCart(i)"></i></td>
+                  <td class="total-price first-row cart-col">{{cartService.CalculateSubTotal(i)}} {{'WALLET'|translate}}</td>
+                  <td class="close-td first-row cart-col"><i class="ti-close" style="cursor: pointer" (click)="cartService.DeleteProductFromCart(i)"></i></td>
 
                 </tr>
 

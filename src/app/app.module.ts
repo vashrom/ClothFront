@@ -36,6 +36,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { OrderAdminComponent } from './components/order-admin/order-admin.component';
 import { BlogAdminComponent } from './components/blog-admin/blog-admin.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
+import { CategoryAdminComponent } from './components/category-admin/category-admin.component';
+import { NewsAdminComponent } from './components/news-admin/news-admin.component';
 
 
 export function HttpLoaderFactory(http:HttpClient) {
@@ -69,6 +71,8 @@ export function HttpLoaderFactory(http:HttpClient) {
     OrderAdminComponent,
     BlogAdminComponent,
     UserAdminComponent,
+    CategoryAdminComponent,
+    NewsAdminComponent,
 
 
 

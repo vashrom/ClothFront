@@ -28,6 +28,7 @@
 
             <div class="product-pic-zoom  col-lg-6 d-inline-block">
               <img class="product-big-img" [src]="product?.image" alt="">
+
             </div>
 
             <div class="product-pic-zoom  col-lg-6 d-inline-block " *ngFor="let t of thumbImages">
@@ -71,28 +72,28 @@
 
               <div class="pd-size-choose">
 
-                <div class="sc-item">
+                <div *ngIf="product.xs >0" class="sc-item">
                   <input (click)="ClothSize('XS')" type="radio" id="xs-size">
                   <label for="xs-size">xs</label>
                 </div>
 
-                <div class="sc-item">
+                <div  *ngIf="product.s>0" class="sc-item">
                   <input (click)="ClothSize('S')" type="radio" id="sm-size">
                   <label for="sm-size">s</label>
                 </div>
-                <div class="sc-item">
+                <div *ngIf="product.m >0" class="sc-item">
                   <input (click)="ClothSize('M')" type="radio" id="md-size">
                   <label for="md-size">m</label>
                 </div>
-                <div class="sc-item">
+                <div *ngIf="product.l >0" class="sc-item">
                   <input (click)="ClothSize('L')" type="radio" id="lg-size">
                   <label for="lg-size">l</label>
                 </div>
-                <div class="sc-item">
+                <div *ngIf="product.xl >0" class="sc-item">
                   <input (click)="ClothSize('XL')" type="radio" id="xl-size">
                   <label for="xl-size">xl</label>
                 </div>
-                <div class="sc-item">
+                <div *ngIf="product.xxl >0" class="sc-item">
                   <input (click)="ClothSize('XXL')"  type="radio" id="xxl-size">
                   <label for="xxl-size">xxl</label>
                 </div>
@@ -146,11 +147,17 @@
             <img [src]="p.image" (click)="selectProduct(p.id)">
 
             <ul>
-              <li class="quick-view"><a class="btn btn-light"
-                                        [class.disabled]="p.quantity<1"
-                                        [class.btn-outline-danger]="p.quantity<1"
-                                        (click)="AddToCart(p.id)"
-              >{{p.quantity < 1? "NO STOCK": "Add To Cart" }}</a></li>
+              <li class="quick-view ">
+
+                <div class="p-0">
+                  <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
+                  <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "Sst" }}</a>
+                  <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
+                  <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
+                  <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
+                  <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+                </div>
+              </li>
             </ul>
           </div>
 

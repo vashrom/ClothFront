@@ -53,7 +53,9 @@
     "BREADCRUMP1":"Main",
     "BREADCRUMP2":"Kontakt",
     "HEADER": "Kontaktiere uns",
-    "PAR1": "Entgegen der landläufigen Meinung ist Lorem Ipsum einfach zufälliger Text. Es hat Wurzeln in einem Stück klassischer lateinischer Literatur aus dem Jahr 45 v. Chr., Maki Jahre alt",
+    "PAR1": "Montag bis Freitag von 9.00 bis 18.00 Uhr",
+    "PAR2": "Samstag von 10:00 bis 16:00 Uhr",
+
     "CARD1H": "Adresse:",
     "CARD2H": "Telefon:",
     "CARD3H": "Email:",
@@ -207,6 +209,33 @@
     "BLOGITEM": "Detail",
     "SHOP": "Geschäft"
 
+  },
+  "SIDEBAR": {
+    "CATEGORY": "Kategorien"
+  },
+  "FOOTER": {
+    "HELP": "Hilfe",
+    "LINKH1": "Kaufen Sie auf Baydalini.com",
+    "LINKH2": "Produkte",
+    "LINKH3": "Zahlung",
+    "LINKH4": "Lieferung",
+    "LINKH5": "Rückgabebedingungen",
+    "LINKH6": "Geschäfte und Unternehmen",
+    "COMPANY": "Unternehmen",
+    "LINKC1": "Über uns",
+    "LINKC2": "Geschäft",
+    "LINKC3": "Großhandel und Dropshipping",
+    "POLICIES": "Richtlinien",
+    "LINKP1": "Datenschutz-Bestimmungen",
+    "LINKP2": "Kaufbedingungen",
+    "JOIN": "Melden Sie sich jetzt für unseren Newsletter an",
+    "JTEXT": "Erhalten Sie E-Mail-Updates zu unserem neuesten Shop und Sonderangeboten.",
+    "PLACEHOLDER": "Geben Sie Ihre Mail ein",
+    "BUTTON": "ABONNIEREN",
+    "L1": "en",
+    "L2": "de",
+    "L3": "ua",
+    "L4": "ru"
   }
 
 

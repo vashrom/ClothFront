@@ -40,7 +40,7 @@ form #decrease {
 form #increase {
   margin-left: -4px;
   //border-radius: 0 8px 8px 0;
-  background: #DAA520		;
+  background: #7a0c35		;
   color: white;
 }
 
@@ -104,3 +104,21 @@ td {
 }
 
 
+.cart-col
+{
+  margin: 30px;
+  padding: 20px;
+}
+
+td
+{
+  border: 1px #e3e3e3 solid ;
+}
+
+th
+{
+  padding: 20px;
+  margin: 30px;
+  border: 1px #e3e3e3 solid ;
+
+}

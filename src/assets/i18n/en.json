@@ -5,6 +5,7 @@
     "RETURN": "RETURN TERMS",
     "ABOUT": "ABOUT",
     "CONTACTS": "CONTACTS",
+
     "BLOG": "BLOG",
     "CATALOG": "COLLECTION"
 
@@ -57,7 +58,8 @@
     "BREADCRUMP1":"Main",
     "BREADCRUMP2":"Contact",
     "HEADER": "Contact Us",
-    "PAR1": "Contrary to popular belief, Lorem Ipsum is simply random text. It has roots in a piece of classical Latin literature from 45 BC, maki years old",
+    "PAR1": "Monday to Friday from 9:00 to 18:00",
+    "PAR2": "Saturday from 10:00 to 16:00",
     "CARD1H": "Address:",
     "CARD2H": "Phone:",
     "CARD3H": "Email:",
@@ -207,6 +209,35 @@
     "BLOGITEM": "Detail",
     "SHOP": "Shop"
 
+  },
+
+  "SIDEBAR": {
+    "CATEGORY": "Categories"
+  },
+
+  "FOOTER": {
+    "HELP": "Help",
+    "LINKH1": "Shop on Baydalini.com",
+    "LINKH2": "Products",
+    "LINKH3": "Payment",
+    "LINKH4": "Delivery",
+    "LINKH5": "Return terms",
+    "LINKH6": "Stores and company",
+    "COMPANY": "Company",
+    "LINKC1": "About Us",
+    "LINKC2": "Shop",
+    "LINKC3": "Wholesale and dropshipping",
+    "POLICIES": "Policies",
+    "LINKP1": "Privacy Policy",
+    "LINKP2": "Purchase Conditions",
+    "JOIN": "Join Our Newsletter Now",
+    "JTEXT": "Get E-mail updates about our latest shop and special offers.",
+    "PLACEHOLDER": "Enter Your Mail",
+    "BUTTON": "SUBSCRIBE",
+    "L1": "en",
+    "L2": "de",
+    "L3": "ua",
+    "L4": "ru"
   }
 
 

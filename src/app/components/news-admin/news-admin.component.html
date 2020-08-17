@@ -1,0 +1,29 @@
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Email</td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let email of emails">
+
+      <td>{{email.id}}</td>
+      <td>{{email.email}}</td>
+
+      <td>
+        <input type="button" value="Видалити" (click)="deleteEmail(email)" class="btn btn-outline-danger" />
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+

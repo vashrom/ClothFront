@@ -31,7 +31,7 @@ export interface ProductModelServer {
 
 }
 
-export interface ServerResponse {
+export interface ProductServerResponse {
 
   count: number;
   products: ProductModelServer[];

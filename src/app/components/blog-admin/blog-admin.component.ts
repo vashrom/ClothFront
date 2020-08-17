@@ -1,7 +1,9 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Blog, BlogModelServer, ServerResponse} from "../../models/blog.model";
+import {Blog, BlogModelServer, BlogServerResponse} from "../../models/blog.model";
 import {BlogService} from "../../services/blog.service";
 import {FlashMessagesService} from "angular2-flash-messages";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-blog-admin',
@@ -17,8 +19,9 @@ export class BlogAdminComponent implements OnInit {
   blogs: BlogModelServer[] = [];
   isNewRecord: boolean;
   statusMessage: string;
+  private SERVER_URL = environment.SERVER_URL;
 
-  constructor(private blogService: BlogService,private flashMessage: FlashMessagesService) {
+  constructor(private blogService: BlogService,private flashMessage: FlashMessagesService,private http: HttpClient) {
     this.blogs = new Array<Blog>();
   }
 
@@ -28,18 +31,18 @@ export class BlogAdminComponent implements OnInit {
 
 
   private loadBlogs() {
-    this.blogService.getAllBlogItems().subscribe((blog: ServerResponse) => {
+    return this.http.get<BlogServerResponse>(this.SERVER_URL + '/blog/en', {}).subscribe((blog: BlogServerResponse) => {
       this.blogs = blog.blog.reverse();
     });
   }
   addBlog(){
-    this.editedBlog = new Blog(0,"","","","","","");
+    this.editedBlog = new Blog(0,"","","","","","","","","","","","","","","");
     this.blogs.push(this.editedBlog);
     this.isNewRecord = true;
   }
 
   editBlog(blog: Blog) {
-    this.editedBlog = new Blog(blog.id,blog.title,blog.image,blog.images,blog.text,blog.category, blog.date);
+    this.editedBlog = new Blog(blog.id,blog.title,blog.title_ua,blog.title_ru,blog.title_de,blog.image,blog.images,blog.text,blog.text_ua,blog.text_ru,blog.text_de,blog.category,blog.category_ua,blog.category_ru,blog.category_de, blog.date);
   }
 
   loadTemplate(blog: Blog){
@@ -54,7 +57,7 @@ export class BlogAdminComponent implements OnInit {
   saveProduct(){
     if(this.isNewRecord){
 
-      this.blogService.createBlog(this.editedBlog).subscribe((blog: ServerResponse) =>{
+      this.blogService.createBlog(this.editedBlog).subscribe((blog: BlogServerResponse) =>{
         this.statusMessage = "Запис блогу успішно додано", this.loadBlogs()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -66,7 +69,7 @@ export class BlogAdminComponent implements OnInit {
     }
     else {
 
-      this.blogService.updateBlog(this.editedBlog.id,this.editedBlog).subscribe((blog: ServerResponse) => {
+      this.blogService.updateBlog(this.editedBlog.id,this.editedBlog).subscribe((blog: BlogServerResponse) => {
         this.statusMessage = "Запис блогу успішно оновлено", this.loadBlogs()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 
@@ -85,7 +88,7 @@ export class BlogAdminComponent implements OnInit {
   }
 
   deleteBlog(blog: Blog) {
-    this.blogService.deleteBlog(blog.id).subscribe((blog: ServerResponse) => {
+    this.blogService.deleteBlog(blog.id).subscribe((blog: BlogServerResponse) => {
       this.statusMessage = "Запис блогу успішно видалено", this.loadBlogs();
       this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
 

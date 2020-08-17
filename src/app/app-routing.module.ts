@@ -23,6 +23,8 @@ import {BlogAdminComponent} from "./components/blog-admin/blog-admin.component";
 import {OrderAdminComponent} from "./components/order-admin/order-admin.component";
 import {UserAdminComponent} from "./components/user-admin/user-admin.component";
 import {AuthAdminGuardService} from "./guard/auth-admin-guard.service";
+import {CategoryAdminComponent} from "./components/category-admin/category-admin.component";
+import {NewsAdminComponent} from "./components/news-admin/news-admin.component";
 
 
 
@@ -90,6 +92,13 @@ const routes: Routes = [
   {
     path: 'usersAdmin',component: UserAdminComponent, canActivate: [AuthAdminGuardService]
   },
+  {
+    path: 'categoryAdmin',component: CategoryAdminComponent, canActivate: [AuthAdminGuardService]
+  },
+  {
+    path: 'newsAdmin',component: NewsAdminComponent, canActivate: [AuthAdminGuardService]
+  },
+
 
 
 
