@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";
 import {AuthenticationService} from "../../services/authentication.service";
@@ -12,7 +12,7 @@ import {CategoryService} from "../../services/category.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
 
   cartData: CartModelServer;
   cartTotal: number;
@@ -33,17 +33,21 @@ export class HeaderComponent implements OnInit {
 
     this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
       this.categories = cats.category;
-      console.log(this.categories);
+
 
     });
 
+    if(!window.localStorage.getItem('language'))
+    {
+      localStorage.setItem('language', 'en');
+    }
+
+
   }
 
-
-
-
-
   selectChangeHandler(event: any){
+
+
     this.selectedLang = event.target.value;
     this.translate.use(this.selectedLang)
     localStorage.setItem('language', this.selectedLang);

@@ -154,13 +154,14 @@
           <li><a routerLink="/contacts">{{'NAV.CONTACTS' | translate}}</a></li>
           <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>
 
-          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАР</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАРИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГИ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ЗАМОВЛЕННЯ</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧІ</a></li><br>
           <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">ПОВІДОМЛЕННЯ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/categoryAdmin">КАТЕГОРІЇ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/newsAdmin">НОВИНИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/imagesAdmin">ЗОБРАЖЕННЯ</a></li>
 
 
         </ul>

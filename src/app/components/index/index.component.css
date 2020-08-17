@@ -1,3 +1,20 @@
 .outset{
   border: 2px outset black
 }
+
+.slider-header
+{
+  text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+}
+
+.slider-header-light
+{
+  text-shadow: 2px 2px 0 #797979, 4px 4px 0 #2f2f2f;
+}
+
+
+/*.single-hero-items*/
+/*{*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: 100%;*/
+/*}*/

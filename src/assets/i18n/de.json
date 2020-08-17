@@ -15,7 +15,10 @@
     "TITLE1": "Neue Businessblusen",
     "PARAG1": "Absatz über Deutsch",
     "SALE": "VERKAUF",
-    "SHOPNOW": "JETZT EINKAUFEN"
+    "SHOPNOW": "JETZT EINKAUFEN",
+    "SLIDER2": "Neue Blusenkollektion",
+    "SLIDER3": "Neue Schuhkollektion",
+    "BLOG": "Aus dem Blog"
   },
   "COLLECTION": {
     "1": "Schuhe",
@@ -236,6 +239,12 @@
     "L2": "de",
     "L3": "ua",
     "L4": "ru"
+  },
+
+
+  "ADDBUTTON":
+  {
+    "NOSTOCK": "KEIN BESTAND"
   }
 
 

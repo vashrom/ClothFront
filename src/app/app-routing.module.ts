@@ -25,10 +25,11 @@ import {UserAdminComponent} from "./components/user-admin/user-admin.component";
 import {AuthAdminGuardService} from "./guard/auth-admin-guard.service";
 import {CategoryAdminComponent} from "./components/category-admin/category-admin.component";
 import {NewsAdminComponent} from "./components/news-admin/news-admin.component";
+import {MainImageAdminComponent} from "./components/main-image-admin/main-image-admin.component";
 
 
-
-const routes: Routes = [
+let routes: Routes;
+routes = [
   {
     path: '', component: IndexComponent
   },
@@ -45,61 +46,62 @@ const routes: Routes = [
     path: 'cart', component: CartComponent
   },
   {
-    path: 'checkout',component: CheckoutComponent
+    path: 'checkout', component: CheckoutComponent
   },
   {
-    path: 'thankyou',component: ThankyouComponent
+    path: 'thankyou', component: ThankyouComponent
   },
   {
-    path: 'profile',component: ProfileComponent, canActivate: [AuthGuardService]
+    path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'login',component: LoginComponent
+    path: 'login', component: LoginComponent
   },
   {
-    path: 'register',component: RegisterComponent
+    path: 'register', component: RegisterComponent
   },
   {
-    path: 'payinfo',component: PayinfoComponent
+    path: 'payinfo', component: PayinfoComponent
   },
   {
-    path: 'return',component: ReturnComponent
+    path: 'return', component: ReturnComponent
   },
   {
-    path: 'contacts',component: ContactsComponent
+    path: 'contacts', component: ContactsComponent
   },
   {
-    path: 'blog',component: BlogComponent
+    path: 'blog', component: BlogComponent
   },
   {
-    path: 'blog/:id',component: BlogItemComponent
+    path: 'blog/:id', component: BlogItemComponent
   },
   {
-    path: 'about',component: AboutComponent
+    path: 'about', component: AboutComponent
   },
   {
-    path: 'productAdmin',component: ProductAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'productAdmin', component: ProductAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'commentAdmin',component: CommentAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'commentAdmin', component: CommentAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'blogAdmin',component: BlogAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'blogAdmin', component: BlogAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'orderAdmin',component: OrderAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'orderAdmin', component: OrderAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'usersAdmin',component: UserAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'usersAdmin', component: UserAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'categoryAdmin',component: CategoryAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'categoryAdmin', component: CategoryAdminComponent, canActivate: [AuthAdminGuardService]
   },
   {
-    path: 'newsAdmin',component: NewsAdminComponent, canActivate: [AuthAdminGuardService]
+    path: 'newsAdmin', component: NewsAdminComponent, canActivate: [AuthAdminGuardService]
   },
-
-
+  {
+    path: 'imagesAdmin', component: MainImageAdminComponent, canActivate: [AuthAdminGuardService]
+  },
 
 
 ];
@@ -108,7 +110,9 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

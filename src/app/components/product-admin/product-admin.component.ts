@@ -3,6 +3,8 @@ import {Product, ProductModelServer, ProductServerResponse} from "../../models/p
 import {ProductService} from "../../services/product.service";
 import {CommentService} from "../../services/comment.service";
 import {FlashMessagesService} from "angular2-flash-messages";
+import {environment} from "../../../environments/environment";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-product-admin',
@@ -21,9 +23,10 @@ export class ProductAdminComponent implements OnInit {
   isNewRecord: boolean;
   statusMessage: string;
   sumSizes: number ;
+  private SERVER_URL = environment.SERVER_URL;
 
 
-  constructor(private productService: ProductService,private flashMessage: FlashMessagesService) {
+  constructor(private productService: ProductService,private flashMessage: FlashMessagesService,private http: HttpClient) {
     this.products = new Array<Product>();
 
   }
@@ -36,7 +39,7 @@ export class ProductAdminComponent implements OnInit {
 
 
   private loadProducts() {
-    this.productService.getAllProducts(window.localStorage.getItem('language')).subscribe((prods: ProductServerResponse) => {
+    return this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/en', {}).subscribe((prods: ProductServerResponse) => {
       this.products = prods.products.reverse();
     });
   }

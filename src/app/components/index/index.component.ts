@@ -9,6 +9,8 @@ import {environment} from "../../../environments/environment";
 import {BlogModelServer} from "../../models/blog.model";
 import {BlogService} from "../../services/blog.service";
 import {BlogServerResponse} from "../../models/blog.model";
+import {ImageService} from "../../services/image.service";
+import {Image, ImageModelServer, ImageServerResponse} from "../../models/image.model";
 
 declare let $: any;
 
@@ -20,76 +22,48 @@ declare let $: any;
 })
 export class IndexComponent implements OnInit {
 
-  cat_name: string;
   products: ProductModelServer[] = [];
   name: string;
   blog: BlogModelServer[] = [];
-  shirts: ProductModelServer[] =[];
-  shoes: ProductModelServer[] =[];
-  dresses: ProductModelServer[] =[];
+  images: ImageModelServer[] =[];
+  slider1: string;
 
 
-  private SERVER_URL = environment.SERVER_URL;
 
-
-  constructor(private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private router: Router, private http: HttpClient,private blogService: BlogService) { }
+  constructor(private imageService: ImageService,private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private router: Router, private http: HttpClient,private blogService: BlogService) {
+    this.images = new Array<Image>()
+  }
 
   ngOnInit(): void {
-    this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language'), {
-
-    }).subscribe((prods: ProductServerResponse) => {
-      this.products = prods.products.reverse();
-    });
 
     this.blogService.getAllBlogItems().subscribe((bl: BlogServerResponse) => {
       this.blog = bl.blog.reverse();
     });
 
-    this.getShirts();
-    this.getDresses();
-    this.getShoes();
-
-
-  }
-
-  getShirts()
-  {
-      this.productService.getProductsFromCategory('shirts',window.localStorage.getItem('language')).subscribe(prods => {
-        this.shirts = prods;
-        console.log(this.shirts);
-      });
-  }
-
-  getShoes()
-  {
-    this.productService.getProductsFromCategory('shoes',window.localStorage.getItem('language')).subscribe(prods => {
-      this.shoes = prods;
-      console.log(this.shoes);
+    this.imageService.getAllImages().subscribe((images: ImageServerResponse) => {
+      this.images = images.images;
+      this.slider1 = this.images[0].slider1_1;
+      console.log(this.images)
     });
+
+
+
+
+
+
   }
 
-  getDresses()
-  {
-    this.productService.getProductsFromCategory('dresses',window.localStorage.getItem('language')).subscribe(prods => {
-      this.dresses = prods;
-      console.log(this.dresses);
-    });
-  }
 
 
 
 
-  selectProduct(id: number) {
-    this.router.navigate(['/product',id]).then();
-  }
+
+
 
   selectBlog(id: number) {
     this.router.navigate(['/blog',id]).then();
   }
 
-  AddToCart(id: number) {
-    this.cartService.addProductToCart(id);
-  }
 
 
 
@@ -200,64 +174,7 @@ export class IndexComponent implements OnInit {
       autoplay: true,
     });
 
-    /*------------------
-        CountDown
-    --------------------*/
-    // // For demo preview
-    // var today = new Date();
-    // var dd = String(today.getDate()).padStart(2, '0');
-    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    // var yyyy = today.getFullYear();
-    //
-    // if(mm == 12) {
-    //   mm = '01';
-    //   yyyy = yyyy + 1;
-    // } else {
-    //   mm = parseInt(mm) + 1;
-    //   mm = String(mm).padStart(2, '0');
-    // }
-    // var timerdate = mm + '/' + dd + '/' + yyyy;
-    // // For demo preview end
-    //
-    // console.log(timerdate);
-    //
-    //
-    // // Use this for real timer date
-    // /* var timerdate = "2020/01/01"; */
-    //
-    // $("#countdown").countdown(timerdate, function(event) {
-    //   $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
-    // });
 
-
-    // /*----------------------------------------------------
-    //  Language Flag js
-    // ----------------------------------------------------*/
-    // $(document).ready(function(e) {
-    //   //no use
-    //   try {
-    //     var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
-    //           var val = data.value;
-    //           if(val!="")
-    //             window.location = val;
-    //         }}}).data("dd");
-    //
-    //     var pagename = document.location.pathname.toString();
-    //     pagename = pagename.split("/");
-    //     pages.setIndexByValue(pagename[pagename.length-1]);
-    //     $("#ver").html(msBeautify.version.msDropdown);
-    //   } catch(e) {
-    //     // console.log(e);
-    //   }
-    //   $("#ver").html(msBeautify.version.msDropdown);
-    //
-    //   //convert
-    //   $(".language_drop").msDropdown({roundedBorder:false});
-    //   $("#tech").data("dd");
-    // });
-    /*-------------------
-		Range Slider
-	--------------------- */
     var rangeSlider = $(".price-range"),
       minamount = $("#minamount"),
       maxamount = $("#maxamount"),

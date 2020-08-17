@@ -164,7 +164,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     --------------------- */
     $('.sorting, .p-show').niceSelect();
 
-  //
+    //
 
     $('.product-pic-zoom').zoom();
 

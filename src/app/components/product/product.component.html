@@ -128,53 +128,53 @@
         </div>
 
 
-<!-- Related Products Section End -->
-<div class="related-products spad">
-  <div class="container">
-    <div class="row ">
-      <div class="col-lg-12">
-        <div class="section-title  mt-5">
-          <h2>{{'PRODUCT.HEADER'|translate}}</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-
-
-<!--      <div class="col-lg-3 col-sm-6">-->
-        <div class="product-item d-inline-block col-lg-3 col-sm-6" *ngFor="let p of offeredProducts | slice:0:4">
-          <div class="pi-pic">
-            <img [src]="p.image" (click)="selectProduct(p.id)">
-
-            <ul>
-              <li class="quick-view ">
-
-                <div class="p-0">
-                  <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
-                  <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "Sst" }}</a>
-                  <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
-                  <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
-                  <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
-                  <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+        <!-- Related Products Section End -->
+        <div class="related-products spad">
+          <div class="container">
+            <div class="row ">
+              <div class="col-lg-12">
+                <div class="section-title  mt-5">
+                  <h2>{{'PRODUCT.HEADER'|translate}}</h2>
                 </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </div>
+            <div class="row">
 
-          <div class="pi-text">
-            <div class="catagory-name">{{p.category}}</div>
-            <a (click)="selectProduct(p.id)">
-              <h5>{{p.title}}</h5>
-            </a>
-            <div class="product-price">
-              {{p.price}} {{'WALLET' | translate}}
+
+              <!--      <div class="col-lg-3 col-sm-6">-->
+              <div class="product-item d-inline-block col-lg-3 col-sm-6" *ngFor="let p of offeredProducts | slice:0:4">
+                <div class="pi-pic">
+                  <img [src]="p.image" (click)="selectProduct(p.id)">
+
+                  <ul>
+                    <li class="quick-view ">
+
+                      <div class="p-0">
+                        <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
+                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "Sst" }}</a>
+                        <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
+                        <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
+                        <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
+                        <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="pi-text">
+                  <div class="catagory-name">{{p.category}}</div>
+                  <a (click)="selectProduct(p.id)">
+                    <h5>{{p.title}}</h5>
+                  </a>
+                  <div class="product-price">
+                    {{p.price}} {{'WALLET' | translate}}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-
-    </div>
-  </div>
-</div>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Product, ProductModelServer, ProductServerResponse} from "../models/product.model";
+import {UserOrderServerResponse} from "../models/order.model";
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,22 @@ export class ProductService {
 
   /*GET ALL PRODUCTS FROM SERVER*/
   getAllProducts(lang: string): Observable<ProductServerResponse>{
-    return this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/'+lang, {
+    if(window.localStorage.getItem('language')!='en') {
+      return this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/' + lang, {});
+    }
+    else {
+      return this.http.get<ProductServerResponse>(this.SERVER_URL + '/products/en', {});
 
-    });
+    }
   }
 
-
+//   if(window.localStorage.getItem('language')!='en') {
+//   return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/'+window.localStorage.getItem('language')+'/user/' + id, {});
+// }
+// else {
+//   return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/user/' + id, {});
+//
+// }
 
   /*GET SINGLE PRODUCT FROM SERVER*/
   getSingleProduct(id: number, lang: string): Observable<ProductModelServer>{

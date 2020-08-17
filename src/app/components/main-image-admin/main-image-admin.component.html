@@ -1,0 +1,95 @@
+
+
+
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>Слайдер 1_1</td>
+      <td>Слайдер 1_2</td>
+      <td>Слайдер 2_1</td>
+      <td>Слайдер 2_2</td>
+      <td>Слайдер 3_1</td>
+      <td>Слайдер 3_2</td>
+      <td>Категорія 1</td>
+      <td>Категорія 2</td>
+      <td>Категорія 3</td>
+
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let image of images">
+    <ng-template [ngTemplateOutlet]="loadTemplate(image)"
+                 [ngTemplateOutletContext]="{ $implicit: image}">
+    </ng-template>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <!--шаблон для чтения-->
+  <ng-template #readOnlyTemplate let-image>
+
+      <td>{{image.slider1_1| slice:0:20}}</td>
+      <td>{{image.slider1_2| slice:0:20}}</td>
+      <td>{{image.slider2_1| slice:0:20}}</td>
+      <td>{{image.slider2_2| slice:0:20}}</td>
+      <td>{{image.slider3_1| slice:0:20}}</td>
+      <td>{{image.slider3_2| slice:0:20}}</td>
+      <td>{{image.cat_1| slice:0:20}}</td>
+      <td>{{image.cat_2| slice:0:20}}</td>
+      <td>{{image.cat_2| slice:0:20}}</td>
+      <td>
+        <input type="button" value="Змінити" class="btn btn-outline-primary" (click)="editImages(image)" />
+      </td>
+
+  </ng-template>
+
+  <!--шаблон для редактирования-->
+  <ng-template #editTemplate>
+
+      <td>
+        <input type="text" [(ngModel)]="editedImages.slider1_1" class="form-control" />
+      </td>
+
+    <td>
+      <input type="text" [(ngModel)]="editedImages.slider1_2" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedImages.slider2_1" class="form-control" />
+    </td>
+
+    <td>
+      <input type="text" [(ngModel)]="editedImages.slider2_2" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedImages.slider3_1" class="form-control" />
+    </td>
+
+    <td>
+      <input type="text" [(ngModel)]="editedImages.slider3_2" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedImages.cat_1" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedImages.cat_2" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedImages.cat_3" class="form-control" />
+    </td>
+
+      <td>
+        <input type="button" value="Зберегти" (click)="saveImage()" class="btn btn-outline-success" />
+      </td>
+      <td>
+        <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
+      </td>
+
+  </ng-template>
+
+</div>
