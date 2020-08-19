@@ -145,7 +145,7 @@
           <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
           <li><a routerLink="/collection">{{'NAV.CATALOG' | translate}}</a>
             <ul class="dropdown">
-              <li *ngFor="let c of categories"><a routerLink="/category/{{c.title_en}}"> {{c.title}}</a></li>
+              <li *ngFor="let col of collections"><a routerLink="/category/{{col.title_en}}"> {{col.title}}</a></li>
             </ul>
           </li>
           <li><a routerLink="/payinfo">{{'NAV.PAYMENT' | translate}}</a></li>
@@ -186,8 +186,7 @@
             {{'NAV.CATALOG' | translate}}<span class="sr-only">(current)</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a  *ngFor="let c of categories"  class="dropdown-item" routerLink="category/{{c.title_en}}">{{c.title}}</a>
-
+            <a *ngFor="let col of collections"  class="dropdown-item" routerLink="category/{{col.title_en}}">{{col.title}}</a>
           </div>
         </li>
         <li class="nav-item active">

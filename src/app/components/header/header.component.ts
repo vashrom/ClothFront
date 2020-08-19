@@ -5,6 +5,8 @@ import {AuthenticationService} from "../../services/authentication.service";
 import {TranslateService} from "@ngx-translate/core";
 import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
 import {CategoryService} from "../../services/category.service";
+import {CollectionModelServer, CollectionServerResponse} from "../../models/collection.model";
+import {CollectionService} from "../../services/collection.service";
 
 
 @Component({
@@ -20,10 +22,11 @@ export class HeaderComponent implements OnInit{
   selectedLang: string ='en';
   dropIndex: number;
   categories: CategoryModelServer[] = [];
+  collections: CollectionModelServer[]=[];
 
 
 
-  constructor(private categoryService: CategoryService,public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
+  constructor(private collectionService: CollectionService,private categoryService: CategoryService,public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
 
   ngOnInit(): void {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
@@ -33,8 +36,10 @@ export class HeaderComponent implements OnInit{
 
     this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
       this.categories = cats.category;
+    });
 
-
+    this.collectionService.getAllCollections().subscribe((coll: CollectionServerResponse) => {
+      this.collections = coll.collection;
     });
 
     if(!window.localStorage.getItem('language'))
