@@ -30,23 +30,33 @@
         </details>
 
         <details>
-          <summary>Sort</summary>
+          <summary>{{'SIDEBAR.COLLECTION'|translate}}</summary>
 
-          <p (click)="sortMinProducts()"><a class="category-link">
-            Price from low to high
-          </a>
-          </p>
-          <p (click)="sortMaxProducts()"><a class="category-link">
-            Price from high to low
+          <p *ngFor="let col of collections"><a class="category-link" routerLink="/collection/{{col.title_en}}">
+            {{col.title}}
           </a>
           </p>
 
         </details>
 
         <details>
-          <summary>Filter</summary>
+          <summary>{{'SIDEBAR.SORT'|translate}}</summary>
+
+          <p (click)="sortMinProducts()"><a class="category-link">
+            {{'SIDEBAR.SORT1'|translate}}
+          </a>
+          </p>
+          <p (click)="sortMaxProducts()"><a class="category-link">
+            {{'SIDEBAR.SORT2'|translate}}
+          </a>
+          </p>
+
+        </details>
+
+        <details>
+          <summary>{{'SIDEBAR.FILTER'|translate}}</summary>
           <div class="filter-widget">
-            <p  class="fw-title">Size</p>
+            <p  class="fw-title">{{'SIDEBAR.FILTER1'|translate}}</p>
             <div class="fw-size-choose">
 
 

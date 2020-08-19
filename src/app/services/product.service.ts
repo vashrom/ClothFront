@@ -27,13 +27,6 @@ export class ProductService {
     }
   }
 
-//   if(window.localStorage.getItem('language')!='en') {
-//   return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/'+window.localStorage.getItem('language')+'/user/' + id, {});
-// }
-// else {
-//   return this.http.get<UserOrderServerResponse>(this.ServerURL + '/ordersinfo/user/' + id, {});
-//
-// }
 
   /*GET SINGLE PRODUCT FROM SERVER*/
   getSingleProduct(id: number, lang: string): Observable<ProductModelServer>{
@@ -45,6 +38,11 @@ export class ProductService {
 {
   return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/'+lang+'/category/'+catName);
 }
+
+  getProductsFromCollection(collName: string, lang: string) : Observable<ProductModelServer[]>
+  {
+    return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/'+lang+'/collection/'+collName);
+  }
 
 /* CREATE PRODUCT FROM SERVER */
   createProduct(product: Product)

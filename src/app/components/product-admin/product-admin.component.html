@@ -165,6 +165,16 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <label>ID Колекції:</label>
+        <input type="number" min="1" [(ngModel)]="editedProduct.coll_id" class="form-control" />
+      </td>
+      <td>
+        <label>Колекція:</label>
+        <input type="text" [(ngModel)]="editedProduct.collection" readonly disabled class="form-control" />
+      </td>
+    </tr>
 
   </ng-template>
 

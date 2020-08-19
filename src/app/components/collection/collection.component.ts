@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductModelServer} from "../../models/product.model";
+import {CollectionModelServer, CollectionServerResponse} from "../../models/collection.model";
+import {environment} from "../../../environments/environment";
+import {CategoryService} from "../../services/category.service";
 import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
-import {map} from "rxjs/operators";
-import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
-import {CategoryService} from "../../services/category.service";
-import {CollectionModelServer, CollectionServerResponse} from "../../models/collection.model";
 import {CollectionService} from "../../services/collection.service";
+import {map} from "rxjs/operators";
+import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-collection',
+  templateUrl: './collection.component.html',
+  styleUrls: ['./collection.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CollectionComponent implements OnInit {
 
-  catName: string;
+  collName: string;
   products: ProductModelServer[] = [];
-  categories: CategoryModelServer[] = [];
   collections: CollectionModelServer[] = [];
+  categories: CategoryModelServer[] = [];
   itemSorted: ProductModelServer[] =[];
   items: ProductModelServer[] = [];
 
@@ -34,24 +34,24 @@ export class CategoryComponent implements OnInit {
     this.route.paramMap.pipe(
       map((param: ParamMap) => {
         // @ts-ignore
-        return param.params.catName;
+        return param.params.collName;
       })
-    ).subscribe(catName =>{
-      this.catName = catName;
-      this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/'+window.localStorage.getItem('language')+'/category/'+catName).subscribe(prods=>{
+    ).subscribe(collName =>{
+      this.collName = collName;
+      this.productService.getProductsFromCollection(this.collName,window.localStorage.getItem('language')).subscribe(prods=>{
         this.products = prods.reverse();
         this.items = prods.reverse();
       });
     });
 
-    this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
-      this.categories = cats.category;
-      console.log(this.categories);
+    this.collectionService.getAllCollections().subscribe((coll: CollectionServerResponse) => {
+      this.collections = coll.collection;
 
     });
-    this.collectionService.getAllCollections().subscribe((coll:CollectionServerResponse)=>{
-      this.collections = coll.collection;
-    })
+
+    this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
+      this.categories = cats.category;
+    });
 
   }
 

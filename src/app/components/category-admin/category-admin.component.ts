@@ -1,7 +1,5 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Blog, BlogModelServer, BlogServerResponse} from "../../models/blog.model";
 import {Category, CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
-import {BlogService} from "../../services/blog.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {CategoryService} from "../../services/category.service";
 import {environment} from "../../../environments/environment";

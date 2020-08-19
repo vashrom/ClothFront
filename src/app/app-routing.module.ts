@@ -26,6 +26,8 @@ import {AuthAdminGuardService} from "./guard/auth-admin-guard.service";
 import {CategoryAdminComponent} from "./components/category-admin/category-admin.component";
 import {NewsAdminComponent} from "./components/news-admin/news-admin.component";
 import {MainImageAdminComponent} from "./components/main-image-admin/main-image-admin.component";
+import {CollectionComponent} from "./components/collection/collection.component";
+import {CollectionAdminComponent} from "./components/collection-admin/collection-admin.component";
 
 
 let routes: Routes;
@@ -101,6 +103,12 @@ routes = [
   },
   {
     path: 'imagesAdmin', component: MainImageAdminComponent, canActivate: [AuthAdminGuardService]
+  },
+  {
+    path: 'collectionAdmin', component: CollectionAdminComponent, canActivate: [AuthAdminGuardService]
+  },
+  {
+    path: 'collection/:collName', component: CollectionComponent
   },
 
 

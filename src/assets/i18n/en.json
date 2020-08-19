@@ -17,7 +17,7 @@
     "PARAG1": "Paragraph on English",
     "SALE": "SALE",
     "SHOPNOW": "SHOP NOW",
-    "SLIDER2": "New blouse collection",
+    "SLIDER2": "New summer collection",
     "SLIDER3": "New shoes collection",
     "BLOG": "From The Blog"
   },
@@ -215,7 +215,14 @@
   },
 
   "SIDEBAR": {
-    "CATEGORY": "Categories"
+    "CATEGORY": "Categories",
+    "COLLECTION": "Collections",
+    "SORT": "Sort",
+    "SORT1": "Price from low to high",
+    "SORT2": "Price from high to low",
+    "FILTER": "Filter",
+    "FILTER1": "Size"
+
   },
 
   "FOOTER": {

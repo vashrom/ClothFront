@@ -151,11 +151,13 @@
 
                       <div class="p-0">
                         <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
-                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "Sst" }}</a>
+                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "S" }}</a>
                         <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
                         <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
                         <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
                         <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+                        <a *ngIf="p.quantity <= 0"  class="nostock-but disabled d-inline-block m-1 p-2">{{'ADDBUTTON.NOSTOCK'|translate}}</a>
+
                       </div>
                     </li>
                   </ul>

@@ -46,13 +46,13 @@ export class ProductAdminComponent implements OnInit {
 
 
   addProduct(){
-    this.editedProduct = new Product(0,"","","",0, 0 ,"","","",0,"", 0,0,0,0,0,0, "","","","","","",0,0,0, "" );
+    this.editedProduct = new Product(0,"","","","",0, 0 ,"","","",0,0,"", 0,0,0,0,0,0, "","","","","","",0,0,0, "" );
     this.products.push(this.editedProduct);
       this.isNewRecord = true;
   }
 
   editProduct(prod: Product) {
-    this.editedProduct = new Product(prod.id,prod.title,prod.category,prod.description,prod.price,prod.quantity,prod.image,prod.images,prod.size,prod.cat_id, prod.short_desc, prod.xs, prod.s, prod.m, prod.l, prod.xl, prod.xxl,prod.title_ua,prod.title_ru,prod.title_de,prod.description_ua,prod.description_ru,prod.description_de,prod.price_ua,prod.price_ru,prod.price_de, prod.color);
+    this.editedProduct = new Product(prod.id,prod.title,prod.category,prod.collection,prod.description,prod.price,prod.quantity,prod.image,prod.images,prod.size,prod.cat_id,prod.coll_id, prod.short_desc, prod.xs, prod.s, prod.m, prod.l, prod.xl, prod.xxl,prod.title_ua,prod.title_ru,prod.title_de,prod.description_ua,prod.description_ru,prod.description_de,prod.price_ua,prod.price_ru,prod.price_de, prod.color);
     console.log(prod.title);
   }
 

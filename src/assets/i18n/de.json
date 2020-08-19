@@ -16,7 +16,7 @@
     "PARAG1": "Absatz über Deutsch",
     "SALE": "VERKAUF",
     "SHOPNOW": "JETZT EINKAUFEN",
-    "SLIDER2": "Neue Blusenkollektion",
+    "SLIDER2": "Neue Sommerkollektion",
     "SLIDER3": "Neue Schuhkollektion",
     "BLOG": "Aus dem Blog"
   },
@@ -214,7 +214,14 @@
 
   },
   "SIDEBAR": {
-    "CATEGORY": "Kategorien"
+    "CATEGORY": "Kategorien",
+    "COLLECTION": "Sammlungen",
+    "SORT": "Sortieren",
+    "SORT1": "Preis von niedrig nach hoch",
+    "SORT2": "Preis von hoch nach niedrig",
+    "FILTER": "Filter",
+    "FILTER1": "Größe"
+
   },
   "FOOTER": {
     "HELP": "Hilfe",

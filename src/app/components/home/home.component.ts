@@ -8,6 +8,8 @@ import {environment} from "../../../environments/environment";
 import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
 import {CategoryService} from "../../services/category.service";
 import {map} from "rxjs/operators";
+import {CollectionModelServer, CollectionServerResponse} from "../../models/collection.model";
+import {CollectionService} from "../../services/collection.service";
 
 @Component({
   selector: 'app-home',
@@ -18,10 +20,11 @@ export class HomeComponent implements OnInit {
 
   products: ProductModelServer[] = [];
   categories: CategoryModelServer[] = [];
+  collections: CollectionModelServer[] = [];
   itemSorted: ProductModelServer[] =[];
   items: ProductModelServer[] = [];
 
-  constructor(private productService: ProductService,private categoryService: CategoryService, private cartService: CartService ,private router: Router, private http: HttpClient) { }
+  constructor(private collectionService: CollectionService,private productService: ProductService,private categoryService: CategoryService, private cartService: CartService ,private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -29,10 +32,11 @@ export class HomeComponent implements OnInit {
 
     this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
       this.categories = cats.category;
-      console.log(this.categories);
-
     });
 
+    this.collectionService.getAllCollections().subscribe((coll:CollectionServerResponse)=>{
+      this.collections = coll.collection;
+    })
 
 
   }
