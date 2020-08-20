@@ -252,6 +252,20 @@
   "ADDBUTTON":
   {
     "NOSTOCK": "KEIN BESTAND"
+  },
+
+  "TABLE":
+  {
+    "HEADER": "Größentabelle",
+    "HEADER2": "Grundgrößen",
+    "CHEST": "Truhe (cm)",
+    "WAIST": "Taille (cm)",
+    "HIPS": "Hüften (cm)",
+    "LINK": "Größentabelle",
+    "PARAMETERS":"Parameter"
+
+
+
   }
 
 

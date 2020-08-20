@@ -42,6 +42,7 @@ import { MainImageAdminComponent } from './components/main-image-admin/main-imag
 import { CollectionComponent } from './components/collection/collection.component';
 import { CollectionAdminComponent } from './components/collection-admin/collection-admin.component';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 export function HttpLoaderFactory(http:HttpClient) {
   return new TranslateHttpLoader(http);
@@ -89,6 +90,7 @@ export function HttpLoaderFactory(http:HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
+    ModalModule.forRoot(),
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

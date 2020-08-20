@@ -253,6 +253,18 @@
   "ADDBUTTON":
 {
   "NOSTOCK": "NO STOCK"
+},
+
+  "TABLE":
+{
+  "HEADER": "Size Table",
+  "HEADER2": "Basic sizes",
+  "CHEST": "Chest (cm)",
+  "WAIST": "Waist (cm)",
+  "HIPS": "Hips (cm)",
+  "LINK": "Size Guide",
+  "PARAMETERS": "Parameters"
+
 }
 
 

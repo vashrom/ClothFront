@@ -110,6 +110,8 @@ routes = [
   {
     path: 'collection/:collName', component: CollectionComponent
   },
+  {path: '**', redirectTo: '/'}
+
 
 
 ];
