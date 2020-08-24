@@ -1,0 +1,150 @@
+<ngx-spinner
+  bdColor="rgba(151,149,149,0.4)"
+  size="large"
+  color="orange"
+  type="ball-clip-rotate-pulse"
+  fullScreen="true"
+>
+
+  <p style="font-size: 20px; color: black">{{'CHECKOUT.BOOKING'|translate}}</p>
+
+</ngx-spinner>
+
+
+<div class="breacrumb-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text product-more">
+          <a routerLink="/"><i class="fa fa-home"></i> {{'REGISTER.BREADCRUMP1'|translate}}</a>
+          <a routerLink="/collection">{{'CART.BREADCRUMP2'|translate}}</a>
+          <span>{{'CHECKOUT.BREADCRUMP3'|translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb Section Begin -->
+
+<!-- Shopping Cart Section Begin -->
+<section class="checkout-section spad" *ngIf="cartTotal > 0">
+  <div class="container">
+   <form [formGroup]="form" (ngSubmit)="submit()">
+    <div  class="checkout-form">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <h4>{{'CHECKOUT.HEADER1'|translate}}</h4>
+          <div class="row">
+            <div class="col-lg-6">
+              <label for="fir">{{'REGISTER.FNAME'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="fname" formControlName="fname" class="form-control" type="text" id="fir">
+              <div *ngIf="f.fname.touched && f.fname.invalid" class="alert alert-danger">
+                <div *ngIf="f.fname.errors.required">{{'VALIDATION_MESSAGE.NAME'|translate}}</div>
+                <div *ngIf="f.fname.errors.minlength">{{'VALIDATION_MESSAGE.NAME_MIN'|translate}}</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <label for="last">{{'REGISTER.LNAME'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="lname"  formControlName="lname" class="form-control" type="text" id="last">
+              <div *ngIf="f.lname.touched && f.lname.invalid" class="alert alert-danger">
+                <div *ngIf="f.lname.errors.required">{{'VALIDATION_MESSAGE.LNAME'|translate}}</div>
+                <div *ngIf="f.lname.errors.minlength">{{'VALIDATION_MESSAGE.LNAME_MIN'|translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <label for="cun">{{'CHECKOUT.COUNTRY'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="country"  formControlName="country" class="form-control" type="text" id="cun">
+              <div *ngIf="f.country.touched && f.country.invalid" class="alert alert-danger">
+                <div *ngIf="f.country.errors.required">{{'VALIDATION_MESSAGE.COUNTRY'|translate}}</div>
+                <div *ngIf="f.country.errors.minlength">{{'VALIDATION_MESSAGE.COUNTRY_MIN'|translate}}</div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <label for="street">{{'CHECKOUT.STREET'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="street"  formControlName="street" class="form-control street-first" type="text" id="street">
+              <div *ngIf="f.street.touched && f.street.invalid" class="alert alert-danger">
+                <div *ngIf="f.street.errors.required">{{'VALIDATION_MESSAGE.STREET'|translate}}</div>
+                <div *ngIf="f.street.errors.minlength">{{'VALIDATION_MESSAGE.STREET_MIN'|translate}}</div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <label for="zip">{{'CHECKOUT.POSTCODE'|translate}}</label>
+              <input  [(ngModel)]="postcode"  formControlName="postcode" class="form-control" type="text" id="zip">
+              <div *ngIf="f.postcode.touched && f.postcode.invalid" class="alert alert-danger">
+                <div *ngIf="f.postcode.errors.minlength">{{'VALIDATION_MESSAGE.POSTCODE_MIN'|translate}}</div>
+                <div *ngIf="f.postcode.errors.maxlength">{{'VALIDATION_MESSAGE.POSTCODE_MAX'|translate}}</div>
+
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <label for="town">{{'CHECKOUT.CITY'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="city"   formControlName="city" class="form-control" type="text" id="town">
+              <div *ngIf="f.city.touched && f.city.invalid" class="alert alert-danger">
+                <div *ngIf="f.city.errors.required">{{'VALIDATION_MESSAGE.CITY'|translate}}</div>
+                <div *ngIf="f.city.errors.minlength">{{'VALIDATION_MESSAGE.CITY_MIN'|translate}}</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <label for="email">{{'REGISTER.EMAIL'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="userEmail"  formControlName="email" id="email" type="text" class="form-control">
+              <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors.required">{{'VALIDATION_MESSAGE.EMAIL'|translate}}</div>
+                <div *ngIf="f.email.errors.email">{{'VALIDATION_MESSAGE.EMAIL_ERR'|translate}}</div>
+                <div *ngIf="f.email.errors.minLength">{{'VALIDATION_MESSAGE.EMAIL_ERR'|translate}}</div>
+
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <label for="phone">{{'REGISTER.PHONE'|translate}}<span>*</span></label>
+              <input  [(ngModel)]="userPhone" formControlName="phone" class="form-control" type="text" id="phone">
+              <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                <div *ngIf="f.phone.errors.required">{{'VALIDATION_MESSAGE.PHONE'|translate}}</div>
+                <div *ngIf="f.phone.errors.minlength">{{'VALIDATION_MESSAGE.PHONE_MIN'|translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <label for="message">{{'CHECKOUT.MESSAGE'|translate}}</label>
+
+              <textarea [(ngModel)]="userMessage"  formControlName="message" id="message" type="text" class="form-control"></textarea>
+              <div *ngIf="f.message.touched && f.message.invalid" class="alert alert-danger">
+                <div *ngIf="f.message.errors.minlength">{{'VALIDATION_MESSAGE.MESSAGE_MIN'|translate}}</div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="place-order">
+            <h4>{{'CHECKOUT.HEADER2'|translate}}</h4>
+            <div class="order-total">
+              <ul class="order-table" >
+                <li>{{'CHECKOUT.PRODUCT'|translate}} <span>{{'CHECKOUT.TOTAL'|translate}}</span></li>
+
+                <li *ngFor="let c of cartData.data" class="fw-normal">{{c.product?.title}} x {{c.numInCart}} <span>{{c.product?.price * c.numInCart}} {{'WALLET'|translate}}</span></li>
+
+                <li class="total-price">Total <span>{{cartTotal}} {{'WALLET'|translate}}</span></li>
+              </ul>
+
+              <div class="order-btn">
+                <button type="submit" [disabled]="!form.valid"   class="site-btn place-btn">{{'CHECKOUT.BUTTON'|translate}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </form>
+  </div>
+</section>
+
+<div class="text-center my-5" *ngIf="cartData.total <= 0;" >
+  <h4>{{'CART.EMPTY' | translate}}</h4>
+
+  <button class="btn btn-warning btn-lg mt-3" style="color: white; background-color: #7a0c35 ; font-weight: bold" routerLink="/">{{'CART.BUTTON' | translate}}</button>
+</div>

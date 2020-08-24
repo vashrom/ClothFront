@@ -1,0 +1,77 @@
+
+
+
+<div class="container-fluid m-3">
+  <flash-messages></flash-messages>
+
+  <input type="button" value="Додати" class="btn btn-outline-dark m-3" (click)="addCollection()" />
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Title</td>
+      <td>Назва</td>
+      <td>Название</td>
+      <td>Titel</td>
+
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let collection of collections">
+      <ng-template [ngTemplateOutlet]="loadTemplate(collection)"
+                   [ngTemplateOutletContext]="{ $implicit: collection}">
+      </ng-template>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <ng-template #readOnlyTemplate let-collection>
+
+    <td>{{collection.id}}</td>
+    <td>{{collection.title}}</td>
+    <td>{{collection.title_ua}}</td>
+    <td>{{collection.title_ru}}</td>
+    <td>{{collection.title_de}}</td>
+
+
+
+    <td>
+      <input type="button" value="Змінити" class="btn btn-outline-primary" (click)="editCollection(collection)" />
+    </td>
+    <td>
+      <input type="button" value="Видалити" (click)="deleteCollection(collection)" class="btn btn-outline-danger" />
+    </td>
+
+  </ng-template>
+
+  <ng-template #editTemplate>
+
+    <td>
+      <input type="number" [(ngModel)]="editedCollection.id" readonly disabled class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedCollection.title" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedCollection.title_ua" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedCollection.title_ru" class="form-control" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="editedCollection.title_de" class="form-control" />
+    </td>
+
+    <td>
+      <input type="button" value="Зберегти" (click)="saveCollection()" class="btn btn-outline-success" />
+    </td>
+    <td>
+      <input type="button" value="Відміна" (click)="cancel()" class="btn btn-outline-danger" />
+    </td>
+
+  </ng-template>
+
+</div>

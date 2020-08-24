@@ -1172,7 +1172,7 @@ ol {
 .product-item .pi-pic ul{
   position: absolute;
   left: 0;
-  bottom: -52px;
+  bottom: -100px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
@@ -1180,16 +1180,7 @@ ol {
   width: 100%;
 }
 
-/*.sizes-btns {*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  bottom: -52px;*/
-/*  -webkit-transition: all 0.3s;*/
-/*  -o-transition: all 0.3s;*/
-/*  transition: all 0.3s;*/
-/*  text-align: center;*/
-/*  width: 100%;*/
-/*}*/
+
 
 .product-item .pi-pic ul li {
   list-style: none;

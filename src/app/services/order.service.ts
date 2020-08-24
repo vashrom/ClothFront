@@ -45,6 +45,7 @@ export class OrderService {
     return this.http.get<OrderDetailsServerResponse[]>(`${this.ServerURL}/orders/${orderId}`).toPromise();
   }
 
+
   getSingleOrderDetails(id: number):Observable<OrderDetailsServerResponse> {
     return this.http.get<OrderDetailsServerResponse>(this.ServerURL + '/orders/' + id);
 
