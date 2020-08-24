@@ -15,7 +15,10 @@
     "TITLE1": "Neue Businessblusen",
     "PARAG1": "Absatz über Deutsch",
     "SALE": "VERKAUF",
-    "SHOPNOW": "JETZT EINKAUFEN"
+    "SHOPNOW": "JETZT EINKAUFEN",
+    "SLIDER2": "Neue Sommerkollektion",
+    "SLIDER3": "Neue Schuhkollektion",
+    "BLOG": "Aus dem Blog"
   },
   "COLLECTION": {
     "1": "Schuhe",
@@ -211,7 +214,14 @@
 
   },
   "SIDEBAR": {
-    "CATEGORY": "Kategorien"
+    "CATEGORY": "Kategorien",
+    "COLLECTION": "Sammlungen",
+    "SORT": "Sortieren",
+    "SORT1": "Preis von niedrig nach hoch",
+    "SORT2": "Preis von hoch nach niedrig",
+    "FILTER": "Filter",
+    "FILTER1": "Größe"
+
   },
   "FOOTER": {
     "HELP": "Hilfe",
@@ -236,6 +246,26 @@
     "L2": "de",
     "L3": "ua",
     "L4": "ru"
+  },
+
+
+  "ADDBUTTON":
+  {
+    "NOSTOCK": "KEIN BESTAND"
+  },
+
+  "TABLE":
+  {
+    "HEADER": "Größentabelle",
+    "HEADER2": "Grundgrößen",
+    "CHEST": "Truhe (cm)",
+    "WAIST": "Taille (cm)",
+    "HIPS": "Hüften (cm)",
+    "LINK": "Größentabelle",
+    "PARAMETERS":"Parameter"
+
+
+
   }
 
 

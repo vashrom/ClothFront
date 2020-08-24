@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CartModelServer} from "../../models/cart.model";
 import {CartService} from "../../services/cart.service";
 import {AuthenticationService} from "../../services/authentication.service";
 import {TranslateService} from "@ngx-translate/core";
 import {CategoryModelServer, CategoryServerResponse} from "../../models/category.model";
 import {CategoryService} from "../../services/category.service";
+import {CollectionModelServer, CollectionServerResponse} from "../../models/collection.model";
+import {CollectionService} from "../../services/collection.service";
 
 
 @Component({
@@ -12,7 +14,7 @@ import {CategoryService} from "../../services/category.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
 
   cartData: CartModelServer;
   cartTotal: number;
@@ -20,10 +22,11 @@ export class HeaderComponent implements OnInit {
   selectedLang: string ='en';
   dropIndex: number;
   categories: CategoryModelServer[] = [];
+  collections: CollectionModelServer[]=[];
 
 
 
-  constructor(private categoryService: CategoryService,public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
+  constructor(private collectionService: CollectionService,private categoryService: CategoryService,public cartService: CartService, public auth: AuthenticationService, public  translate: TranslateService) { }
 
   ngOnInit(): void {
     this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
@@ -33,17 +36,23 @@ export class HeaderComponent implements OnInit {
 
     this.categoryService.getAllCategories().subscribe((cats: CategoryServerResponse) => {
       this.categories = cats.category;
-      console.log(this.categories);
-
     });
+
+    this.collectionService.getAllCollections().subscribe((coll: CollectionServerResponse) => {
+      this.collections = coll.collection;
+    });
+
+    if(!window.localStorage.getItem('language'))
+    {
+      localStorage.setItem('language', 'en');
+    }
+
 
   }
 
-
-
-
-
   selectChangeHandler(event: any){
+
+
     this.selectedLang = event.target.value;
     this.translate.use(this.selectedLang)
     localStorage.setItem('language', this.selectedLang);

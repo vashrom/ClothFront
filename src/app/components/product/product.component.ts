@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
@@ -6,6 +6,8 @@ import {map} from "rxjs/operators";
 import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
+
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 declare let $: any;
 
@@ -23,10 +25,13 @@ export class ProductComponent implements OnInit, AfterViewInit {
   size: string;
   color: string;
 
+  modalRef: BsModalRef;
+
+
 
   @ViewChild('quantity') quantityInput;
 
-  constructor( private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
+  constructor(private modalService: BsModalService ,private productService: ProductService, private cartService: CartService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -52,6 +57,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
       console.log(this.offeredProducts);
     });
 
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   ngAfterViewInit(): void {
@@ -164,7 +173,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     --------------------- */
     $('.sorting, .p-show').niceSelect();
 
-  //
+    //
 
     $('.product-pic-zoom').zoom();
 

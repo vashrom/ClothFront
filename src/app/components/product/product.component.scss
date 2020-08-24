@@ -125,3 +125,25 @@ h2{
   font-weight: 400;
 }
 
+.nostock-but
+{
+  cursor: not-allowed;
+}
+
+#size_guide
+{
+  font-weight: bold;
+  color: #7a0c35;
+  cursor: pointer;
+}
+
+.table-head
+{
+  background-color: #7a0c35;
+  color: whitesmoke;
+}
+
+.table th
+{
+  padding: 0.5rem;
+}

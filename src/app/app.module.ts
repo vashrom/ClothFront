@@ -38,7 +38,11 @@ import { BlogAdminComponent } from './components/blog-admin/blog-admin.component
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
 import { CategoryAdminComponent } from './components/category-admin/category-admin.component';
 import { NewsAdminComponent } from './components/news-admin/news-admin.component';
+import { MainImageAdminComponent } from './components/main-image-admin/main-image-admin.component';
+import { CollectionComponent } from './components/collection/collection.component';
+import { CollectionAdminComponent } from './components/collection-admin/collection-admin.component';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 export function HttpLoaderFactory(http:HttpClient) {
   return new TranslateHttpLoader(http);
@@ -73,6 +77,9 @@ export function HttpLoaderFactory(http:HttpClient) {
     UserAdminComponent,
     CategoryAdminComponent,
     NewsAdminComponent,
+    MainImageAdminComponent,
+    CollectionComponent,
+    CollectionAdminComponent,
 
 
 
@@ -83,6 +90,7 @@ export function HttpLoaderFactory(http:HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
+    ModalModule.forRoot(),
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

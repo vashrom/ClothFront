@@ -145,7 +145,7 @@
           <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
           <li><a routerLink="/collection">{{'NAV.CATALOG' | translate}}</a>
             <ul class="dropdown">
-              <li *ngFor="let c of categories"><a routerLink="/category/{{c.title_en}}"> {{c.title}}</a></li>
+              <li *ngFor="let col of collections"><a routerLink="/collection/{{col.title_en}}"> {{col.title}}</a></li>
             </ul>
           </li>
           <li><a routerLink="/payinfo">{{'NAV.PAYMENT' | translate}}</a></li>
@@ -154,13 +154,15 @@
           <li><a routerLink="/contacts">{{'NAV.CONTACTS' | translate}}</a></li>
           <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>
 
-          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАР</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАРИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГИ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ЗАМОВЛЕННЯ</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧІ</a></li><br>
           <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">ПОВІДОМЛЕННЯ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/categoryAdmin">КАТЕГОРІЇ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/collectionAdmin">КОЛЕКЦІЇ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/newsAdmin">НОВИНИ</a></li>
+          <li *ngIf="auth.isAdmin()"><a routerLink="/imagesAdmin">ЗОБРАЖЕННЯ</a></li>
 
 
         </ul>
@@ -184,8 +186,7 @@
             {{'NAV.CATALOG' | translate}}<span class="sr-only">(current)</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a  *ngFor="let c of categories"  class="dropdown-item" routerLink="category/{{c.title_en}}">{{c.title}}</a>
-
+            <a *ngFor="let col of collections"  class="dropdown-item" routerLink="collection/{{col.title_en}}">{{col.title}}</a>
           </div>
         </li>
         <li class="nav-item active">

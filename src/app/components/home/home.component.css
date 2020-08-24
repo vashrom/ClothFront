@@ -1,6 +1,6 @@
-.quick-view {
-  cursor: not-allowed;
-}
+/*.quick-view {*/
+/*  cursor: not-allowed;*/
+/*}*/
 
 
 
@@ -58,10 +58,40 @@ details p {
   padding-top: 1rem;
 }
 
-a{
+.category-link{
   color: black;
   font-size: 1rem;
   margin-left: 1rem;
 }
 
+.pi-text, .category-name, .product-price, .product-title
+{
+  text-align: center;
+}
 
+a
+{
+  cursor: pointer;
+}
+
+details
+{
+  padding-bottom: 7%;
+}
+
+.fw-title
+{
+  font-size: 24px;
+  margin: 5px;
+}
+
+.sc-item label:hover
+{
+  background-color: black;
+  color: whitesmoke;
+}
+
+.nostock-but
+{
+  cursor: not-allowed;
+}

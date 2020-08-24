@@ -3,6 +3,7 @@ export interface ProductModelServer {
   id: number;
   title: string;
   category: string;
+  collection: string;
   description: string;
   price: number;
   quantity: number;
@@ -10,6 +11,7 @@ export interface ProductModelServer {
   images: string;
   size: string;
   cat_id: number;
+  coll_id: number;
   short_desc: string;
   xs: number;
   s: number;
@@ -44,6 +46,7 @@ export class Product{
     public id: number,
     public title: string,
     public category: string,
+    public collection: string,
     public description: string,
     public price: number,
     public quantity: number,
@@ -51,6 +54,7 @@ export class Product{
     public images: string,
     public size: string,
     public cat_id: number,
+    public coll_id: number,
     public short_desc: string,
     public xs: number,
     public s: number,

@@ -16,7 +16,10 @@
     "TITLE1": "New business blouses",
     "PARAG1": "Paragraph on English",
     "SALE": "SALE",
-    "SHOPNOW": "SHOP NOW"
+    "SHOPNOW": "SHOP NOW",
+    "SLIDER2": "New summer collection",
+    "SLIDER3": "New shoes collection",
+    "BLOG": "From The Blog"
   },
 
   "COLLECTION": {
@@ -212,7 +215,14 @@
   },
 
   "SIDEBAR": {
-    "CATEGORY": "Categories"
+    "CATEGORY": "Categories",
+    "COLLECTION": "Collections",
+    "SORT": "Sort",
+    "SORT1": "Price from low to high",
+    "SORT2": "Price from high to low",
+    "FILTER": "Filter",
+    "FILTER1": "Size"
+
   },
 
   "FOOTER": {
@@ -238,9 +248,24 @@
     "L2": "de",
     "L3": "ua",
     "L4": "ru"
-  }
+  },
 
+  "ADDBUTTON":
+{
+  "NOSTOCK": "NO STOCK"
+},
 
+  "TABLE":
+{
+  "HEADER": "Size Table",
+  "HEADER2": "Basic sizes",
+  "CHEST": "Chest (cm)",
+  "WAIST": "Waist (cm)",
+  "HIPS": "Hips (cm)",
+  "LINK": "Size Guide",
+  "PARAMETERS": "Parameters"
+
+}
 
 
 
