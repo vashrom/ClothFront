@@ -49,18 +49,3 @@ export class ContactsComponent implements OnInit {
   }
 
 }
-// @ViewChild('map',{static:true}) mapElement: any;
-// map: google.maps.Map;
-// marker: google.maps.Marker;
-
-// const mapProperties = {
-//   center: new google.maps.LatLng(49.048938, 23.770880),
-//   zoom: 15,
-//   mapTypeId: google.maps.MapTypeId.ROADMAP,
-// };
-// this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
-// this.marker = new google.maps.Marker({
-//   position: new google.maps.LatLng(49.048938, 23.770880),
-//   title: 'Developers'
-// });
-// this.marker.setMap(this.map);

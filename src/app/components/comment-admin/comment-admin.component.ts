@@ -2,8 +2,7 @@ import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {CommentService} from "../../services/comment.service";
 import {Comment, CommentModelServer, CommentServerResponse} from "../../models/comment.model";
 import {FlashMessagesService} from "angular2-flash-messages";
-import {map} from "rxjs/operators";
-import {ParamMap} from "@angular/router";
+
 
 @Component({
   selector: 'app-comment-admin',
@@ -15,9 +14,7 @@ export class CommentAdminComponent implements OnInit {
   @ViewChild('readOnlyTemplate', {static: false}) readOnlyTemplate: TemplateRef<any>;
   @ViewChild('editTemplate', {static: false}) editTemplate: TemplateRef<any>;
 
-  editedComment: Comment;
   comments: CommentModelServer[] = [];
-  isNewRecord: boolean;
   statusMessage: string;
   catName: string;
 

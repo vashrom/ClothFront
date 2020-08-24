@@ -99,17 +99,3 @@ export interface UserOrderServerResponse {
 
 }
 
-//Order: {
-//   id: number,
-//   user_id: number,
-//   fname: string,
-//   lname: string,
-//   country: string,
-//   street: string,
-//   postcode: string,
-//   city: string,
-//   email: string,
-//   phone: string,
-//   message: string
-// },
-

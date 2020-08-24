@@ -1,11 +1,9 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {Image, ImageModelServer, ImageServerResponse} from "../../models/image.model";
-import {BlogService} from "../../services/blog.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {HttpClient} from "@angular/common/http";
 import {ImageService} from "../../services/image.service";
-import {Blog, BlogServerResponse} from "../../models/blog.model";
 
 @Component({
   selector: 'app-main-image-admin',

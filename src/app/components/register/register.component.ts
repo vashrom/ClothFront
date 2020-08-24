@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload} from "../../services/authentication.service";
 import { Router } from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-register',

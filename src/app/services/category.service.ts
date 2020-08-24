@@ -4,7 +4,6 @@ import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Category, CategoryServerResponse} from "../models/category.model";
-import {UserOrderServerResponse} from "../models/order.model";
 
 
 @Injectable({

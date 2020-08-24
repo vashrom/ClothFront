@@ -128,13 +128,11 @@
 
                 <li *ngFor="let c of cartData.data" class="fw-normal">{{c.product?.title}} x {{c.numInCart}} <span>{{c.product?.price * c.numInCart}} {{'WALLET'|translate}}</span></li>
 
-                <!--                <li class="fw-normal">Subtotal <span>$240.00</span></li>-->
                 <li class="total-price">Total <span>{{cartTotal}} {{'WALLET'|translate}}</span></li>
               </ul>
 
               <div class="order-btn">
                 <button type="submit" [disabled]="!form.valid"   class="site-btn place-btn">{{'CHECKOUT.BUTTON'|translate}}</button>
-<!--                (click)="onCheckout()"-->
               </div>
             </div>
           </div>

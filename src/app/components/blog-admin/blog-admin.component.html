@@ -2,7 +2,6 @@
 
 
 <div class="container-fluid m-3">
-  <!--<h1>Список пользователей</h1>-->
   <flash-messages></flash-messages>
 
   <input type="button" value="Додати" class="btn btn-outline-dark m-3" (click)="addBlog()" />
@@ -28,7 +27,6 @@
   </table>
 
 
-  <!--шаблон для чтения-->
   <ng-template #readOnlyTemplate let-blog>
 <tr>
       <td>{{blog.id}}</td>
@@ -48,7 +46,6 @@
 </tr>
   </ng-template>
 
-  <!--шаблон для редактирования-->
   <ng-template #editTemplate>
 <tr>
       <td>

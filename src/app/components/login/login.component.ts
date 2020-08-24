@@ -36,11 +36,6 @@ export class LoginComponent {
     return this.form.controls;
   }
 
-
-  // login() {
-  //
-  // }
-
   submit(){
     this.auth.login(this.credentials).subscribe(
       ()=> {

@@ -4,7 +4,6 @@ import {Collection, CollectionModelServer, CollectionServerResponse} from "../..
 import {FlashMessagesService} from "angular2-flash-messages";
 import {HttpClient} from "@angular/common/http";
 import {CollectionService} from "../../services/collection.service";
-import {Category, CategoryServerResponse} from "../../models/category.model";
 
 @Component({
   selector: 'app-collection-admin',

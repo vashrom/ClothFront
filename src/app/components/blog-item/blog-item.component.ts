@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "../../services/cart.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {BlogService} from "../../services/blog.service";
 import {map} from "rxjs/operators";
