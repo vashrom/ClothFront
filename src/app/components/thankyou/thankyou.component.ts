@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {OrderService} from "../../services/order.service";
-import {ProductModelServer, ProductServerResponse} from "../../models/product.model";
-import {Observable} from "rxjs";
-import {CartModelServer} from "../../models/cart.model";
-import {CartService} from "../../services/cart.service";
+import {OrderDetailsModelServer, OrderDetailsServerResponse} from "../../models/order.model";
 
 @Component({
   selector: 'app-thankyou',
@@ -14,12 +11,13 @@ import {CartService} from "../../services/cart.service";
 export class ThankyouComponent implements OnInit {
   message: string;
   orderId: number;
-  products: ProductResponseModel[] = [];
+  products: OrderDetailsModelServer[];
   cartTotal: number;
 
 
   constructor(private router: Router,
-              private orderService: OrderService) {
+              private orderService: OrderService,
+              ) {
     const navigation = this.router.getCurrentNavigation();
 
     const state = navigation.extras.state as {
@@ -30,10 +28,14 @@ export class ThankyouComponent implements OnInit {
     };
 
     this.message = state.message;
-    this.products = state.products;
+   // this.products = state.products;
     this.orderId = state.orderId;
     this.cartTotal = state.total;
     console.log(navigation);
+
+
+
+
 
     console.log(state);
 
@@ -42,7 +44,9 @@ export class ThankyouComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.orderService.getSingleOrderDetails(this.orderId).subscribe((orders: OrderDetailsServerResponse) => {
+      this.products = orders.orders;
+    });
   }
 
 }
