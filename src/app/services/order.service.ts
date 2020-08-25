@@ -42,13 +42,24 @@ export class OrderService {
   }
 
   getSingleOrder(orderId: number) {
-    return this.http.get<OrderDetailsServerResponse[]>(`${this.ServerURL}/orders/${orderId}`).toPromise();
-  }
+    if(window.localStorage.getItem('language')!='en') {
+      return this.http.get<OrderDetailsServerResponse[]>(`${this.ServerURL}/orders/${window.localStorage.getItem('language')}/${orderId}`).toPromise();
+    }
+    else
+    {
+      return this.http.get<OrderDetailsServerResponse[]>(`${this.ServerURL}/orders/en/${orderId}`).toPromise();
+    }
+    }
 
 
   getSingleOrderDetails(id: number):Observable<OrderDetailsServerResponse> {
-    return this.http.get<OrderDetailsServerResponse>(this.ServerURL + '/orders/' + id);
-
+    if(window.localStorage.getItem('language')!='en') {
+      return this.http.get<OrderDetailsServerResponse>(this.ServerURL + '/orders/'+window.localStorage.getItem('language')+'/' + id);
+    }
+    else
+    {
+      return this.http.get<OrderDetailsServerResponse>(this.ServerURL + '/orders/en/' + id);
+    }
   }
 
   deleteOrderReq(id: number){
