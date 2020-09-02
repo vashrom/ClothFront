@@ -617,7 +617,7 @@ ol {
 }
 
 .nav-item {
-  background: #252525;
+  background: whitesmoke;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,7 +629,7 @@ ol {
 
 .nav-item .nav-depart .depart-btn {
   background: #3b3b3b;
-  color: #ffffff;
+  color: #000000;
   padding: 14px 84px 14px 18px;
   cursor: pointer;
   position: relative;
@@ -644,7 +644,7 @@ ol {
 
 .nav-item .nav-depart .depart-btn:before {
   position: absolute;
-  color: #ffffff;
+  color: #000000;
   right: 20px;
   top: 13px;
   content: "";
@@ -653,7 +653,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn i {
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
 }
 
@@ -667,7 +667,7 @@ ol {
 .nav-item .nav-depart .depart-btn .depart-hover {
   position: absolute;
   width: 100%;
-  background: #fff;
+  background: whitesmoke;
   left: 0;
   top: 62px;
   opacity: 0;
@@ -685,7 +685,7 @@ ol {
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li.active a {
-  color: #7a0c35;
+  color: whitesmoke;
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li a {
@@ -726,17 +726,21 @@ ol {
   font-size: 14px;
   font-weight: 700;
   display: block;
-  color: #ffffff;
-  border-right: 2px solid #3b3b3b;
+  color: #000000;
+  border-right: 2px solid whitesmoke;
   text-transform: uppercase;
   padding: 16px 42px 15px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
+.nav-item .nav-menu li a:hover {
+  color: #7a0c35;
+  text-decoration: underline;
+}
 
 .nav-item .nav-menu li:hover>a {
-  background: #7a0c35;
+  background: whitesmoke;
 }
 
 .nav-item .nav-menu li:hover .dropdown {
@@ -751,7 +755,7 @@ ol {
   top: 82px;
   width: 200px;
   z-index: 99;
-  background: #252525;
+  background: whitesmoke;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s;
