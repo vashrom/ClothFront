@@ -37,8 +37,8 @@
                   <th>{{'CART.IMAGE' | translate}}</th>
                   <th class="p-name text-center">{{'CART.TITLE' | translate}}</th>
                   <th>{{'CART.PRICE' | translate}}</th>
-                  <th class="pr-2 pl-2">{{'CART.SIZE' | translate}}</th>
-                  <th class="pr-2 pl-2">{{'CART.COLOR' | translate}}</th>
+<!--                  <th class="pr-2 pl-2">{{'CART.SIZE' | translate}}</th>-->
+<!--                  <th class="pr-2 pl-2">{{'CART.COLOR' | translate}}</th>-->
                   <th>{{'CART.QUANTITY' | translate}}</th>
                   <th>{{'CART.TOTAL' | translate}}</th>
                   <th><i class="ti-close" (click)="cartService.DeleteAllProductsFromCart()"></i></th>
@@ -52,15 +52,16 @@
                   <td class="cart-title first-row w-25 text-center cart-col">
                     <h5>{{c.product.title}}</h5>
                   </td>
-                  <td class="p-price first-row cart-col">{{c.product.price}}{{'WALLET'|translate}}</td>
+<!--                  <td class="p-price first-row cart-col">{{c.product.price}}{{'WALLET'|translate}}</td>-->
+                  <td class="p-price first-row cart-col">{{c.product.price}}₴</td>
 
 
-                  <td class="cart-title first-row p-4 text-center cart-col">
-                    {{c.size}}
-                  </td>
-                  <td class="cart-title first-row p-3 cart-col">
-                    {{c.color}}
-                  </td>
+<!--                  <td class="cart-title first-row p-4 text-center cart-col">-->
+<!--                    {{c.size}}-->
+<!--                  </td>-->
+<!--                  <td class="cart-title first-row p-3 cart-col">-->
+<!--                    {{c.color}}-->
+<!--                  </td>-->
 
 
 
@@ -80,7 +81,8 @@
 
 
                   </td>
-                  <td class="total-price first-row cart-col">{{cartService.CalculateSubTotal(i)}} {{'WALLET'|translate}}</td>
+<!--                  <td class="total-price first-row cart-col">{{cartService.CalculateSubTotal(i)}} {{'WALLET'|translate}}</td>-->
+                  <td class="total-price first-row cart-col">{{cartService.CalculateSubTotal(i)}} ₴</td>
                   <td class="close-td first-row cart-col"><i class="ti-close" style="cursor: pointer" (click)="cartService.DeleteProductFromCart(i)"></i></td>
 
                 </tr>
@@ -100,7 +102,9 @@
                 <div class="proceed-checkout">
                   <ul>
                     <!--                    <li class="subtotal">Subtotal <span>$240.00</span></li>-->
-                    <li class="cart-total">{{'CART.TOTAL' | translate}} <span>{{cartTotal}} {{'WALLET'|translate}}</span></li>
+<!--                    <li class="cart-total">{{'CART.TOTAL' | translate}} <span>{{cartTotal}} {{'WALLET'|translate}}</span></li>-->
+                    <li class="cart-total">{{'CART.TOTAL' | translate}} <span>{{cartTotal}} ₴</span></li>
+
                   </ul>
                   <a routerLink="/checkout" class="proceed-btn">{{'CART.BUTTON2' | translate}}</a>
                 </div>

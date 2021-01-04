@@ -67,7 +67,9 @@ export class ProductAdminComponent implements OnInit {
 
   saveProduct(){
     if(this.isNewRecord){
-      this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
+      // this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
+
+      this.editedProduct.coll_id=2;
       this.productService.createProduct(this.editedProduct).subscribe((prods: ProductServerResponse) =>{
         this.statusMessage = "Товар успішно додано", this.loadProducts()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });
@@ -80,7 +82,8 @@ export class ProductAdminComponent implements OnInit {
     }
     else {
 
-      this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
+      // this.editedProduct.quantity = Number(this.editedProduct.xs) + Number(this.editedProduct.s) +Number(this.editedProduct.m) +Number(this.editedProduct.l) +Number(this.editedProduct.xl) +Number(this.editedProduct.xxl);
+      this.editedProduct.coll_id=2;
       this.productService.updateProduct(this.editedProduct.id,this.editedProduct).subscribe((prods: ProductServerResponse) => {
         this.statusMessage = "Товар успішно оновлено", this.loadProducts()
         this.flashMessage.show(this.statusMessage, { cssClass: 'alert-success', timeout: 2000 });

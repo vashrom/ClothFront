@@ -12,18 +12,18 @@
   },
 
   "HOME": {
-    "TITLE1": "Новые блузки делового стиля",
+    "TITLE1": "Выходные скидки на маршмеллоу",
     "PARAG1": "Параграф на русском",
     "SALE": "СКИДКА",
     "SHOPNOW": "В МАГАЗИН",
-    "SLIDER2": "Новая летняя коллекция",
-    "SLIDER3": "Новая коллекция обуви",
+    "SLIDER2": "Новая коллекция шоколада",
+    "SLIDER3": "Окунись в мир карамели",
     "BLOG": "Из блога"
   },
   "COLLECTION": {
-    "1": "Обувь",
-    "2": "Платья",
-    "3": "Рубашки",
+    "1": "Орехи",
+    "2": "Молды",
+    "3": "Глазурь",
     "DISCOVER": "Узнать больше"
 
   },
@@ -47,7 +47,7 @@
   },
 
   "ABOUT": {
-    "HEADER": "Про Baydalini",
+    "HEADER": "Про Macaron Shop",
     "TEXT": "Текст о нас laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquiplaboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip",
     "QUOTE": "“Цитата“ ",
     "QUOTEA": "- Автор Цитаты",
@@ -249,7 +249,8 @@
   },
   "ADDBUTTON":
   {
-    "NOSTOCK": "НЕТ В НАЛИЧИИ"
+    "NOSTOCK": "НЕТ В НАЛИЧИИ",
+    "ADDTO":  "ДОБАВИТЬ В КОРЗИНУ"
   },
 
   "TABLE":

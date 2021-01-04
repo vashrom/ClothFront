@@ -28,7 +28,7 @@
           <ul>
             <li><a routerLink="/about">{{'FOOTER.LINKC1'|translate}}</a></li>
             <li><a routerLink="/collection">{{'FOOTER.LINKC2'|translate}}</a></li>
-            <li><a routerLink="/payinfo">{{'FOOTER.LINKC3'|translate}}</a></li>
+<!--            <li><a routerLink="/payinfo">{{'FOOTER.LINKC3'|translate}}</a></li>-->
           </ul>
         </div>
       </div>
@@ -59,15 +59,15 @@
         </div>
 
         <div class="footer-social footer-left">
-          <a href="https://www.facebook.com/BAYDALINI"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.instagram.com/baydalini_boutique/"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.facebook.com/MacaronConditer" target="popup"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/macaron.shoponline/" target="popup"><i class="fa fa-instagram"></i></a>
 <!--          <a href="#"><i class="fa fa-twitter"></i></a>-->
 <!--          <a href="#"><i class="fa fa-pinterest"></i></a>-->
         </div>
+        <a class="m-2 lng" (click)="chooseLang('ua')">{{'FOOTER.L3'|translate}}</a>
 
         <a class="m-2 lng" (click)="chooseLang('en')">{{'FOOTER.L1'|translate}}</a>
-        <a class="m-2 lng" (click)="chooseLang('de')">{{'FOOTER.L2'|translate}}</a>
-        <a class="m-2 lng" (click)="chooseLang('ua')">{{'FOOTER.L3'|translate}}</a>
+<!--        <a class="m-2 lng" (click)="chooseLang('de')">{{'FOOTER.L2'|translate}}</a>-->
         <a class="m-2 lng" (click)="chooseLang('ru')">{{'FOOTER.L4'|translate}}</a>
 
 

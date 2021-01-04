@@ -13,19 +13,19 @@
   },
 
   "HOME": {
-    "TITLE1": "New business blouses",
+    "TITLE1": "Weekend discounts on marshmallows",
     "PARAG1": "Paragraph on English",
     "SALE": "SALE",
     "SHOPNOW": "SHOP NOW",
-    "SLIDER2": "New summer collection",
-    "SLIDER3": "New shoes collection",
+    "SLIDER2": "New chocolate collection",
+    "SLIDER3": "Immerse yourself in the world of caramel",
     "BLOG": "From The Blog"
   },
 
   "COLLECTION": {
-    "1": "Shoes",
-    "2": "Dresses",
-    "3": "Shirts",
+    "1": "Nuts",
+    "2": "Molds",
+    "3": "Glaze",
     "DISCOVER": "Discover more"
   },
 
@@ -50,7 +50,7 @@
   },
 
   "ABOUT": {
-    "HEADER": "About Baydalini",
+    "HEADER": "About Macaron Shop",
     "TEXT": "About us text laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit laboris nisi ut aliquip",
     "QUOTE": "“Quote text“ ",
     "QUOTEA": "- Quote Author",
@@ -252,7 +252,8 @@
 
   "ADDBUTTON":
 {
-  "NOSTOCK": "NO STOCK"
+  "NOSTOCK": "NO STOCK",
+  "ADDTO":  "ADD TO CART"
 },
 
   "TABLE":

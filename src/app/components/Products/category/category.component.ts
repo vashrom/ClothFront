@@ -59,8 +59,8 @@ export class CategoryComponent implements OnInit {
     this.router.navigate(['/product',id]).then();
   }
 
-  AddToCart(id: number, size:string) {
-    this.cartService.addProductToCart(id, 1,size);
+  AddToCart(id: number) {
+    this.cartService.addProductToCart(id, 1);
   }
 
 

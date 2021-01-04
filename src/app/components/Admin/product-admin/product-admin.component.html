@@ -74,7 +74,7 @@
         <input type="number" min="0" [(ngModel)]="editedProduct.price" class="form-control" />
       </td>
       <td>
-        <input type="number" min="0" [(ngModel)]="editedProduct.quantity"   readonly disabled class="form-control" />
+        <input type="number" min="0" [(ngModel)]="editedProduct.quantity"   class="form-control" />
       </td>
       <td>
         <input type="text" [(ngModel)]="editedProduct.image"  class="form-control" />
@@ -101,22 +101,22 @@
         <label >Назва RU:</label>
         <input placeholder="Назва RU" min="0" type="text" [(ngModel)]="editedProduct.title_ru"   class="form-control" />
       </td>
-      <td>
-        <label >Назва DE:</label>
-        <input placeholder="Назва DE" min="0" type="text" [(ngModel)]="editedProduct.title_de"   class="form-control" />
-      </td>
-      <td>
-        <label >Ціна UA:</label>
-        <input  placeholder="Ціна UA" type="number" min="0" [(ngModel)]="editedProduct.price_ua" class="form-control" />
-      </td>
-      <td>
-        <label >Ціна RU:</label>
-        <input placeholder="Ціна RU" type="number" min="0" [(ngModel)]="editedProduct.price_ru" class="form-control" />
-      </td>
-      <td>
-        <label >Ціна DE:</label>
-        <input placeholder="Ціна DE" type="number" min="0" [(ngModel)]="editedProduct.price_de" class="form-control" />
-      </td>
+<!--      <td>-->
+<!--        <label >Назва DE:</label>-->
+<!--        <input placeholder="Назва DE" min="0" type="text" [(ngModel)]="editedProduct.title_de"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label >Ціна UA:</label>-->
+<!--        <input  placeholder="Ціна UA" type="number" min="0" [(ngModel)]="editedProduct.price_ua" class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label >Ціна RU:</label>-->
+<!--        <input placeholder="Ціна RU" type="number" min="0" [(ngModel)]="editedProduct.price_ru" class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label >Ціна DE:</label>-->
+<!--        <input placeholder="Ціна DE" type="number" min="0" [(ngModel)]="editedProduct.price_de" class="form-control" />-->
+<!--      </td>-->
       <td>
         <label >Опис UA:</label>
         <input placeholder="Опис UA" type="text" [(ngModel)]="editedProduct.description_ua" class="form-control" />
@@ -125,56 +125,47 @@
         <label >Опис RU:</label>
         <input placeholder="Опис RU" type="text" [(ngModel)]="editedProduct.description_ru" class="form-control" />
       </td>
-      <td>
-        <label >Опис DE:</label>
-        <input placeholder="Опис DE" type="text" [(ngModel)]="editedProduct.description_de" class="form-control" />
-      </td>
-      <td>
-        <label >Колір:</label>
-        <input placeholder="Колір" type="text" [(ngModel)]="editedProduct.color" class="form-control" />
-      </td>
+<!--      <td>-->
+<!--        <label >Опис DE:</label>-->
+<!--        <input placeholder="Опис DE" type="text" [(ngModel)]="editedProduct.description_de" class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label >Колір:</label>-->
+<!--        <input placeholder="Колір" type="text" [(ngModel)]="editedProduct.color" class="form-control" />-->
+<!--      </td>-->
 
     </tr>
 
 
 
-    <tr>
-      <td>
-        <label>XS:</label>
-        <input placeholder="XS" min="0" type="number" [(ngModel)]="editedProduct.xs"   class="form-control" />
-      </td>
-      <td>
-        <label>S:</label>
-        <input placeholder="S" min="0" type="number" [(ngModel)]="editedProduct.s"   class="form-control" />
-      </td>
-      <td>
-        <label>M:</label>
-        <input placeholder="M" min="0" type="number" [(ngModel)]="editedProduct.m"   class="form-control" />
-      </td>
-      <td>
-        <label>L:</label>
-        <input placeholder="L" min="0" type="number" [(ngModel)]="editedProduct.l"   class="form-control" />
-      </td>
-      <td>
-        <label>XL:</label>
-        <input placeholder="XL" min="0" type="number" [(ngModel)]="editedProduct.xl"   class="form-control" />
-      </td>
-      <td>
-        <label>XXL:</label>
-        <input placeholder="XXL" min="0" type="number" [(ngModel)]="editedProduct.xxl"   class="form-control" />
-      </td>
-    </tr>
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <label>XS:</label>-->
+<!--        <input placeholder="XS" min="0" type="number" [(ngModel)]="editedProduct.xs"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label>S:</label>-->
+<!--        <input placeholder="S" min="0" type="number" [(ngModel)]="editedProduct.s"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label>M:</label>-->
+<!--        <input placeholder="M" min="0" type="number" [(ngModel)]="editedProduct.m"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label>L:</label>-->
+<!--        <input placeholder="L" min="0" type="number" [(ngModel)]="editedProduct.l"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label>XL:</label>-->
+<!--        <input placeholder="XL" min="0" type="number" [(ngModel)]="editedProduct.xl"   class="form-control" />-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <label>XXL:</label>-->
+<!--        <input placeholder="XXL" min="0" type="number" [(ngModel)]="editedProduct.xxl"   class="form-control" />-->
+<!--      </td>-->
+<!--    </tr>-->
 
-    <tr>
-      <td>
-        <label>ID Колекції:</label>
-        <input type="number" min="1" [(ngModel)]="editedProduct.coll_id" class="form-control" />
-      </td>
-      <td>
-        <label>Колекція:</label>
-        <input type="text" [(ngModel)]="editedProduct.collection" readonly disabled class="form-control" />
-      </td>
-    </tr>
+<!--   -->
 
   </ng-template>
 

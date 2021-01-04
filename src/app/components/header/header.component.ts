@@ -66,14 +66,12 @@ export class HeaderComponent implements OnInit{
       case 'en':
         this.dropIndex = 0 ;
         break;
-      case 'de':
+
+      case 'ua':
         this.dropIndex = 1 ;
         break;
-      case 'ua':
-        this.dropIndex = 2 ;
-        break;
       case 'ru':
-        this.dropIndex = 3 ;
+        this.dropIndex = 2 ;
         break;
       default:
         this.dropIndex = 0 ;

@@ -5,11 +5,11 @@
       <div class="ht-left">
         <div class="mail-service">
           <i class=" fa fa-envelope"></i>
-          baydalinie@gmail.com
+          macaron@gmail.com
         </div>
         <div class="phone-service">
           <i class=" fa fa-phone"></i>
-         +380 677 586 660
+         +380 95 716 6321
         </div>
       </div>
 
@@ -20,7 +20,7 @@
         <a *ngIf="!auth.isLoggedIn()" routerLink="/register" class="login-panel"><i class="fa fa-user"></i>{{'HEADER.REGISTER'|translate}}</a>
         <a *ngIf="!auth.isLoggedIn()"  routerLink="/login" class="login-panel"><i class="fa fa-user"></i>{{'HEADER.LOGIN'|translate}} &nbsp; &nbsp;</a>
         <a *ngIf="auth.isLoggedIn()" routerLink="/" (click)="auth.logout()" class="login-panel">{{'HEADER.LOGOUT'|translate}}</a>
-        <a *ngIf="auth.isLoggedIn()" routerLink="/profile" class="login-panel"><i class="fa fa-user"></i>{{auth.getUserDetails()?.first_name}} &nbsp; &nbsp;</a>
+        <a *ngIf="auth.isLoggedIn()" routerLink="/profile" class="login-panel"><i class="fa fa-user"></i>{{auth.getUserDetails()?.email}} &nbsp; &nbsp;</a>
 
 
         <div class="lan-selector">
@@ -29,8 +29,7 @@
 
             <option id="en" value="en" data-imagecss="flag yu"
                     data-title="English">{{'HEADER.ENGLISH'|translate}}</option>
-            <option id="de" value="de"   data-image-src="assets/img/flag-2.jpg" data-imagecss="flag yu"
-                     data-title="Bangladesh">{{'HEADER.GERMAN'|translate}}</option>
+
             <option value="ua"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
                     data-title="Ukrainian">{{'HEADER.UKRAINIAN'|translate}}</option>
             <option value="ru"   data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
@@ -40,8 +39,8 @@
 
         </div>
         <div class="top-social">
-          <a href="https://www.facebook.com/BAYDALINI"><i class="ti-facebook"></i></a>
-          <a href="https://www.instagram.com/baydalini_boutique/"><i class="ti-instagram"></i></a>
+          <a href="https://www.facebook.com/MacaronConditer" target="popup"><i class="ti-facebook"></i></a>
+          <a href="https://www.instagram.com/macaron.shoponline/" target="popup"><i class="ti-instagram"></i></a>
         </div>
 
 
@@ -59,7 +58,7 @@
         <div  class="col-lg-12 col-md-12" >
 
 
-          <img routerLink="/" id="logo" src="../../../assets/img/baydalini.jpg" style="border: white;" class="mx-auto d-block w-25 ml-3" />
+          <img routerLink="/" id="logo" src="../../../assets/img/macaron.jpg" style="border: white;" class="mx-auto d-block w-25 ml-3" />
 
 
           <ul id="cart" class="nav-right float-right centered m-sm-3">
@@ -84,7 +83,9 @@
                       <td class="si-pic"><img [src]="c.product ?. image" alt="{{c.product.title}}"></td>
                       <td class="si-text">
                         <div class="product-selected">
-                          <p>{{c.product.price}} {{'WALLET'|translate}} x {{c.numInCart}}</p>
+<!--                          <p>{{c.product.price}} {{'WALLET'|translate}} x {{c.numInCart}}</p>-->
+                          <p>{{c.product.price}} ₴ x {{c.numInCart}}</p>
+
                           <h6>{{c.product.title}}</h6>
                         </div>
                       </td>
@@ -98,7 +99,9 @@
                 </div>
                 <div class="select-total">
                   <span>{{'HEADER.TOTAL'|translate}}:</span>
-                  <h5>{{ cartTotal}} {{'WALLET'|translate}}</h5>
+<!--                  <h5>{{ cartTotal}} {{'WALLET'|translate}}</h5>-->
+                  <h5>{{ cartTotal}} ₴</h5>
+
                 </div>
                 <div class="select-button">
                   <a routerLink="/cart" class="primary-btn view-card">{{'HEADER.CART'|translate}}</a>
@@ -106,7 +109,9 @@
                 </div>
               </div>
             </li>
-            <li class="cart-price">{{cartTotal}} {{'WALLET'|translate}}</li>
+<!--            <li class="cart-price">{{cartTotal}} {{'WALLET'|translate}}</li>-->
+            <li class="cart-price">{{cartTotal}} ₴</li>
+
           </ul>
         </div>
       </div>
@@ -124,22 +129,22 @@
           <li ><a routerLink="/">{{'NAV.MAIN' | translate}}</a></li>
           <li><a routerLink="/collection">{{'NAV.CATALOG' | translate}}</a>
             <ul class="dropdown">
-              <li *ngFor="let col of collections"><a routerLink="/collection/{{col.title_en}}"> {{col.title}}</a></li>
+              <li *ngFor="let cat of categories"><a routerLink="/category/{{cat.title_en}}"> {{cat.title}}</a></li>
             </ul>
           </li>
           <li><a routerLink="/payinfo">{{'NAV.PAYMENT' | translate}}</a></li>
           <li><a routerLink="/return">{{'NAV.RETURN' | translate}}</a></li>
           <li><a routerLink="/about">{{'NAV.ABOUT' | translate}}</a></li>
           <li><a routerLink="/contacts">{{'NAV.CONTACTS' | translate}}</a></li>
-          <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>
+<!--          <li><a routerLink="/blog">{{'NAV.BLOG' | translate}}</a></li>-->
 
           <li *ngIf="auth.isAdmin()"><a routerLink="/productAdmin">ТОВАРИ</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГИ</a></li>
+<!--          <li *ngIf="auth.isAdmin()"><a routerLink="/blogAdmin">БЛОГИ</a></li>-->
           <li *ngIf="auth.isAdmin()"><a routerLink="/orderAdmin">ЗАМОВЛЕННЯ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/usersAdmin">КОРИСТУВАЧІ</a></li><br>
           <li *ngIf="auth.isAdmin()"><a routerLink="/commentAdmin">ПОВІДОМЛЕННЯ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/categoryAdmin">КАТЕГОРІЇ</a></li>
-          <li *ngIf="auth.isAdmin()"><a routerLink="/collectionAdmin">КОЛЕКЦІЇ</a></li>
+<!--          <li *ngIf="auth.isAdmin()"><a routerLink="/collectionAdmin">КОЛЕКЦІЇ</a></li>-->
           <li *ngIf="auth.isAdmin()"><a routerLink="/newsAdmin">НОВИНИ</a></li>
           <li *ngIf="auth.isAdmin()"><a routerLink="/imagesAdmin">ЗОБРАЖЕННЯ</a></li>
 
@@ -165,7 +170,7 @@
             {{'NAV.CATALOG' | translate}}<span class="sr-only">(current)</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a *ngFor="let col of collections"  class="dropdown-item" routerLink="collection/{{col.title_en}}">{{col.title}}</a>
+            <a *ngFor="let cat of categories"  class="dropdown-item" routerLink="category/{{cat.title_en}}">{{cat.title}}</a>
           </div>
         </li>
         <li class="nav-item active">
@@ -180,9 +185,9 @@
         <li class="nav-item active">
           <a class="nav-link" routerLink="/contacts">{{'NAV.CONTACTS' | translate}} <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/blog">{{'NAV.BLOG' | translate}} <span class="sr-only">(current)</span></a>
-        </li>
+<!--        <li class="nav-item active">-->
+<!--          <a class="nav-link" routerLink="/blog">{{'NAV.BLOG' | translate}} <span class="sr-only">(current)</span></a>-->
+<!--        </li>-->
 
       </ul>
 

@@ -29,15 +29,15 @@
 
         </details>
 
-        <details>
-          <summary>{{'SIDEBAR.COLLECTION'|translate}}</summary>
+<!--        <details>-->
+<!--          <summary>{{'SIDEBAR.COLLECTION'|translate}}</summary>-->
 
-          <p *ngFor="let col of collections"><a class="category-link" routerLink="/collection/{{col.title_en}}">
-            {{col.title}}
-          </a>
-          </p>
+<!--          <p *ngFor="let col of collections"><a class="category-link" routerLink="/collection/{{col.title_en}}">-->
+<!--            {{col.title}}-->
+<!--          </a>-->
+<!--          </p>-->
 
-        </details>
+<!--        </details>-->
 
         <details>
           <summary>{{'SIDEBAR.SORT'|translate}}</summary>
@@ -53,44 +53,44 @@
 
         </details>
 
-        <details>
-          <summary>{{'SIDEBAR.FILTER'|translate}}</summary>
-          <div class="filter-widget">
-            <p  class="fw-title">{{'SIDEBAR.FILTER1'|translate}}</p>
-            <div class="fw-size-choose">
+<!--        <details>-->
+<!--          <summary>{{'SIDEBAR.FILTER'|translate}}</summary>-->
+<!--          <div class="filter-widget">-->
+<!--            <p  class="fw-title">{{'SIDEBAR.FILTER1'|translate}}</p>-->
+<!--            <div class="fw-size-choose">-->
 
 
-              <div class="sc-item col-3">
-                <input type="radio" id="xs-size">
-                <label (click)="filterBySize('XS')" for="xs-size">xs</label>
-              </div>
-              <div  class="sc-item col-3">
-                <input type="radio" id="s-size">
-                <label (click)="filterBySize('S')" for="s-size">s</label>
-              </div>
-              <div  class="sc-item col-3">
-                <input type="radio" id="m-size">
-                <label (click)="filterBySize('M')" for="m-size">m</label>
-              </div>
-              <div  class="sc-item col-3">
-                <input type="radio" id="l-size">
-                <label (click)="filterBySize('L')" for="l-size">l</label>
-              </div>
-              <div  class="sc-item col-3">
-                <input type="radio" id="xl-size">
-                <label (click)="filterBySize('XL')" for="xl-size">xl</label>
-              </div>
-              <div  class="sc-item col-3">
-                <input type="radio" id="xxl-size">
-                <label (click)="filterBySize('XXL')" for="xxl-size">xxl</label>
-              </div>
+<!--              <div class="sc-item col-3">-->
+<!--                <input type="radio" id="xs-size">-->
+<!--                <label (click)="filterBySize('XS')" for="xs-size">xs</label>-->
+<!--              </div>-->
+<!--              <div  class="sc-item col-3">-->
+<!--                <input type="radio" id="s-size">-->
+<!--                <label (click)="filterBySize('S')" for="s-size">s</label>-->
+<!--              </div>-->
+<!--              <div  class="sc-item col-3">-->
+<!--                <input type="radio" id="m-size">-->
+<!--                <label (click)="filterBySize('M')" for="m-size">m</label>-->
+<!--              </div>-->
+<!--              <div  class="sc-item col-3">-->
+<!--                <input type="radio" id="l-size">-->
+<!--                <label (click)="filterBySize('L')" for="l-size">l</label>-->
+<!--              </div>-->
+<!--              <div  class="sc-item col-3">-->
+<!--                <input type="radio" id="xl-size">-->
+<!--                <label (click)="filterBySize('XL')" for="xl-size">xl</label>-->
+<!--              </div>-->
+<!--              <div  class="sc-item col-3">-->
+<!--                <input type="radio" id="xxl-size">-->
+<!--                <label (click)="filterBySize('XXL')" for="xxl-size">xxl</label>-->
+<!--              </div>-->
 
 
 
-            </div>
-          </div>
+<!--            </div>-->
+<!--          </div>-->
 
-        </details>
+<!--        </details>-->
 
 
       </div>
@@ -110,12 +110,14 @@
                     <li class="quick-view ">
 
                       <div class="p-0">
-                        <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>
-                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "S" }}</a>
-                        <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>
-                        <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>
-                        <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>
-                        <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>
+                        <a *ngIf="p.quantity>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.quantity<1" [class.btn-outline-danger]="p.quantity<1" (click)="AddToCart(p.id)">{{p.quantity < 1? "": 'ADDBUTTON.ADDTO'|translate }}</a>
+
+<!--                        <a *ngIf="p.xs>0" class="btn btn-light d-inline-block m-1 p-2" [class.disabled]="p.xs<1" [class.btn-outline-danger]="p.xs<1" (click)="AddToCart(p.id,'XS')">{{p.xs < 1? "": "XS" }}</a>-->
+<!--                        <a *ngIf="p.s>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.s<1" [class.btn-outline-danger]="p.s<1" (click)="AddToCart(p.id,'S')">{{p.s < 1? "": "S" }}</a>-->
+<!--                        <a *ngIf="p.m>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.m<1" [class.btn-outline-danger]="p.m<1" (click)="AddToCart(p.id,'M')">{{p.m < 1? "": "M" }}</a>-->
+<!--                        <a *ngIf="p.l>0" class="btn btn-light   d-inline-block m-1 p-2"  [class.disabled]="p.l<1" [class.btn-outline-danger]="p.l<1" (click)="AddToCart(p.id,'L')">{{p.l < 1? "": "L" }}</a>-->
+<!--                        <a *ngIf="p.xl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xl<1" [class.btn-outline-danger]="p.xl<1" (click)="AddToCart(p.id,'XL')">{{p.xl < 1? "": "XL" }}</a>-->
+<!--                        <a *ngIf="p.xxl>0" class="btn btn-light  d-inline-block m-1 p-2"  [class.disabled]="p.xxl<1" [class.btn-outline-danger]="p.xxl<1" (click)="AddToCart(p.id,'XXL')">{{p.xxl < 1? "": "XXL" }}</a>-->
                         <a *ngIf="p.quantity <= 0"  class="nostock-but disabled d-inline-block m-1 p-2">{{'ADDBUTTON.NOSTOCK'|translate}}</a>
                       </div>
                     </li>
@@ -130,7 +132,8 @@
                     <h5>{{p.title | titlecase}}</h5>
                   </a>
                   <div class="product-price">
-                    {{p.price}} {{'WALLET'|translate}}
+<!--                    {{p.price}} {{'WALLET'|translate}}-->
+                    {{p.price}} ₴
                   </div>
                 </div>
               </div>
