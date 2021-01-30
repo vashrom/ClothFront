@@ -1,6 +1,6 @@
 {
   "/users": {
-    "target": "http://localhost:3000",
+    "target": "http://45.94.158.114:3000",
     "secure": false
   }
 }
